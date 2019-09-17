@@ -297,8 +297,7 @@ def bubblechart2(request):
                                 """{
                         "chart": {
         "theme": "fusion",
-        "caption": "Sales Analysis of Shoe Brands",
-        "subcaption": "Last Quarter",
+        "caption": "Top 5 Products",
         "xAxisMinValue": "0",
         "xAxisMaxValue": "100",
         "yAxisMinValue": "0",
@@ -306,18 +305,16 @@ def bubblechart2(request):
         "plotFillAlpha": "70",
         "plotFillHoverColor": "#6baa01",
         "showPlotBorder": "0",
-        "xAxisName": "Average Price",
-        "yAxisName": "Units Sold",
-        "xNumberPrefix": "$",
+        "xAxisName": "Month",
+        "yAxisName": "Total Sales",
         "showValues": "1",
         "showCanvasBorder": "0",
         "showTrendlineLabels": "0",
-        "plotTooltext": "$name : Profit Contribution - $zvalue%",
+        "plotTooltext": "$name : Tk $zvalue",
         "adjustVDiv": "1",
         "showXAxisValues": "1",
         "numVDivlines": "5",
         "xAxisValuesStep": "1",
-        "vDivlineColor": "ff0000",
         "vDivlineThickness": "5",
         "vDivlineAlpha": "70",
         "vDivlineIsDashed": "1",
@@ -333,81 +330,65 @@ def bubblechart2(request):
           "label": "0",
           "x": "0"
         }, {
-          "label": "$10",
+          "label": "Jan",
           "x": "10",
           "showverticalline": "1"
         }, {
-          "label": "$30",
+          "label": "Feb",
           "x": "30",
           "showverticalline": "1"
         }, {
-          "label": "$50",
+          "label": "Mar",
           "x": "50",
           "showverticalline": "1"
         }, {
-          "label": "$70",
+          "label": "Apr",
           "x": "70",
           "showverticalline": "1"
         }, {
-          "label": "$90",
+          "label": "May",
           "x": "90",
           "showverticalline": "1"
         }]
       }],
       "dataset": [{
         "color": "#00aee4",
-        "data": [{
-          "x": "80",
-          "y": "15000",
-          "z": "24",
-          "name": "Nike"
-        }, {
-          "x": "60",
-          "y": "18500",
-          "z": "26",
-          "name": "Adidas"
-        }, {
+        "data": [ {
           "x": "50",
           "y": "19450",
           "z": "19",
-          "name": "Puma"
+          "name": "Lux"
         }, {
           "x": "65",
           "y": "10500",
           "z": "8",
-          "name": "Fila"
+          "name": "Cool Shaving Cream",
+           "color" : "ffbf00"
+
         }, {
           "x": "43",
           "y": "8750",
           "z": "5",
-          "name": "Lotto"
+          "name": "Teer Ata",
+          "color" : "333333"
+
         }, {
           "x": "32",
           "y": "22000",
           "z": "10",
-          "name": "Reebok"
+          "name": "Coca Cola",
+           "color" : "ff6b5e"
+
         }, {
           "x": "44",
           "y": "13000",
           "z": "9",
-          "name": "Woodland"
+          "name": "Pepsi",
+          "color" : "96e0ff"
         }]
       }],
-      "trendlines": [{
-        "line": [{
-          "startValue": "20000",
-          "endValue": "30000",
-          "isTrendZone": "1",
-          "color": "#aaaaaa",
-          "alpha": "14"
-        }, {
-          "startValue": "10000",
-          "endValue": "20000",
-          "isTrendZone": "1",
-          "color": "#aaaaaa",
-          "alpha": "7"
-        }]
-      }]
+     
+      
     
                     
 
