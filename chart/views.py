@@ -63,7 +63,7 @@ def chart(request):
 
 
 def barchart(request):
-   chartObj = FusionCharts( 'column2d', 'ex1', '600', '400', 'chart-1', 'json', """{
+   chartObj = FusionCharts( 'column2d','ex1',"70%","400",'chart-1','json', """{
   "chart": {
     "caption": "Shoppers",
     "numbersuffix": "K",
@@ -78,7 +78,7 @@ def barchart(request):
     },
     {
       "label": "Medium",
-      "value": "912.345"
+      "value": "9.345"
     },
     {
       "label": "Low",
@@ -90,7 +90,7 @@ def barchart(request):
 
 
 def stackedbarchart(request):
-   chartObj = FusionCharts( 'stackedcolumn2d', 'chart-container', '600', '400', 'chart-1', 'json', """{
+   chartObj = FusionCharts( 'stackedcolumn2d', 'chart-container', '70%', '400', 'chart-1', 'json', """{
     "chart": {
      
         "theme": "fusion",
@@ -99,7 +99,7 @@ def stackedbarchart(request):
         "showLegend": "0"
 
     },
-    "categories": [
+    "categories": [ 
         {
             "category": [
                 {
@@ -159,89 +159,7 @@ def stackedbarchart(request):
             ]
         }
         
-    ],
-     "annotations": {
-        "groups": [{
-            "items": [{
-                "id": "dyn-labelBG",
-                "type": "text",
-                "text":"Male",
-                "radius": "3",
-                "x": "540",
-                "y": "250",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-             
-            },
-            {
-               "id": "dyn-labelBG2",
-                "type": "text",
-                "text":"Female",
-                "radius": "3",
-                "x": "547",
-                "y": "150",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-            },
-              {
-               "id": "dyn-labelBG3",
-                "type": "text",
-                "text":"Female",
-                "radius": "3",
-                "x": "170",
-                "y": "150",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-            },
-            {
-               "id": "dyn-labelBG4",
-                "type": "text",
-                "text":"Female",
-                "radius": "3",
-                "x": "359",
-                "y": "150",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-            },
-            {
-                "id": "dyn-labelBG5",
-                "type": "text",
-                "text":"Male",
-                "radius": "3",
-                "x": "351",
-                "y": "250",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-             
-            },
-            {
-                "id": "dyn-labelBG6",
-                "type": "text",
-                "text":"Male",
-                "radius": "3",
-                "x": "160",
-                "y": "250",
-                "tox": "190",
-                "toy": "90",
-                "color": "#000000",
-             
-            },
-            
-            
-            
-            ]
-        },
-        
-        
-        ]
-    }
-    
-    
+    ],  
     
 }""")
    return render(request, 'index.html', {'output': chartObj.render()})
