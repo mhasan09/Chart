@@ -163,3 +163,43 @@ def stackedbarchart(request):
     
 }""")
    return render(request, 'index.html', {'output': chartObj.render()})
+
+
+
+
+def gaugechart(request):
+
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+    angularGauge = FusionCharts("angulargauge", "ex1" , "100%", "400", "chart-1", "json",
+        # The data is passed as a string in the `dataSource` as parameter.
+        """{
+            "chart": {
+               
+                "theme": "fusion",
+                "chartBottomMargin": "50",
+                "showValue": "0",
+                "showTickMarks": "0",
+                "showTickValues": "0"
+            },
+            "colorRange": {
+                "color": [{
+                    "minValue": "0",
+                    "maxValue": "110",
+                    "code": "#26bfff"
+                },
+                 {
+                    "minValue": "110",
+                    "maxValue": "111",
+                    "code": "#ffffff"
+                }, {
+                    "minValue": "112",
+                    "maxValue": "150",
+                    "code": "#ff6b5e"
+                }, ]
+            },
+         
+        }"""
+        )
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return  render(request, 'index.html', {'output' : angularGauge.render(),'chartTitle': 'Update data at runtime'})
+
