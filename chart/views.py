@@ -179,24 +179,37 @@ def gaugechart(request):
                 "chartBottomMargin": "50",
                 "showValue": "0",
                 "showTickMarks": "0",
-                "showTickValues": "0"
+                "showTickValues": "0",
+                "pivotFillColor": "#ffffff",
+                "pivotFillAlpha": "0"
+
+                
             },
             "colorRange": {
                 "color": [{
                     "minValue": "0",
                     "maxValue": "110",
-                    "code": "#26bfff"
-                },
-                 {
-                    "minValue": "110",
-                    "maxValue": "111",
-                    "code": "#ffffff"
-                }, {
-                    "minValue": "112",
+                    "code": "#26bfff",           
+                   
+
+                    
+                }
+               , {
+                    "minValue": "115",
                     "maxValue": "150",
                     "code": "#ff6b5e"
                 }, ]
             },
+              "dials": {
+                "dial": [{
+                    "value": "70",
+                    "id": "dial1",
+                    "radius":"0",
+                    "pivotRadius":"0",
+                    "rearExtension":"0",
+                    
+                }]
+            }
          
         }"""
         )
