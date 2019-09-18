@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/star_rating.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568795212645</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="khulna , rajshahi, chittagong , rangpur , barisal maps are added">
+      <created>1568796987983</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1568796987983</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +214,7 @@
     <MESSAGE value="led chart added" />
     <MESSAGE value="added requirements.txt" />
     <MESSAGE value="bangladesh maps added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bangladesh maps added" />
+    <MESSAGE value="khulna , rajshahi, chittagong , rangpur , barisal maps are added" />
+    <option name="LAST_COMMIT_MESSAGE" value="khulna , rajshahi, chittagong , rangpur , barisal maps are added" />
   </component>
 </project>
