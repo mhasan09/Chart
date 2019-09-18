@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,ledChart2,chart2,barisal,dhaka,rajshahi,khulna,sylhet,mymensingh,rangpur,chittagong
+from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,ledChart2,chart2,barisal,dhaka,rajshahi,khulna,sylhet,mymensingh,rangpur,chittagong,chart3
 urlpatterns = [
    path('chart',chart,name="chart"),
    path('map',chart2,name="chart"),
+   path('map2',chart3,name="chart"),
    path('barisal',barisal,name="chart"),
    path('dhaka',dhaka,name="chart"),
    path('rajshahi',rajshahi,name="chart"),
