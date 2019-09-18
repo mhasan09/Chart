@@ -1271,12 +1271,12 @@ def chart3(request):
         }
     }]
 
-
+    
                                 }"""
                                 )
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
-    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+    return render(request, 'index.html', {'output': angularGauge.render()  ,'chartTitle': 'Update data at runtime'})
 
 
 def chart4(request):
