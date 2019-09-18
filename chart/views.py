@@ -589,134 +589,284 @@ def ledChart(request):
 
 
 def ledChart2(request):
-    angularGauge = FusionCharts("hled", "ex1", "50%", "125", "chart-1", "json",
+    angularGauge = FusionCharts("hled", "ex1", "30%", "155", "chart-1", "json",
                                 """{
      "chart": {
             "caption": "SUCCESS RATE OF PREVIOUS SMILE PROMOTION",
+            "subcaption" : "Buy 1 get 1 ",
             "lowerLimit": "0",
             "upperLimit": "100",
-            "lowerLimitDisplay": "Empty",
-            "upperLimitDisplay": "Full",
             "numberSuffix": "%",
-            "valueFontSize": "12",
             "showhovereffect": "1",
             "origW": "400",
             "origH": "150",
-            "ledSize": "3",
-            "ledGap": "2",
-            "manageResize": "1",
-            "theme": "fusion"
+            "ledSize": "5",
+            "ledGap": "0",
+            "theme": "fusion",
+            "plotTooltext": "Buy 1 get 1 ",
+            "showTickMarks": "0",
+            "showTickValues": "0",
+            "showGaugeBorder": "0",
+            "showValue": "0",
+            "showHoverEffect":"1",
+      
       },
          "annotations": {
         "showbelow": "1",
-        "groups": [
-            {
-                "id": "indicator",
-                "items": [
-                    {
-                        "id": "bgRectAngle",
-                        "type": "rectangle",
-                        "alpha": "90",
-                        "radius": "1",
-                        "fillColor": "#6baa01",
-                        "x": "$gaugeCenterX - 20",
-                        "tox": "$gaugeCenterX + 20",
-                        "y": "$gaugeEndY + 25",
-                        "toy": "$gaugeEndY + 45"
-                    }
-                ]
-            }
-        ]
+     
+     
     },
     "colorRange": {
         "color": [
             {
                 "minValue": "0",
-                "maxValue": "45",
-                "code": "#e44a00"
+                "maxValue": "10",
+                "code": "#1589B9"
             },
             {
-                "minValue": "45",
-                "maxValue": "75",
-                "code": "#f8bd19"
+                "minValue": "10",
+                "maxValue": "20",
+                "code": "#ffffff"
             },
             {
-                "minValue": "75",
-                "maxValue": "100",
-                "code": "#6baa01"
-            }
+                "minValue": "20",
+                "maxValue": "30",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "30",
+                "maxValue": "40",
+                "code": "#ffffff"
+            },
+              {
+                "minValue": "40",
+                "maxValue": "50",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "50",
+                "maxValue": "60",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "60",
+                "maxValue": "70",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "70",
+                "maxValue": "80",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#1589B9"
+            },
+              {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#ffffff"
+            },
+           
+           
+            
+         
         ]
     },
-    "value": "92"
+    "value": "91"
 
 
                                 }"""
                                 )
-    angularGauge2 = FusionCharts("hled", "ex2", "50%", "100", "chart-2", "json",
-                                 """{
-      "chart": {
-             "lowerLimit": "0",
-             "upperLimit": "100",
-             "lowerLimitDisplay": "Empty",
-             "upperLimitDisplay": "Full",
-             "numberSuffix": "%",
-             "valueFontSize": "12",
-             "showhovereffect": "1",
-             "origW": "400",
-             "origH": "150",
-             "ledSize": "3",
-             "ledGap": "2",
-             "manageResize": "1",
-             "theme": "fusion"
-       },
-          "annotations": {
-         "showbelow": "1",
-         "groups": [
+    angularGauge2 = FusionCharts("hled", "ex2", "30%", "155", "chart-2", "json",
+                                """{
+     "chart": {
+            "subcaption" : "Free Product     ",
+            "lowerLimit": "0",
+            "upperLimit": "100",
+            "numberSuffix": "%",
+            "showhovereffect": "1",
+            "origW": "400",
+            "origH": "150",
+            "ledSize": "5",
+            "ledGap": "0",
+            "theme": "fusion",
+            "plotTooltext": "Free Product",
+            "showTickMarks": "0",
+            "showTickValues": "0",
+            "showGaugeBorder": "0",
+            "showValue": "0",
+            "showHoverEffect":"1",
+
+      },
+         "annotations": {
+        "showbelow": "1",
+
+
+    },
+    "colorRange": {
+        "color": [
+            {
+                "minValue": "0",
+                "maxValue": "10",
+                "code": "#1589B9"
+            },
+            {
+                "minValue": "10",
+                "maxValue": "20",
+                "code": "#ffffff"
+            },
+            {
+                "minValue": "20",
+                "maxValue": "30",
+                "code": "#1589B9"
+            },
              {
-                 "id": "indicator",
-                 "items": [
-                     {
-                         "id": "bgRectAngle",
-                         "type": "rectangle",
-                         "alpha": "90",
-                         "radius": "1",
-                         "fillColor": "#6baa01",
-                         "x": "$gaugeCenterX - 20",
-                         "tox": "$gaugeCenterX + 20",
-                         "y": "$gaugeEndY + 25",
-                         "toy": "$gaugeEndY + 45"
-                     }
-                 ]
-             }
-         ]
-     },
-     "colorRange": {
-         "color": [
+                "minValue": "30",
+                "maxValue": "40",
+                "code": "#ffffff"
+            },
+              {
+                "minValue": "40",
+                "maxValue": "50",
+                "code": "#1589B9"
+            },
              {
-                 "minValue": "0",
-                 "maxValue": "45",
-                 "code": "#e44a00"
-             },
+                "minValue": "50",
+                "maxValue": "60",
+                "code": "#ffffff"
+            },
              {
-                 "minValue": "45",
-                 "maxValue": "75",
-                 "code": "#f8bd19"
-             },
+                "minValue": "60",
+                "maxValue": "70",
+                "code": "#1589B9"
+            },
              {
-                 "minValue": "75",
-                 "maxValue": "100",
-                 "code": "#6baa01"
-             }
-         ]
-     },
-     "value": "92"
- 
- 
-                                 }"""
-                                 )
+                "minValue": "70",
+                "maxValue": "80",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#1589B9"
+            },
+              {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#ffffff"
+            },
+
+
+
+
+        ]
+    },
+    "value": "81",
+    
+
+
+                                }"""
+                                )
+    angularGauge3 = FusionCharts("hled", "ex3", "30%", "155", "chart-3", "json",
+                                """{
+     "chart": {
+            "subcaption" : "Tk 5 Off",
+            "subcaption" : "Tk 5 Off",
+            "subcaptionAlignment" : "left",
+            "lowerLimit": "0",
+            "upperLimit": "100",
+            "numberSuffix": "%",
+            "showhovereffect": "1",
+            "origW": "400",
+            "origH": "150",
+            "ledSize": "5",
+            "ledGap": "0",
+            "theme": "fusion",
+            "plotTooltext": "Tk 5 Off",
+            "showTickMarks": "0",
+            "showTickValues": "0",
+            "showGaugeBorder": "0",
+            "showValue": "0",
+            "showHoverEffect":"1",
+
+      },
+         "annotations": {
+        "showbelow": "1",
+       
+
+
+    },
+    "colorRange": {
+        "color": [
+            {
+                "minValue": "0",
+                "maxValue": "10",
+                "code": "#1589B9"
+            },
+            {
+                "minValue": "10",
+                "maxValue": "20",
+                "code": "#ffffff"
+            },
+            {
+                "minValue": "20",
+                "maxValue": "30",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "30",
+                "maxValue": "40",
+                "code": "#ffffff"
+            },
+              {
+                "minValue": "40",
+                "maxValue": "50",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "50",
+                "maxValue": "60",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "60",
+                "maxValue": "70",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "70",
+                "maxValue": "80",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#1589B9"
+            },
+              {
+                "minValue": "80",
+                "maxValue": "90",
+                "code": "#ffffff"
+            },
+
+
+
+
+        ]
+    },
+    "value": "34"
+
+
+                                }"""
+                                )
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'led_chart.html', {'output': angularGauge.render(),
                                               'output2': angularGauge2.render(),
+                                              'output3': angularGauge3.render(),
+
+
                                               })
 
