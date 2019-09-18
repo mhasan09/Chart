@@ -21,6 +21,6 @@ urlpatterns = [
    path('barchart',barchart,name="bar_chart"),
    path('stack',stackedbarchart,name="stacked_bar_chart"),
    path('gauge',gaugechart,name="gauge_chart"),
-   path('bubble',bubblechart2,name="bubble_chart"),
+   path('bubble',bubblechart,name="bubble_chart"),
    path('led',ledChart2,name="led_chart"),
 ]

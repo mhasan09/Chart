@@ -594,6 +594,8 @@ def ledChart2(request):
      "chart": {
             "caption": "SUCCESS RATE OF PREVIOUS SMILE PROMOTION",
             "subcaption" : "Buy 1 get 1 ",
+            "gaugeFillColor": "#ffffff",
+
             "lowerLimit": "0",
             "upperLimit": "100",
             "numberSuffix": "%",
@@ -625,26 +627,36 @@ def ledChart2(request):
             },
             {
                 "minValue": "10",
-                "maxValue": "20",
+                "maxValue": "15",
                 "code": "#ffffff"
             },
             {
-                "minValue": "20",
-                "maxValue": "30",
+                "minValue": "15",
+                "maxValue": "25",
                 "code": "#1589B9"
+            },
+             {
+                "minValue": "25",
+                "maxValue": "30",
+                "code": "#ffffff"
             },
              {
                 "minValue": "30",
                 "maxValue": "40",
-                "code": "#ffffff"
-            },
-              {
-                "minValue": "40",
-                "maxValue": "50",
                 "code": "#1589B9"
             },
              {
-                "minValue": "50",
+                "minValue": "40",
+                "maxValue": "45",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "45",
+                "maxValue": "55",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "55",
                 "maxValue": "60",
                 "code": "#ffffff"
             },
@@ -652,29 +664,34 @@ def ledChart2(request):
                 "minValue": "60",
                 "maxValue": "70",
                 "code": "#1589B9"
-            },
-             {
+            },    {
                 "minValue": "70",
-                "maxValue": "80",
+                "maxValue": "75",
                 "code": "#ffffff"
             },
              {
-                "minValue": "80",
-                "maxValue": "90",
+                "minValue": "75",
+                "maxValue": "85",
                 "code": "#1589B9"
             },
-              {
-                "minValue": "80",
+             {
+                "minValue": "85",
                 "maxValue": "90",
                 "code": "#ffffff"
             },
+             {
+                "minValue": "90",
+                "maxValue": "100",
+                "code": "#1589B9"
+            },
+      
            
            
             
          
         ]
     },
-    "value": "91"
+    "value": "70"
 
 
                                 }"""
@@ -686,6 +703,7 @@ def ledChart2(request):
             "lowerLimit": "0",
             "upperLimit": "100",
             "numberSuffix": "%",
+            "gaugeFillColor": "#ffffff",
             "showhovereffect": "1",
             "origW": "400",
             "origH": "150",
@@ -714,26 +732,36 @@ def ledChart2(request):
             },
             {
                 "minValue": "10",
-                "maxValue": "20",
+                "maxValue": "15",
                 "code": "#ffffff"
             },
             {
-                "minValue": "20",
-                "maxValue": "30",
+                "minValue": "15",
+                "maxValue": "25",
                 "code": "#1589B9"
+            },
+             {
+                "minValue": "25",
+                "maxValue": "30",
+                "code": "#ffffff"
             },
              {
                 "minValue": "30",
                 "maxValue": "40",
-                "code": "#ffffff"
-            },
-              {
-                "minValue": "40",
-                "maxValue": "50",
                 "code": "#1589B9"
             },
              {
-                "minValue": "50",
+                "minValue": "40",
+                "maxValue": "45",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "45",
+                "maxValue": "55",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "55",
                 "maxValue": "60",
                 "code": "#ffffff"
             },
@@ -741,21 +769,25 @@ def ledChart2(request):
                 "minValue": "60",
                 "maxValue": "70",
                 "code": "#1589B9"
-            },
-             {
+            },    {
                 "minValue": "70",
-                "maxValue": "80",
+                "maxValue": "75",
                 "code": "#ffffff"
             },
              {
-                "minValue": "80",
-                "maxValue": "90",
+                "minValue": "75",
+                "maxValue": "85",
                 "code": "#1589B9"
             },
-              {
-                "minValue": "80",
+             {
+                "minValue": "85",
                 "maxValue": "90",
                 "code": "#ffffff"
+            },
+             {
+                "minValue": "90",
+                "maxValue": "100",
+                "code": "#1589B9"
             },
 
 
@@ -775,13 +807,15 @@ def ledChart2(request):
             "subcaption" : "Tk 5 Off",
             "subcaption" : "Tk 5 Off",
             "subcaptionAlignment" : "left",
+            "gaugeFillColor": "#ffffff",
+          
             "lowerLimit": "0",
             "upperLimit": "100",
             "numberSuffix": "%",
             "showhovereffect": "1",
             "origW": "400",
             "origH": "150",
-            "ledSize": "5",
+            "ledSize": "3",
             "ledGap": "0",
             "theme": "fusion",
             "plotTooltext": "Tk 5 Off",
@@ -792,6 +826,7 @@ def ledChart2(request):
             "showHoverEffect":"1",
 
       },
+      
          "annotations": {
         "showbelow": "1",
        
@@ -807,26 +842,36 @@ def ledChart2(request):
             },
             {
                 "minValue": "10",
-                "maxValue": "20",
+                "maxValue": "15",
                 "code": "#ffffff"
             },
             {
-                "minValue": "20",
-                "maxValue": "30",
+                "minValue": "15",
+                "maxValue": "25",
                 "code": "#1589B9"
+            },
+             {
+                "minValue": "25",
+                "maxValue": "30",
+                "code": "#ffffff"
             },
              {
                 "minValue": "30",
                 "maxValue": "40",
-                "code": "#ffffff"
-            },
-              {
-                "minValue": "40",
-                "maxValue": "50",
                 "code": "#1589B9"
             },
              {
-                "minValue": "50",
+                "minValue": "40",
+                "maxValue": "45",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "45",
+                "maxValue": "55",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "55",
                 "maxValue": "60",
                 "code": "#ffffff"
             },
@@ -834,21 +879,25 @@ def ledChart2(request):
                 "minValue": "60",
                 "maxValue": "70",
                 "code": "#1589B9"
-            },
-             {
+            },    {
                 "minValue": "70",
-                "maxValue": "80",
+                "maxValue": "75",
                 "code": "#ffffff"
             },
              {
-                "minValue": "80",
-                "maxValue": "90",
+                "minValue": "75",
+                "maxValue": "85",
                 "code": "#1589B9"
             },
-              {
-                "minValue": "80",
+             {
+                "minValue": "85",
                 "maxValue": "90",
                 "code": "#ffffff"
+            },
+             {
+                "minValue": "90",
+                "maxValue": "100",
+                "code": "#1589B9"
             },
 
 
