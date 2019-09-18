@@ -926,8 +926,8 @@ def chart2(request):
 
   # The `mapConfig` dict contains key-value pairs data for chart attribute
   mapConfig = OrderedDict()
-  mapConfig["caption"] = "Average Statistics"
-  mapConfig["subcaption"] = "1955-2015"
+  mapConfig["caption"] = "Average Promotion Statistics"
+  mapConfig["subcaption"] = "2019"
   mapConfig["numbersuffix"] = "%"
   mapConfig["includevalueinlabels"] = "1"
   mapConfig["labelsepchar"] = ":"
@@ -949,18 +949,17 @@ def chart2(request):
 
   # Map data array
   mapDataArray = [
-    ["NA", "0.82", "1"],
-    ["SA", "2.04", "1"],
-    ["AS", "1.78", "1"],
-    ["EU", "0.40", "1"],
-    ["AF", "2.58", "1"],
-    ["AU", "1.30", "1"]
+    ["BA", "0.82", "1"],
+    ["CG", "2.04", "1"],
+    ["DA", "1.78", "1"],
+    ["KH", "0.40", "1"],
+    ["RS", "2.58", "1"],
+    ["RP", "1.30", "1"],
+    ["SY", "1.30", "1"],
+
   ]
 
 
-  # Iterate through the data in `mapDataArray` and insert in to the `dataSource["data"]` list.
-  # The data for the `data` should be in an array wherein each element of the array is a JSON object
-  # having the `id`, `value` and `showlabel` as keys.
 
 
   # Create an object for the world map using the FusionCharts class constructor
@@ -969,3 +968,133 @@ def chart2(request):
 
   # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
   return  render(request, 'index.html', {'output' : fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
+
+
+
+
+def barisal(request):
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+    angularGauge = FusionCharts("maps/barisal", "ex1", "70%", "950", "chart-1", "json",
+                                """{
+     "chart": {
+         "caption": "Barisal",
+            "subcaption": " 1955-2015",
+            "numbersuffix": "%",
+            "includevalueinlabels": "1",
+            "labelsepchar": ": ",
+            "entityFillHoverColor": "#FFF9C4",
+            "theme": "fusion"
+      },
+      "colorrange": {
+        "minvalue": "0",
+        "code": "#FFE0B2",
+        "gradient": "1",
+        "color": [{
+            "minvalue": "0.5",
+            "maxvalue": "1.0",
+            "color": "#FFD74D"
+        }, {
+            "minvalue": "1.0",
+            "maxvalue": "2.0",
+            "color": "#FB8C00"
+        }, {
+            "minvalue": "2.0",
+            "maxvalue": "3.0",
+            "color": "#E65100"
+        }]
+    },
+    "data": [{
+        "id": "NA",
+        "value": ".82",
+        "showLabel": "1"
+    }, {
+        "id": "SA",
+        "value": "2.04",
+        "showLabel": "1"
+    }, {
+        "id": "AS",
+        "value": "1.78",
+        "showLabel": "1"
+    }, {
+        "id": "EU",
+        "value": ".40",
+        "showLabel": "1"
+    }, {
+        "id": "AF",
+        "value": "2.58",
+        "showLabel": "1"
+    }, {
+        "id": "AU",
+        "value": "1.30",
+        "showLabel": "1"
+    }]
+
+                                }"""
+                                )
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
+def dhaka(request):
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+    angularGauge = FusionCharts("maps/dhaka", "ex1", "70%", "950", "chart-1", "json",
+                                """{
+     "chart": {
+         "caption": "Dhaka",
+            "subcaption": " 1955-2015",
+            "numbersuffix": "%",
+            "includevalueinlabels": "1",
+            "labelsepchar": ": ",
+            "entityFillHoverColor": "#FFF9C4",
+            "theme": "fusion"
+      },
+      "colorrange": {
+        "minvalue": "0",
+        "code": "#FFE0B2",
+        "gradient": "1",
+        "color": [{
+            "minvalue": "0.5",
+            "maxvalue": "1.0",
+            "color": "#FFD74D"
+        }, {
+            "minvalue": "1.0",
+            "maxvalue": "2.0",
+            "color": "#FB8C00"
+        }, {
+            "minvalue": "2.0",
+            "maxvalue": "3.0",
+            "color": "#E65100"
+        }]
+    },
+    "data": [{
+        "id": "NA",
+        "value": ".82",
+        "showLabel": "1"
+    }, {
+        "id": "SA",
+        "value": "2.04",
+        "showLabel": "1"
+    }, {
+        "id": "AS",
+        "value": "1.78",
+        "showLabel": "1"
+    }, {
+        "id": "EU",
+        "value": ".40",
+        "showLabel": "1"
+    }, {
+        "id": "AF",
+        "value": "2.58",
+        "showLabel": "1"
+    }, {
+        "id": "AU",
+        "value": "1.30",
+        "showLabel": "1"
+    }]
+
+                                }"""
+                                )
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
