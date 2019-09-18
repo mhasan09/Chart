@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FC-python wrapper</title>
+
+    <script type="text/javascript" src="//cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script type="text/javascript"
+            src="//cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    {#    <script type="text/javascript" src="{% static 'js/fusioncharts.js' %}"></script>#}
+</head>
+<body style="font-family:'Titillium'; font-size: 16px;">
+    <div id="chart-1"></div>
+    {{ output|safe }}
+    <div id="chart-2"></div>
+    {{ output2|safe }}
+    <div id="chart-3"></div>
+    {{ output3|safe }}
+
+
+
+</body>
+<style type="text/css">
+    g[class$='creditgroup'] {
+        display: none !important;
+    }
+
+
+</style>
+</html>
