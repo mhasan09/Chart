@@ -1313,43 +1313,43 @@ def chart4(request):
         }]
     },
     "data": [{
-        "id": "SY",
+        "id": "BD.SY",
         "displayValue": "Sylhet",
         "value": "57.2",
-        "link": "newchart-json-SY"
+        "link": "newchart-json-BD.SY"
     },
     {
-        "id": "DA",
+        "id": "BD.DA",
         "value": "57.1",
         "showLabel": "1"
     },
     {
-        "id": "KH",
+        "id": "BD.KH",
         "value": "247",
         "showLabel": "1"
     },
     {
-        "id": "RS",
+        "id": "BD.RS",
         "value": "188.5",
         "showLabel": "1"
     },
     {
-        "id": "BA",
+        "id": "BD.BA",
         "value": "87.2",
         "showLabel": "1"
     },
      {
-        "id": "CG",
+        "id": "BD.CG",
         "value": "87.2",
         "showLabel": "1"
     },
     {
-        "id": "RP",
+        "id": "BD.RP",
         "value": "8.32",
         "showLabel": "1"
     }],
     "linkeddata": [{
-        "id": "SY",
+        "id": "BD.SY",
         "linkedchart": {
             "chart": {
                 "caption": "SYLHET",
@@ -1377,19 +1377,19 @@ def chart4(request):
                 }]
             },
             "data": [{
-                "id": "HA",
+                "id": "BD.SY.HA",
                 "value": "99"
             },
             {
-                "id": "MB",
+                "id": "BD.SY.MB",
                 "value": "99"
             },
             {
-                "id": "SN",
+                "id": "BD.SY.SN",
                 "value": "90"
             },
             {
-                "id": "SL",
+                "id": "BD.SY.SL",
                 "value": "96"
             },
             
