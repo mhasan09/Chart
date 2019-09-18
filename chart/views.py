@@ -970,8 +970,6 @@ def chart2(request):
   return  render(request, 'index.html', {'output' : fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
 
 
-
-
 def barisal(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/barisal", "ex1", "70%", "950", "chart-1", "json",
