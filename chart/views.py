@@ -286,6 +286,7 @@ def bubblechart(request):
           "showverticalline": "1"
         }]
       }],
+      
       "dataset": [{
         "color": "#00aee4",
         "data": [ {
@@ -454,6 +455,14 @@ def bubblechart2(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': a.render(), 'chartTitle': 'Update data at runtime'})
 
+def bubblechart3(request):
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+
+
+
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'test4.html')
 
 
 
