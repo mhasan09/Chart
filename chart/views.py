@@ -212,7 +212,7 @@ def gaugechart(request):
                     "pivotRadius":"0",
                     "rearExtension":"0",
                     
-                }]
+                }]  
             }
          
         }"""
@@ -462,7 +462,7 @@ def ledChart(request):
                                 """{
      "chart": {
             "caption": "SUCCESS RATE OF PREVIOUS SMILE PROMOTION",
-            "subcaption" : "Buy 1 get 1 ",
+            "subcaption" : "Buy 1 get 1",
             "gaugeFillColor": "#ffffff",
 
             "lowerLimit": "0",
@@ -474,7 +474,7 @@ def ledChart(request):
             "ledSize": "5",
             "ledGap": "0",
             "theme": "fusion",
-            "plotTooltext": "Buy 1 get 1 ",
+            "plotTooltext": "$value%",
             "showTickMarks": "0",
             "showTickValues": "0",
             "showGaugeBorder": "0",
@@ -579,7 +579,7 @@ def ledChart(request):
             "ledSize": "5",
             "ledGap": "0",
             "theme": "fusion",
-            "plotTooltext": "Free Product",
+            "plotTooltext": "$value%",
             "showTickMarks": "0",
             "showTickValues": "0",
             "showGaugeBorder": "0",
@@ -687,7 +687,7 @@ def ledChart(request):
             "ledSize": "3",
             "ledGap": "0",
             "theme": "fusion",
-            "plotTooltext": "Tk 5 Off",
+            "plotTooltext": "$value%",
             "showTickMarks": "0",
             "showTickValues": "0",
             "showGaugeBorder": "0",
@@ -1279,7 +1279,6 @@ def chart5(request):
                                 "chart": {
         "caption": "Promotion Campaign",
         "theme": "fusion",
-        "formatNumberScale": "0",
         "showLabels": "1",
         "nullEntityColor": "#C2C2D6",
         "nullEntityAlpha": "50",
@@ -1308,37 +1307,43 @@ def chart5(request):
         "id": "BD.SY",
         "displayValue": "Sylhet",
         "value": "57.2",
-        "link": "http://127.0.0.1:8000/sylhet"
+        "link": "http://127.0.0.1:7000/sylhet"
     },
     {
         "id": "BD.DA",
         "value": "57.1",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/dhaka"
     },
     {
         "id": "BD.KH",
         "value": "247",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/khulna"
     },
     {
         "id": "BD.RS",
         "value": "188.5",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/rajshahi"
     },
     {
         "id": "BD.BA",
         "value": "87.2",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/barisal"
     },
      {
         "id": "BD.CG",
         "value": "87.2",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/chittagong"
     },
     {
         "id": "BD.RP",
         "value": "8.32",
-        "showLabel": "1"
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/rangpur"
     }]
      
 
