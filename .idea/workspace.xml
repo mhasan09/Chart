@@ -110,7 +110,7 @@
       <workItem from="1568627297454" duration="42916000" />
       <workItem from="1568809039483" duration="288000" />
       <workItem from="1568865251581" duration="493000" />
-      <workItem from="1568879449910" duration="2144000" />
+      <workItem from="1568879449910" duration="2385000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -259,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568879725995</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="linked map added for bangladesh">
+      <created>1568886218869</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1568886218869</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +304,7 @@
     <MESSAGE value="configureLink" />
     <MESSAGE value="map drill down done" />
     <MESSAGE value="gradient down to zero" />
-    <option name="LAST_COMMIT_MESSAGE" value="gradient down to zero" />
+    <MESSAGE value="linked map added for bangladesh" />
+    <option name="LAST_COMMIT_MESSAGE" value="linked map added for bangladesh" />
   </component>
 </project>
