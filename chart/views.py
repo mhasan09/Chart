@@ -1292,7 +1292,7 @@ def chart5(request):
         "endlabel": "High",
         "code": "#e44a00",
         "minvalue": "0",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "maxvalue": "60",
             "displayvalue": "Average",
@@ -1443,7 +1443,7 @@ def mymensingh(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1507,7 +1507,7 @@ def dhaka(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1570,7 +1570,7 @@ def rajshahi(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1633,7 +1633,7 @@ def khulna(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1696,7 +1696,7 @@ def sylhet(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1759,7 +1759,7 @@ def mymensingh(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1822,7 +1822,7 @@ def rangpur(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1885,7 +1885,7 @@ def chittagong(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
