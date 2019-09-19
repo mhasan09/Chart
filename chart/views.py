@@ -1285,7 +1285,8 @@ def chart5(request):
         "hoverOnNull": "0",
         "useSNameInLabels": "0",
         "entityFillColor": "#A8A8A8",
-        "entityFillHoverColor": "#E5E5E9"
+        "entityFillHoverColor": "#E5E5E9",
+        "showLegend" : "0"
     },
     "colorrange": {
         "startlabel": "Low",
@@ -1314,6 +1315,11 @@ def chart5(request):
         "value": "57.1",
         "showLabel": "1",
          "link": "http://127.0.0.1:7000/dhaka"
+    },
+       {
+        "id": "BD.DA.FR",
+        "value": "57.1",
+        "showLabel": "1",
     },
     {
         "id": "BD.KH",
@@ -1380,7 +1386,7 @@ def barisal(request):
       "colorrange": {
         "minvalue": "0",
         "code": "#FFE0B2",
-        "gradient": "1",
+        "gradient": "0",
         "color": [{
             "minvalue": "0.5",
             "maxvalue": "1.0",
@@ -1502,7 +1508,9 @@ def dhaka(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1565,7 +1573,9 @@ def rajshahi(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1628,7 +1638,9 @@ def khulna(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1691,7 +1703,9 @@ def sylhet(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1754,7 +1768,9 @@ def mymensingh(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1817,7 +1833,9 @@ def rangpur(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0"
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1880,7 +1898,11 @@ def chittagong(request):
             "includevalueinlabels": "1",
             "labelsepchar": ": ",
             "entityFillHoverColor": "#FFF9C4",
-            "theme": "fusion"
+            "theme": "fusion",
+            "showLegend" : "0",
+            "showLegend" : "0"
+
+
       },
       "colorrange": {
         "minvalue": "0",
@@ -1933,3 +1955,5 @@ def chittagong(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+def linkedchart(request):
+    return render(request,"bdmap.html")

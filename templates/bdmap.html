@@ -1,0 +1,143 @@
+<html>
+<head>
+	<title>My first chart using FusionCharts Suite XT</title>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	<script type="text/javascript">
+		FusionCharts.ready(function(){
+			var chartObj = new FusionCharts({
+    type: 'maps/bangladesh',
+    renderAt: 'chart-container',
+    width: '50%',
+    height: '600',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "World Population Density",
+            "subcaption": "Number of people per Square Mile",
+            "theme": "fusion",
+            "formatNumberScale": "0",
+            "showLabels": "1",
+            "nullEntityColor": "#C2C2D6",
+            "nullEntityAlpha": "50",
+            "hoverOnNull": "0",
+            "useSNameInLabels": "0",
+            "entityFillColor": "#A8A8A8",
+            "entityFillHoverColor": "#E5E5E9",
+            "showLegend" : "0"
+        },
+        "colorrange": {
+            "startlabel": "Low",
+            "endlabel": "High",
+            "code": "#e44a00",
+            "minvalue": "0",
+            "gradient": "0",
+            "color": [{
+                "maxvalue": "60",
+                "displayvalue": "Average",
+                "code": "#f8bd19"
+            }, {
+                "maxvalue": "300",
+                "code": "#6baa01"
+            }]
+        },
+
+        "data": [{
+        "id": "BD.SY",
+        "displayValue": "Sylhet",
+        "value": "57.2",
+        "link": "newchart-json-BD.SY"
+    },
+    {
+        "id": "BD.DA",
+        "value": "57.1",
+        "showLabel": "1"
+    },
+    {
+        "id": "BD.KH",
+        "value": "247",
+        "showLabel": "1"
+    },
+    {
+        "id": "BD.RS",
+        "value": "188.5",
+        "showLabel": "1"
+    },
+    {
+        "id": "BD.BA",
+        "value": "87.2",
+        "showLabel": "1"
+    },
+     {
+        "id": "BD.CG",
+        "value": "87.2",
+        "showLabel": "1"
+    },
+    {
+        "id": "BD.RP",
+        "value": "8.32",
+        "showLabel": "1"
+    }],
+        "linkeddata": [{
+        "id": "BD.SY",
+        "linkedchart": {
+            "chart": {
+                "caption": "SYLHET",
+                "entityFillHoverColor": "#E5E5E9",
+                "showLabels": "1",
+                "entityFillColor": "#A8A8A8",
+                "theme": "fusion",
+                "showBorder": "1",
+                "bordercolor": "#FFFFFF",
+                "entityborderThickness": "3"
+            },
+            "colorrange": {
+                "startlabel": "Low",
+                "endlabel": "High",
+                "code": "#e44a00",
+                "minvalue": "0",
+                "gradient": "0",
+                "color": [{
+                    "maxvalue": "150",
+                    "displayvalue": "Average",
+                    "code": "#f8bd19"
+                }, {
+                    "maxvalue": "600",
+                    "code": "#6baa01"
+                }]
+            },
+            "data": [{
+                "id": "BD.SY.HA",
+                "value": "99"
+            },
+            {
+                "id": "BD.SY.MB",
+                "value": "99"
+            },
+            {
+                "id": "BD.SY.SN",
+                "value": "90"
+            },
+            {
+                "id": "BD.SY.SL",
+                "value": "96"
+            },
+
+            ]}}]
+    },
+    "events": {
+        "beforeRender": function(e) {
+            e.sender.configureLink({
+                "type": "maps/sylhet"
+            }, 0);
+        }
+    }
+});
+			chartObj.render();
+		});
+	</script>
+	</head>
+	<body>
+		<div id="chart-container">FusionCharts XT will load here!</div>
+	</body>
+</html>
