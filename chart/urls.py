@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,chart2,barisal,dhaka,rajshahi,khulna,sylhet,mymensingh,rangpur,chittagong,chart3,chart4,chart5
+from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,chart2,barisal,dhaka,rajshahi,khulna,sylhet,mymensingh,rangpur,mymensingh,chittagong,chart3,chart4,chart5
 urlpatterns = [
    path('chart',chart,name="chart"),
    path('map',chart2,name="chart"),
@@ -23,6 +23,7 @@ urlpatterns = [
    path('map3',chart4,name="chart"),
    path('map4',chart5,name="chart"),
    path('barisal',barisal,name="chart"),
+   path('mymensingh',mymensingh,name="chart"),
    path('dhaka',dhaka,name="chart"),
    path('rajshahi',rajshahi,name="chart"),
    path('rangpur',rangpur,name="chart"),

@@ -1344,7 +1344,14 @@ def chart5(request):
         "value": "8.32",
         "showLabel": "1",
          "link": "http://127.0.0.1:7000/rangpur"
-    }]
+    },
+      {
+        "id": "BD.MM",
+        "value": "8.32",
+        "showLabel": "1",
+         "link": "http://127.0.0.1:7000/mymensingh"
+    }
+    ]
      
 
                                 }"""
@@ -1419,6 +1426,70 @@ def barisal(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
+def mymensingh(request):
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+    angularGauge = FusionCharts("maps/mymensingh", "ex1", "70%", "950", "chart-1", "json",
+                                """{
+     "chart": {
+         "caption": "Mymensingh",
+            "subcaption": " 2019",
+            "numbersuffix": "%",
+            "includevalueinlabels": "1",
+            "labelsepchar": ": ",
+            "entityFillHoverColor": "#FFF9C4",
+            "theme": "fusion"
+      },
+      "colorrange": {
+        "minvalue": "0",
+        "code": "#FFE0B2",
+        "gradient": "1",
+        "color": [{
+            "minvalue": "0.5",
+            "maxvalue": "1.0",
+            "color": "#FFD74D"
+        }, {
+            "minvalue": "1.0",
+            "maxvalue": "2.0",
+            "color": "#FB8C00"
+        }, {
+            "minvalue": "2.0",
+            "maxvalue": "3.0",
+            "color": "#E65100"
+        }]
+    },
+    "data": [{
+        "id": "NA",
+        "value": ".82",
+        "showLabel": "1"
+    }, {
+        "id": "SA",
+        "value": "2.04",
+        "showLabel": "1"
+    }, {
+        "id": "AS",
+        "value": "1.78",
+        "showLabel": "1"
+    }, {
+        "id": "EU",
+        "value": ".40",
+        "showLabel": "1"
+    }, {
+        "id": "AF",
+        "value": "2.58",
+        "showLabel": "1"
+    }, {
+        "id": "AU",
+        "value": "1.30",
+        "showLabel": "1"
+    }]
+
+                                }"""
+                                )
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
 
 def dhaka(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
