@@ -799,10 +799,9 @@ def ledChart(request):
 
 
 def ledChart2(request):
-    angularGauge = FusionCharts("hled", "ex1", "100%", "200", "chart-1", "json",
+    angularGauge = FusionCharts("hled", "ex1", "100%", "155", "chart-1", "json",
                                 """{
      "chart": {
-            "caption": "SUCCESS RATE OF PREVIOUS SMILE PROMOTION",
         
             "gaugeFillColor": "#ffffff",
 
