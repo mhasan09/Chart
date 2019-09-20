@@ -797,6 +797,337 @@ def ledChart(request):
 
                                               })
 
+
+def ledChart2(request):
+    angularGauge = FusionCharts("hled", "ex1", "100%", "200", "chart-1", "json",
+                                """{
+     "chart": {
+            "caption": "SUCCESS RATE OF PREVIOUS SMILE PROMOTION",
+        
+            "gaugeFillColor": "#ffffff",
+
+            "lowerLimit": "0",
+            "upperLimit": "100",
+            "numberSuffix": "%",
+            "showhovereffect": "1",
+            "origW": "400",
+            "origH": "150",
+            "ledSize": "5",
+            "ledGap": "0",
+            "theme": "fusion",
+            "plotTooltext": "$value%",
+            "showTickMarks": "0",
+            "showTickValues": "0",
+            "showGaugeBorder": "0",
+            "showValue": "0",
+            "showHoverEffect":"1",
+
+      },
+         "annotations": {
+        "showbelow": "1",
+
+
+    },
+    "colorRange": {
+        "color": [
+            {
+                "minValue": "0",
+                "maxValue": "10",
+                "code": "#1589B9"
+            },
+            {
+                "minValue": "10",
+                "maxValue": "15",
+                "code": "#ffffff"
+            },
+            {
+                "minValue": "15",
+                "maxValue": "25",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "25",
+                "maxValue": "30",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "30",
+                "maxValue": "40",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "40",
+                "maxValue": "45",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "45",
+                "maxValue": "55",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "55",
+                "maxValue": "60",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "60",
+                "maxValue": "70",
+                "code": "#1589B9"
+            },    {
+                "minValue": "70",
+                "maxValue": "75",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "75",
+                "maxValue": "85",
+                "code": "#1589B9"
+            },
+             {
+                "minValue": "85",
+                "maxValue": "90",
+                "code": "#ffffff"
+            },
+             {
+                "minValue": "90",
+                "maxValue": "100",
+                "code": "#1589B9"
+            },
+
+
+
+
+
+        ]
+    },
+    "value": "70"
+
+
+                                }"""
+                                )
+    angularGauge2 = FusionCharts("hled", "ex2", "100%", "155", "chart-2", "json",
+                                 """{
+      "chart": {
+             
+             "lowerLimit": "0",
+             "upperLimit": "100",
+             "numberSuffix": "%",
+             "gaugeFillColor": "#ffffff",
+             "showhovereffect": "1",
+             "origW": "400",
+             "origH": "150",
+             "ledSize": "5",
+             "ledGap": "0",
+             "theme": "fusion",
+             "plotTooltext": "$value%",
+             "showTickMarks": "0",
+             "showTickValues": "0",
+             "showGaugeBorder": "0",
+             "showValue": "0",
+             "showHoverEffect":"1",
+ 
+       },
+          "annotations": {
+         "showbelow": "1",
+ 
+ 
+     },
+     "colorRange": {
+         "color": [
+             {
+                 "minValue": "0",
+                 "maxValue": "10",
+                 "code": "#1589B9"
+             },
+             {
+                 "minValue": "10",
+                 "maxValue": "15",
+                 "code": "#ffffff"
+             },
+             {
+                 "minValue": "15",
+                 "maxValue": "25",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "25",
+                 "maxValue": "30",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "30",
+                 "maxValue": "40",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "40",
+                 "maxValue": "45",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "45",
+                 "maxValue": "55",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "55",
+                 "maxValue": "60",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "60",
+                 "maxValue": "70",
+                 "code": "#1589B9"
+             },    {
+                 "minValue": "70",
+                 "maxValue": "75",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "75",
+                 "maxValue": "85",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "85",
+                 "maxValue": "90",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "90",
+                 "maxValue": "100",
+                 "code": "#1589B9"
+             },
+ 
+ 
+ 
+ 
+         ]
+     },
+     "value": "81",
+ 
+ 
+ 
+                                 }"""
+                                 )
+    angularGauge3 = FusionCharts("hled", "ex3", "100%", "155", "chart-3", "json",
+                                 """{
+      "chart": {
+             
+             "subcaptionAlignment" : "left",
+             "gaugeFillColor": "#ffffff",
+ 
+             "lowerLimit": "0",
+             "upperLimit": "100",
+             "numberSuffix": "%",
+             "showhovereffect": "1",
+             "origW": "400",
+             "origH": "150",
+             "ledSize": "3",
+             "ledGap": "0",
+             "theme": "fusion",
+             "plotTooltext": "$value%",
+             "showTickMarks": "0",
+             "showTickValues": "0",
+             "showGaugeBorder": "0",
+             "showValue": "0",
+             "showHoverEffect":"1",
+ 
+       },
+ 
+          "annotations": {
+         "showbelow": "1",
+ 
+ 
+ 
+     },
+     "colorRange": {
+         "color": [
+             {
+                 "minValue": "0",
+                 "maxValue": "10",
+                 "code": "#1589B9"
+             },
+             {
+                 "minValue": "10",
+                 "maxValue": "15",
+                 "code": "#ffffff"
+             },
+             {
+                 "minValue": "15",
+                 "maxValue": "25",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "25",
+                 "maxValue": "30",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "30",
+                 "maxValue": "40",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "40",
+                 "maxValue": "45",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "45",
+                 "maxValue": "55",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "55",
+                 "maxValue": "60",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "60",
+                 "maxValue": "70",
+                 "code": "#1589B9"
+             },    {
+                 "minValue": "70",
+                 "maxValue": "75",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "75",
+                 "maxValue": "85",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "85",
+                 "maxValue": "90",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "90",
+                 "maxValue": "100",
+                 "code": "#1589B9"
+             },
+ 
+ 
+ 
+ 
+         ]
+     },
+     "value": "34"
+ 
+ 
+                                 }"""
+                                 )
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'led2.html', {'output': angularGauge.render(),
+                                              'output2': angularGauge2.render(),
+                                              'output3': angularGauge3.render(),
+
+                                              })
+
+
 def chart2(request):
 
   # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
@@ -1966,3 +2297,4 @@ def chittagong(request):
 
 def linkedchart(request):
     return render(request,"bdmap.html")
+
