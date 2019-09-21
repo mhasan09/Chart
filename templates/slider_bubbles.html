@@ -99,108 +99,105 @@
 FusionCharts.ready(function() {
   // Store all sets of data to be updated in an array.
   var data = [{
-      "chart": {
-        "caption": "Total footfall in Bakersfield Central",
-        "subCaption": "Last week",
-        "xAxisName": "Day",
-        "yAxisName": "No. of Visitors",
-        "lineThickness": "2",
-        "theme": "zune"
-      },
-      "data": [{
-        "label": "1",
-        "value": "14233"
-      }, {
-        "label": "2",
-        "value": "23507"
-      }, {
-        "label": "3",
-        "value": "9110"
-      }, {
-        "label": "4",
-        "value": "15529"
-      }, {
-        "label": "5",
-        "value": "20803"
-      }, {
-        "label": "6",
-        "value": "23507"
-      }, {
-        "label": "7",
-        "value": "9110"
-      }, {
-        "label": "8",
-        "value": "15529"
-      }, {
-        "label": "9",
-        "value": "20803"
-      }, {
-        "label": "10",
-        "value": "23507"
-      }, {
-        "label": "11",
-        "value": "9110"
-      }, {
-        "label": "12",
-        "value": "15529"
-      }, {
-        "label": "13",
-        "value": "20803"
-      }, {
-        "label": "14",
-        "value": "23507"
-      }, {
-        "label": "15",
-        "value": "9110"
-      }, {
-        "label": "16",
-        "value": "20803"
-      }, {
-        "label": "17",
-        "value": "23507"
-      }, {
-        "label": "18",
-        "value": "9110"
-      }, {
-        "label": "19",
-        "value": "15529"
-      }, {
-        "label": "20",
-        "value": "20803"
-      }, {
-        "label": "21",
-        "value": "23507"
-      }, {
-        "label": "22",
-        "value": "9110"
-      }, {
-        "label": "23",
-        "value": "15529"
-      }, {
-        "label": "24",
-        "value": "20803"
-      }, {
-        "label": "25",
-        "value": "23507"
-      }, {
-        "label": "26",
-        "value": "9110"
-      }, {
-        "label": "27",
-        "value": "15529"
-      }, {
-        "label": "28",
-        "value": "20803"
-      }, {
-        "label": "29",
-        "value": "19202"
-      }, {
-        "label": "30",
-        "value": "19202"
-      }, {
-        "label": "31",
-        "value": "19202"
-      }]
+        "chart": {
+            "theme": "fusion",
+        "caption": "Top 5 Products",
+        "xAxisMinValue": "0",
+        "xAxisMaxValue": "100",
+        "yAxisMinValue": "0",
+        "yAxisMaxValue": "30000",
+        "plotFillAlpha": "70",
+        "plotFillHoverColor": "#6baa01",
+        "showPlotBorder": "0",
+        "xAxisName": "Month",
+        "yAxisName": "Total Sales",
+        "showValues": "1",
+        "showCanvasBorder": "0",
+        "showTrendlineLabels": "0",
+        "plotTooltext": "$name : Tk $zvalue",
+        "adjustVDiv": "1",
+        "showXAxisValues": "1",
+        "numVDivlines": "5",
+        "xAxisValuesStep": "1",
+        "vDivlineThickness": "5",
+         "vDivlineAlpha": "70",
+        "vDivlineIsDashed": "1",
+        "vDivlineDashLen": "4",
+        "vDivlineDashGap": "3",
+        "showAlternateVGridColor": "1",
+        "alternateVGridColor": "0ffff0",
+        "alternateVGridAlpha": "40",
+        "valueFontSize": "10"
+            },
+       "categories": [{
+        "category": [{
+          "label": "0",
+          "x": "0"
+        },
+        {
+          "label": "Jan",
+          "x": "10",
+          "showverticalline": "1"
+        },
+        {
+          "label": "Feb",
+          "x": "30",
+          "showverticalline": "1"
+        },
+        {
+          "label": "Mar",
+          "x": "50",
+          "showverticalline": "1"
+        },
+        {
+          "label": "Apr",
+          "x": "70",
+          "showverticalline": "1"
+        },
+        {
+          "label": "May",
+          "x": "90",
+          "showverticalline": "1"
+        }]
+      }],
+        "dataset": [{
+        "color": "#00aee4",
+        "data": [ {
+          "x": "50",
+          "y": "19450",
+          "z": "19",
+          "name": "Lux"
+        }, {
+          "x": "65",
+          "y": "10500",
+          "z": "8",
+          "name": "Cool Shaving Cream",
+           "color" : "ffbf00"
+
+        }, {
+          "x": "43",
+          "y": "8750",
+          "z": "5",
+          "name": "Teer Ata",
+          "color" : "333333"
+
+        }, {
+          "x": "32",
+          "y": "22000",
+          "z": "10",
+          "name": "Coca Cola",
+           "color" : "ff6b5e"
+
+        }, {
+          "x": "44",
+          "y": "13000",
+          "z": "9",
+          "name": "Pepsi",
+          "color" : "96e0ff"
+        }]
+      }],
+
+
     }, {
       "chart": {
         "animation": "1",
@@ -1865,10 +1862,10 @@ FusionCharts.ready(function() {
     animationDuation = 1500,
     currentVal = 0,
     visitChart = new FusionCharts({
-      type: 'line',
+      type: 'bubble',
       renderAt: 'chart-container',
-      width: '500',
-      height: '320',
+      width: '600',
+      height: '300',
       dataFormat: 'json',
       dataSource: data[0]
     }).render();

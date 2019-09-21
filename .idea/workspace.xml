@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/slider_bubbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/slider_bubbles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test_bubble.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test_bubble.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +111,7 @@
       <workItem from="1568959416822" duration="1689000" />
       <workItem from="1568984462624" duration="2825000" />
       <workItem from="1569003870871" duration="1656000" />
-      <workItem from="1569045931683" duration="7029000" />
+      <workItem from="1569045931683" duration="7928000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -306,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569049572279</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="bubble chart structure">
+      <created>1569053070329</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1569053070329</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +353,7 @@
     <MESSAGE value="led chart responsiveness" />
     <MESSAGE value="alignment fixed of lED" />
     <MESSAGE value="sliding chart issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="sliding chart issue" />
+    <MESSAGE value="bubble chart structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="bubble chart structure" />
   </component>
 </project>
