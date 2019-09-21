@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/map_svg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/map_svg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map_svg.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +113,7 @@
       <workItem from="1568984462624" duration="2825000" />
       <workItem from="1569003870871" duration="1656000" />
       <workItem from="1569045931683" duration="9385000" />
-      <workItem from="1569068523276" duration="4472000" />
+      <workItem from="1569068523276" duration="6440000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -321,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569054034879</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="map tested">
+      <created>1569073633718</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1569073633718</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +345,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing purpose" />
     <MESSAGE value="changed in stack bar chart" />
     <MESSAGE value="gaugechart added" />
     <MESSAGE value="philalpha color for gauge chart" />
@@ -366,6 +369,7 @@
     <MESSAGE value="sliding chart issue" />
     <MESSAGE value="bubble chart structure" />
     <MESSAGE value="bubble chart structure level 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="bubble chart structure level 2" />
+    <MESSAGE value="map tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="map tested" />
   </component>
 </project>

@@ -14675,6 +14675,18 @@ ne" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" width="21.02" hei
 
 
 
+
 </div>
+ <button onclick = "gfg_Run()">
+            Dhaka
+        </button>
 </body>
+<script type="text/javascript">
+    var color =["#222f3e","#333333"]
+    var i = 0
+    document.querySelector('button').addEventListener("click",function(){
+        i = i < color.length ? ++i : 0 ;
+    document.querySelector('body').style.background = color[i]
+    })
+</script>
 </html>
