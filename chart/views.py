@@ -2310,3 +2310,5 @@ def linkedchart(request):
 def bubble_slide(request):
     return render(request,"slider_bubbles.html")
 
+def svg_map(request):
+    return render(request,"map_svg.html")

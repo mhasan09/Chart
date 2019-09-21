@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,chart2,barisal,dhaka,rajshahi,\
-   khulna,sylhet,mymensingh,rangpur,mymensingh,chittagong,chart3,chart4,chart5,linkedchart,bubblechart3,ledChart2,bubble_slide,bubblechart4
+   khulna,sylhet,mymensingh,rangpur,mymensingh,chittagong,chart3,chart4,chart5,linkedchart,bubblechart3,ledChart2,bubble_slide,bubblechart4,svg_map
 
 urlpatterns = [
    path('chart',chart,name="chart"),
@@ -43,4 +43,5 @@ urlpatterns = [
    path('l2',ledChart2,name="led_chart"),
    path('bs',bubble_slide,name="bubble_slide"),
    path('b1',bubblechart4,name="bubble_slide"),
+   path('svg',svg_map,name="bubble_slide"),
 ]
