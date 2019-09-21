@@ -809,7 +809,7 @@ def ledChart(request):
 
 
 def ledChart2(request):
-    angularGauge = FusionCharts("hled", "ex1", "100%", "155", "chart-1", "json",
+    angularGauge = FusionCharts("hled", "ex1", "85%", "155", "chart-1", "json",
                                 """{
      "chart": {
         
@@ -915,7 +915,7 @@ def ledChart2(request):
 
                                 }"""
                                 )
-    angularGauge2 = FusionCharts("hled", "ex2", "100%", "155", "chart-2", "json",
+    angularGauge2 = FusionCharts("hled", "ex2", "85%", "155", "chart-2", "json",
                                  """{
       "chart": {
              
@@ -1020,7 +1020,7 @@ def ledChart2(request):
  
                                  }"""
                                  )
-    angularGauge3 = FusionCharts("hled", "ex3", "100%", "155", "chart-3", "json",
+    angularGauge3 = FusionCharts("hled", "ex3", "85%", "155", "chart-3", "json",
                                  """{
       "chart": {
              
