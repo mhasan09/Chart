@@ -2297,3 +2297,6 @@ def chittagong(request):
 def linkedchart(request):
     return render(request,"bdmap.html")
 
+def bubble_slide(request):
+    return render(request,"slider_bubbles.html")
+
