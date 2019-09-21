@@ -464,6 +464,16 @@ def bubblechart3(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'test4.html')
 
+def bubblechart4(request):
+    # Create an object for the angualar gauge using the FusionCharts class constructor
+
+
+
+
+    # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
+    return render(request, 'test_bubble.html')
+
+
 
 
 def ledChart(request):

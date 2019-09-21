@@ -1,1967 +1,2007 @@
-<html>
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>FusionCharts - Gallery Example - Multi-series line 2D Chart </title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-    <script type="text/javascript"
-            src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-    <script type="text/javascript">
-        FusionCharts.ready(function () {
-            // Store all sets of data to be updated in an array.
-            var data = [{
-                    "chart": {
-                        "caption": "Total footfall in Bakersfield Central",
-                        "subCaption": "Last week",
-                        "xAxisName": "Day",
-                        "yAxisName": "No. of Visitors",
-                        "lineThickness": "2",
-                        "theme": "zune"
-                    },
-                    "data": [{
-                        "label": "1",
-                        "value": "14233"
-                    }, {
-                        "label": "2",
-                        "value": "23507"
-                    }, {
-                        "label": "3",
-                        "value": "9110"
-                    }, {
-                        "label": "4",
-                        "value": "15529"
-                    }, {
-                        "label": "5",
-                        "value": "20803"
-                    }, {
-                        "label": "6",
-                        "value": "23507"
-                    }, {
-                        "label": "7",
-                        "value": "9110"
-                    }, {
-                        "label": "8",
-                        "value": "15529"
-                    }, {
-                        "label": "9",
-                        "value": "20803"
-                    }, {
-                        "label": "10",
-                        "value": "23507"
-                    }, {
-                        "label": "11",
-                        "value": "9110"
-                    }, {
-                        "label": "12",
-                        "value": "15529"
-                    }, {
-                        "label": "13",
-                        "value": "20803"
-                    }, {
-                        "label": "14",
-                        "value": "23507"
-                    }, {
-                        "label": "15",
-                        "value": "9110"
-                    }, {
-                        "label": "16",
-                        "value": "20803"
-                    }, {
-                        "label": "17",
-                        "value": "23507"
-                    }, {
-                        "label": "18",
-                        "value": "9110"
-                    }, {
-                        "label": "19",
-                        "value": "15529"
-                    }, {
-                        "label": "20",
-                        "value": "20803"
-                    }, {
-                        "label": "21",
-                        "value": "23507"
-                    }, {
-                        "label": "22",
-                        "value": "9110"
-                    }, {
-                        "label": "23",
-                        "value": "15529"
-                    }, {
-                        "label": "24",
-                        "value": "20803"
-                    }, {
-                        "label": "25",
-                        "value": "23507"
-                    }, {
-                        "label": "26",
-                        "value": "9110"
-                    }, {
-                        "label": "27",
-                        "value": "15529"
-                    }, {
-                        "label": "28",
-                        "value": "20803"
-                    }, {
-                        "label": "29",
-                        "value": "19202"
-                    }, {
-                        "label": "30",
-                        "value": "19202"
-                    }, {
-                        "label": "31",
-                        "value": "19202"
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "2",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "98.71"
-                        }, {
-                            "value": "97.38"
-                        }, {
-                            "value": "98.77"
-                        }, {
-                            "value": "98.58"
-                        }, {
-                            "value": "97.41"
-                        }, {
-                            "value": "94.51"
-                        }, {
-                            "value": "94.44"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "1.29"
-                        }, {
-                            "value": "2.62"
-                        }, {
-                            "value": "1.23"
-                        }, {
-                            "value": "1.42"
-                        }, {
-                            "value": "2.59"
-                        }, {
-                            "value": "5.49"
-                        }, {
-                            "value": "5.56"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "3",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "98.71"
-                        }, {
-                            "value": "95.96"
-                        }, {
-                            "value": "98.25"
-                        }, {
-                            "value": "97.84"
-                        }, {
-                            "value": "93.88"
-                        }, {
-                            "value": "92.98"
-                        }, {
-                            "value": "91.01"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "1.29"
-                        }, {
-                            "value": "4.04"
-                        }, {
-                            "value": "1.75"
-                        }, {
-                            "value": "2.16"
-                        }, {
-                            "value": "6.12"
-                        }, {
-                            "value": "7.02"
-                        }, {
-                            "value": "8.99"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "4",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "97.25"
-                        }, {
-                            "value": "93.77"
-                        }, {
-                            "value": "96.47"
-                        }, {
-                            "value": "96.13"
-                        }, {
-                            "value": "90.84"
-                        }, {
-                            "value": "87.22"
-                        }, {
-                            "value": "86.39"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "2.75"
-                        }, {
-                            "value": "6.23"
-                        }, {
-                            "value": "3.53"
-                        }, {
-                            "value": "3.87"
-                        }, {
-                            "value": "9.16"
-                        }, {
-                            "value": "12.78"
-                        }, {
-                            "value": "13.61"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "5",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "95.71"
-                        }, {
-                            "value": "92.21"
-                        }, {
-                            "value": "95.88"
-                        }, {
-                            "value": "96"
-                        }, {
-                            "value": "90.72"
-                        }, {
-                            "value": "86.18"
-                        }, {
-                            "value": "84.16"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "4.29"
-                        }, {
-                            "value": "7.79"
-                        }, {
-                            "value": "4.12"
-                        }, {
-                            "value": "4"
-                        }, {
-                            "value": "9.28"
-                        }, {
-                            "value": "13.82"
-                        }, {
-                            "value": "15.84"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "6",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "92.42"
-                        }, {
-                            "value": "85.63"
-                        }, {
-                            "value": "94.5"
-                        }, {
-                            "value": "94.09"
-                        }, {
-                            "value": "87.93"
-                        }, {
-                            "value": "82.69"
-                        }, {
-                            "value": "79.16"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "7.58"
-                        }, {
-                            "value": "14.37"
-                        }, {
-                            "value": "5.5"
-                        }, {
-                            "value": "5.91"
-                        }, {
-                            "value": "12.07"
-                        }, {
-                            "value": "17.31"
-                        }, {
-                            "value": "20.84"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "7",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "90.71"
-                        }, {
-                            "value": "81.27"
-                        }, {
-                            "value": "93.05"
-                        }, {
-                            "value": "92.25"
-                        }, {
-                            "value": "85.53"
-                        }, {
-                            "value": "79.53"
-                        }, {
-                            "value": "77.62"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "9.29"
-                        }, {
-                            "value": "18.73"
-                        }, {
-                            "value": "6.95"
-                        }, {
-                            "value": "7.75"
-                        }, {
-                            "value": "14.47"
-                        }, {
-                            "value": "20.47"
-                        }, {
-                            "value": "22.38"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "8",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "88.92"
-                        }, {
-                            "value": "80.38"
-                        }, {
-                            "value": "92.05"
-                        }, {
-                            "value": "91.29"
-                        }, {
-                            "value": "85.09"
-                        }, {
-                            "value": "75.17"
-                        }, {
-                            "value": "77.18"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "11.08"
-                        }, {
-                            "value": "19.62"
-                        }, {
-                            "value": "7.95"
-                        }, {
-                            "value": "8.71"
-                        }, {
-                            "value": "14.91"
-                        }, {
-                            "value": "24.83"
-                        }, {
-                            "value": "22.82"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "9",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "88.92"
-                        }, {
-                            "value": "76.71"
-                        }, {
-                            "value": "91.88"
-                        }, {
-                            "value": "89.48"
-                        }, {
-                            "value": "82.27"
-                        }, {
-                            "value": "72.07"
-                        }, {
-                            "value": "74.11"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "11.08"
-                        }, {
-                            "value": "23.29"
-                        }, {
-                            "value": "8.12"
-                        }, {
-                            "value": "10.52"
-                        }, {
-                            "value": "17.73"
-                        }, {
-                            "value": "27.93"
-                        }, {
-                            "value": "25.89"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "10",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "88.92"
-                        }, {
-                            "value": "76.71"
-                        }, {
-                            "value": "91.18"
-                        }, {
-                            "value": "86.96"
-                        }, {
-                            "value": "79.23"
-                        }, {
-                            "value": "67.64"
-                        }, {
-                            "value": "73.93"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "11.08"
-                        }, {
-                            "value": "23.29"
-                        }, {
-                            "value": "8.82"
-                        }, {
-                            "value": "13.04"
-                        }, {
-                            "value": "20.77"
-                        }, {
-                            "value": "32.36"
-                        }, {
-                            "value": "26.07"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "11",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "87"
-                        }, {
-                            "value": "75.75"
-                        }, {
-                            "value": "89.76"
-                        }, {
-                            "value": "85.93"
-                        }, {
-                            "value": "76.12"
-                        }, {
-                            "value": "62.58"
-                        }, {
-                            "value": "72.98"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "13"
-                        }, {
-                            "value": "24.25"
-                        }, {
-                            "value": "10.24"
-                        }, {
-                            "value": "14.07"
-                        }, {
-                            "value": "23.88"
-                        }, {
-                            "value": "37.42"
-                        }, {
-                            "value": "27.02"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "12",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "85.04"
-                        }, {
-                            "value": "74.77"
-                        }, {
-                            "value": "89.39"
-                        }, {
-                            "value": "84"
-                        }, {
-                            "value": "73.58"
-                        }, {
-                            "value": "60.85"
-                        }, {
-                            "value": "71.64"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "14.96"
-                        }, {
-                            "value": "25.23"
-                        }, {
-                            "value": "10.61"
-                        }, {
-                            "value": "16"
-                        }, {
-                            "value": "26.42"
-                        }, {
-                            "value": "39.15"
-                        }, {
-                            "value": "28.36"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "13",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "85.04"
-                        }, {
-                            "value": "71.77"
-                        }, {
-                            "value": "88.09"
-                        }, {
-                            "value": "82.75"
-                        }, {
-                            "value": "71.96"
-                        }, {
-                            "value": "60.85"
-                        }, {
-                            "value": "70.45"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "14.96"
-                        }, {
-                            "value": "28.23"
-                        }, {
-                            "value": "11.91"
-                        }, {
-                            "value": "17.25"
-                        }, {
-                            "value": "28.04"
-                        }, {
-                            "value": "39.15"
-                        }, {
-                            "value": "29.55"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "14",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "83"
-                        }, {
-                            "value": "69.73"
-                        }, {
-                            "value": "87.14"
-                        }, {
-                            "value": "81.1"
-                        }, {
-                            "value": "68.81"
-                        }, {
-                            "value": "57.7"
-                        }, {
-                            "value": "65.53"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "17"
-                        }, {
-                            "value": "30.27"
-                        }, {
-                            "value": "12.86"
-                        }, {
-                            "value": "18.9"
-                        }, {
-                            "value": "31.19"
-                        }, {
-                            "value": "42.3"
-                        }, {
-                            "value": "34.47"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "15",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "80.92"
-                        }, {
-                            "value": "69.73"
-                        }, {
-                            "value": "85.98"
-                        }, {
-                            "value": "80.92"
-                        }, {
-                            "value": "66.78"
-                        }, {
-                            "value": "57.24"
-                        }, {
-                            "value": "64.2"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "19.08"
-                        }, {
-                            "value": "30.27"
-                        }, {
-                            "value": "14.02"
-                        }, {
-                            "value": "19.08"
-                        }, {
-                            "value": "33.22"
-                        }, {
-                            "value": "42.76"
-                        }, {
-                            "value": "35.8"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "16",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "80.92"
-                        }, {
-                            "value": "67.6"
-                        }, {
-                            "value": "84.79"
-                        }, {
-                            "value": "80.73"
-                        }, {
-                            "value": "64.54"
-                        }, {
-                            "value": "54.58"
-                        }, {
-                            "value": "61.28"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "19.08"
-                        }, {
-                            "value": "32.4"
-                        }, {
-                            "value": "15.21"
-                        }, {
-                            "value": "19.27"
-                        }, {
-                            "value": "35.46"
-                        }, {
-                            "value": "45.42"
-                        }, {
-                            "value": "38.72"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "17",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "80.92"
-                        }, {
-                            "value": "65.44"
-                        }, {
-                            "value": "83.78"
-                        }, {
-                            "value": "78.98"
-                        }, {
-                            "value": "64.54"
-                        }, {
-                            "value": "49.47"
-                        }, {
-                            "value": "58.4"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "19.08"
-                        }, {
-                            "value": "34.56"
-                        }, {
-                            "value": "16.22"
-                        }, {
-                            "value": "21.02"
-                        }, {
-                            "value": "35.46"
-                        }, {
-                            "value": "50.53"
-                        }, {
-                            "value": "41.6"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "18",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "80.92"
-                        }, {
-                            "value": "64.33"
-                        }, {
-                            "value": "82.96"
-                        }, {
-                            "value": "77.4"
-                        }, {
-                            "value": "62.4"
-                        }, {
-                            "value": "48.5"
-                        }, {
-                            "value": "54.71"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "19.08"
-                        }, {
-                            "value": "35.67"
-                        }, {
-                            "value": "17.04"
-                        }, {
-                            "value": "22.6"
-                        }, {
-                            "value": "37.6"
-                        }, {
-                            "value": "51.5"
-                        }, {
-                            "value": "45.29"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "19",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "80.92"
-                        }, {
-                            "value": "60.96"
-                        }, {
-                            "value": "81.29"
-                        }, {
-                            "value": "75.18"
-                        }, {
-                            "value": "58.2"
-                        }, {
-                            "value": "44.19"
-                        }, {
-                            "value": "54.15"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "19.08"
-                        }, {
-                            "value": "39.04"
-                        }, {
-                            "value": "18.71"
-                        }, {
-                            "value": "24.82"
-                        }, {
-                            "value": "41.8"
-                        }, {
-                            "value": "55.81"
-                        }, {
-                            "value": "45.85"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "20",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "78.63"
-                        }, {
-                            "value": "58.67"
-                        }, {
-                            "value": "81.07"
-                        }, {
-                            "value": "73.54"
-                        }, {
-                            "value": "58.01"
-                        }, {
-                            "value": "42"
-                        }, {
-                            "value": "52.91"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "21.37"
-                        }, {
-                            "value": "41.33"
-                        }, {
-                            "value": "18.93"
-                        }, {
-                            "value": "26.46"
-                        }, {
-                            "value": "41.99"
-                        }, {
-                            "value": "58"
-                        }, {
-                            "value": "47.09"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "21",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "76.29"
-                        }, {
-                            "value": "55.17"
-                        }, {
-                            "value": "80.21"
-                        }, {
-                            "value": "71.87"
-                        }, {
-                            "value": "56.69"
-                        }, {
-                            "value": "41.48"
-                        }, {
-                            "value": "50.85"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "23.71"
-                        }, {
-                            "value": "44.83"
-                        }, {
-                            "value": "19.79"
-                        }, {
-                            "value": "28.13"
-                        }, {
-                            "value": "43.31"
-                        }, {
-                            "value": "58.52"
-                        }, {
-                            "value": "49.15"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "22",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "76.29"
-                        }, {
-                            "value": "52.79"
-                        }, {
-                            "value": "79.32"
-                        }, {
-                            "value": "70.38"
-                        }, {
-                            "value": "53.42"
-                        }, {
-                            "value": "40.26"
-                        }, {
-                            "value": "50.26"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "23.71"
-                        }, {
-                            "value": "47.21"
-                        }, {
-                            "value": "20.68"
-                        }, {
-                            "value": "29.62"
-                        }, {
-                            "value": "46.58"
-                        }, {
-                            "value": "59.74"
-                        }, {
-                            "value": "49.74"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "23",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "76.29"
-                        }, {
-                            "value": "47.96"
-                        }, {
-                            "value": "78.87"
-                        }, {
-                            "value": "70.38"
-                        }, {
-                            "value": "50.28"
-                        }, {
-                            "value": "36.7"
-                        }, {
-                            "value": "47.89"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "23.71"
-                        }, {
-                            "value": "52.04"
-                        }, {
-                            "value": "21.13"
-                        }, {
-                            "value": "29.62"
-                        }, {
-                            "value": "49.72"
-                        }, {
-                            "value": "63.3"
-                        }, {
-                            "value": "52.11"
-                        }]
-                    }]
-                }, {
-                    "chart": {
-                        "animation": "1",
-                        "transposeAnimation": "1",
-                        "transposeAnimDuration": "1",
-                        "palettecolors": "#0a434c,#0bcccc",
-                        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
-                        "subCaption": "Last Year",
-                        "xyz": "24",
-                        "xaxisname": "Age",
-                        "showvalues": "1",
-                        "valueFontColor": "#FFFFFF",
-                        "numberSuffix": "%",
-                        "yAxisMaxValue": "100",
-                        "divlineColor": "#999999",
-                        "showHoverEffect": "1",
-                        "interactiveLegend": "0",
-                        "legendBorderAlpha": "20",
-                        "theme": "zune"
-                    },
-                    "categories": [{
-                        "category": [{
-                            "label": "< 10"
-                        }, {
-                            "label": "10 - 20"
-                        }, {
-                            "label": "20 - 30"
-                        }, {
-                            "label": "30 - 40"
-                        }, {
-                            "label": "40 - 50"
-                        }, {
-                            "label": "50 - 60"
-                        }, {
-                            "label": "60 - 70"
-                        }]
-                    }],
-                    "dataset": [{
-                        "seriesname": "Affected",
-                        "data": [{
-                            "value": "76.29"
-                        }, {
-                            "value": "46.73"
-                        }, {
-                            "value": "77.73"
-                        }, {
-                            "value": "67.96"
-                        }, {
-                            "value": "47.29"
-                        }, {
-                            "value": "32.17"
-                        }, {
-                            "value": "44.26"
-                        }]
-                    }, {
-                        "seriesname": "Cured",
-                        "data": [{
-                            "value": "23.71"
-                        }, {
-                            "value": "53.27"
-                        }, {
-                            "value": "22.27"
-                        }, {
-                            "value": "32.04"
-                        }, {
-                            "value": "52.71"
-                        }, {
-                            "value": "67.83"
-                        }, {
-                            "value": "55.74"
-                        }]
-                    }]
-                }],
-                i,
-                updateDuration = 1100,
-                isPlaying = false,
-                interValID,
-                animationDuation = 1500,
-                currentVal = 0,
-                visitChart = new FusionCharts({
-                    type: 'line',
-                    renderAt: 'chart-container',
-                    width: '500',
-                    height: '320',
-                    dataFormat: 'json',
-                    dataSource: data[0]
-                }).render();
 
-            /**
-             * @description - on initial loading of the chart, sets the position of the slider.
-             * @param {Integer} value - starting position of the slider niddle
-             */
-            var slider = function (value) {
-                    $("#slider").slider({
-                        value: value,
-                        min: 0,
-                        max: data.length - 1,
-                        step: 1,
-                        slide: function (event, ui) {
-                            if ($("#button").hasClass() === "button-replay")
-                                $("#button").addClass("button-play");
-                            currentVal = ui.value;
-                            isPlaying = false;
-                        },
-                        stop: function (event, ui) {
-                            visitChart.setJSONData(data[ui.value])
-                            // else
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
 
-                        }
-                    });
+  ></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
 
-                    //chart data update
-                    visitChart.setJSONData(data[value]);
-                },
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css" />
 
-                /**
-                 * @description -
-                 */
-                startSlider = function () {
-                    interValID = setInterval(function () {
-                        currentVal = $("#slider").slider("value") + 1;
+      <script type="text/javascript" src="http://static.fusioncharts.com/code/develop/fusioncharts.js"></script>
+      <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.zune.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
 
-                        if (currentVal >= data.length) {
-                            $("#button").removeClass("button");
-                            $("#button").removeClass("button-play");
-                            $("#button").removeClass("button-pause");
+  <style id="compiled-css" type="text/css">
+      .main-container {
+  width: 500px;
+  background-color: #ffffff;
+}
 
-                            $("#button").addClass("button-replay");
-                            clearInterval(interValID);
-                            isPlaying = true;
-                        } else {
-                            slider(currentVal);
-                        }
-                    }, animationDuation);
-                };
+#button {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-left: 8px;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  background-color: #e7eeeb;
+  border-radius: 2px;
+  border: 1px solid #b7b7b7;
+}
 
-            /**
-             * @description -
-             */
-            $("#button").on('click', function () {
-                if (isPlaying) {
-                    //pause slider
-                    clearInterval(interValID);
-                    isPlaying = false;
-                    $("#button").removeClass("button");
-                    $("#button").removeClass("button-pause");
-                    $("#button").removeClass("button-replay");
-                    $("#button").addClass("button-play");
+.button-play {
+  background: url('http://static.fusioncharts.com/jsfiddle/images/button-arrow.png') no-repeat;
+  background-position-x: 13px;
+  background-position-y: 7.5px;
+}
 
-                    if (currentVal >= data.length) {
-                        $("#slider").slider("value", "0")
-                        $("#button").removeClass("button");
-                        $("#button").removeClass("button-play");
-                        $("#button").removeClass("button-replay");
-                        $("#button").addClass("button-pause");
-                        isPlaying = true;
-                        clearInterval(interValID);
-                        startSlider();
-                    }
-                } else {
-                    startSlider();
-                    isPlaying = true;
-                    $("#button").removeClass("button");
-                    $("#button").removeClass("button-play");
-                    $("#button").removeClass("button-replay");
-                    $("#button").addClass("button-pause");
-                }
-            });
+.button-pause {
+  background: url('http://static.fusioncharts.com/jsfiddle/images/pause.png') no-repeat;
+  background-position-x: 12px;
+  background-position-y: 9.5px;
+}
 
-            // calling slider function with parameter 0
-            slider(0);
-        });
+.button-replay {
+  background: url('http://static.fusioncharts.com/jsfiddle/images/replay.png') no-repeat;
+  background-position-x: 9px;
+  background-position-y: 5px;
+}
 
-    </script>
-    <style type="text/css">
-        .main-container {
-            width: 500px;
-            background-color: #ffffff;
+.slide {
+  border-color: #b7b7b7;
+  background: #edf4f1;
+  cursor: pointer;
+  margin-left: 12%;
+  width: 84%;
+  margin-top: -4.6%;
+}
+
+.ui-slider-horizontal .ui-state-default {
+  border: 1px solid #b7b7b7;
+  background: #e7eeeb;
+}
+
+.tick {
+  display: inline-block;
+  margin-bottom: 3%;
+  width: 6.35%;
+  font-size: 11px;
+  color: #0a434c;
+}
+
+.tick2 {
+  padding-left: 13%;
+}
+
+  </style>
+
+
+
+  <script type="text/javascript">//<![CDATA[
+
+    window.onload=function(){
+
+FusionCharts.ready(function() {
+  // Store all sets of data to be updated in an array.
+  var data = [{
+      "chart": {
+        "caption": "Total footfall in Bakersfield Central",
+        "subCaption": "Last week",
+        "xAxisName": "Day",
+        "yAxisName": "No. of Visitors",
+        "lineThickness": "2",
+        "theme": "zune"
+      },
+      "data": [{
+        "label": "1",
+        "value": "14233"
+      }, {
+        "label": "2",
+        "value": "23507"
+      }, {
+        "label": "3",
+        "value": "9110"
+      }, {
+        "label": "4",
+        "value": "15529"
+      }, {
+        "label": "5",
+        "value": "20803"
+      }, {
+        "label": "6",
+        "value": "23507"
+      }, {
+        "label": "7",
+        "value": "9110"
+      }, {
+        "label": "8",
+        "value": "15529"
+      }, {
+        "label": "9",
+        "value": "20803"
+      }, {
+        "label": "10",
+        "value": "23507"
+      }, {
+        "label": "11",
+        "value": "9110"
+      }, {
+        "label": "12",
+        "value": "15529"
+      }, {
+        "label": "13",
+        "value": "20803"
+      }, {
+        "label": "14",
+        "value": "23507"
+      }, {
+        "label": "15",
+        "value": "9110"
+      }, {
+        "label": "16",
+        "value": "20803"
+      }, {
+        "label": "17",
+        "value": "23507"
+      }, {
+        "label": "18",
+        "value": "9110"
+      }, {
+        "label": "19",
+        "value": "15529"
+      }, {
+        "label": "20",
+        "value": "20803"
+      }, {
+        "label": "21",
+        "value": "23507"
+      }, {
+        "label": "22",
+        "value": "9110"
+      }, {
+        "label": "23",
+        "value": "15529"
+      }, {
+        "label": "24",
+        "value": "20803"
+      }, {
+        "label": "25",
+        "value": "23507"
+      }, {
+        "label": "26",
+        "value": "9110"
+      }, {
+        "label": "27",
+        "value": "15529"
+      }, {
+        "label": "28",
+        "value": "20803"
+      }, {
+        "label": "29",
+        "value": "19202"
+      }, {
+        "label": "30",
+        "value": "19202"
+      }, {
+        "label": "31",
+        "value": "19202"
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "2",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "98.71"
+        }, {
+          "value": "97.38"
+        }, {
+          "value": "98.77"
+        }, {
+          "value": "98.58"
+        }, {
+          "value": "97.41"
+        }, {
+          "value": "94.51"
+        }, {
+          "value": "94.44"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "1.29"
+        }, {
+          "value": "2.62"
+        }, {
+          "value": "1.23"
+        }, {
+          "value": "1.42"
+        }, {
+          "value": "2.59"
+        }, {
+          "value": "5.49"
+        }, {
+          "value": "5.56"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "3",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "98.71"
+        }, {
+          "value": "95.96"
+        }, {
+          "value": "98.25"
+        }, {
+          "value": "97.84"
+        }, {
+          "value": "93.88"
+        }, {
+          "value": "92.98"
+        }, {
+          "value": "91.01"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "1.29"
+        }, {
+          "value": "4.04"
+        }, {
+          "value": "1.75"
+        }, {
+          "value": "2.16"
+        }, {
+          "value": "6.12"
+        }, {
+          "value": "7.02"
+        }, {
+          "value": "8.99"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "4",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "97.25"
+        }, {
+          "value": "93.77"
+        }, {
+          "value": "96.47"
+        }, {
+          "value": "96.13"
+        }, {
+          "value": "90.84"
+        }, {
+          "value": "87.22"
+        }, {
+          "value": "86.39"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "2.75"
+        }, {
+          "value": "6.23"
+        }, {
+          "value": "3.53"
+        }, {
+          "value": "3.87"
+        }, {
+          "value": "9.16"
+        }, {
+          "value": "12.78"
+        }, {
+          "value": "13.61"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "5",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "95.71"
+        }, {
+          "value": "92.21"
+        }, {
+          "value": "95.88"
+        }, {
+          "value": "96"
+        }, {
+          "value": "90.72"
+        }, {
+          "value": "86.18"
+        }, {
+          "value": "84.16"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "4.29"
+        }, {
+          "value": "7.79"
+        }, {
+          "value": "4.12"
+        }, {
+          "value": "4"
+        }, {
+          "value": "9.28"
+        }, {
+          "value": "13.82"
+        }, {
+          "value": "15.84"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "6",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "92.42"
+        }, {
+          "value": "85.63"
+        }, {
+          "value": "94.5"
+        }, {
+          "value": "94.09"
+        }, {
+          "value": "87.93"
+        }, {
+          "value": "82.69"
+        }, {
+          "value": "79.16"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "7.58"
+        }, {
+          "value": "14.37"
+        }, {
+          "value": "5.5"
+        }, {
+          "value": "5.91"
+        }, {
+          "value": "12.07"
+        }, {
+          "value": "17.31"
+        }, {
+          "value": "20.84"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "7",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "90.71"
+        }, {
+          "value": "81.27"
+        }, {
+          "value": "93.05"
+        }, {
+          "value": "92.25"
+        }, {
+          "value": "85.53"
+        }, {
+          "value": "79.53"
+        }, {
+          "value": "77.62"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "9.29"
+        }, {
+          "value": "18.73"
+        }, {
+          "value": "6.95"
+        }, {
+          "value": "7.75"
+        }, {
+          "value": "14.47"
+        }, {
+          "value": "20.47"
+        }, {
+          "value": "22.38"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "8",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "88.92"
+        }, {
+          "value": "80.38"
+        }, {
+          "value": "92.05"
+        }, {
+          "value": "91.29"
+        }, {
+          "value": "85.09"
+        }, {
+          "value": "75.17"
+        }, {
+          "value": "77.18"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "11.08"
+        }, {
+          "value": "19.62"
+        }, {
+          "value": "7.95"
+        }, {
+          "value": "8.71"
+        }, {
+          "value": "14.91"
+        }, {
+          "value": "24.83"
+        }, {
+          "value": "22.82"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "9",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "88.92"
+        }, {
+          "value": "76.71"
+        }, {
+          "value": "91.88"
+        }, {
+          "value": "89.48"
+        }, {
+          "value": "82.27"
+        }, {
+          "value": "72.07"
+        }, {
+          "value": "74.11"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "11.08"
+        }, {
+          "value": "23.29"
+        }, {
+          "value": "8.12"
+        }, {
+          "value": "10.52"
+        }, {
+          "value": "17.73"
+        }, {
+          "value": "27.93"
+        }, {
+          "value": "25.89"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "10",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "88.92"
+        }, {
+          "value": "76.71"
+        }, {
+          "value": "91.18"
+        }, {
+          "value": "86.96"
+        }, {
+          "value": "79.23"
+        }, {
+          "value": "67.64"
+        }, {
+          "value": "73.93"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "11.08"
+        }, {
+          "value": "23.29"
+        }, {
+          "value": "8.82"
+        }, {
+          "value": "13.04"
+        }, {
+          "value": "20.77"
+        }, {
+          "value": "32.36"
+        }, {
+          "value": "26.07"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "11",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "87"
+        }, {
+          "value": "75.75"
+        }, {
+          "value": "89.76"
+        }, {
+          "value": "85.93"
+        }, {
+          "value": "76.12"
+        }, {
+          "value": "62.58"
+        }, {
+          "value": "72.98"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "13"
+        }, {
+          "value": "24.25"
+        }, {
+          "value": "10.24"
+        }, {
+          "value": "14.07"
+        }, {
+          "value": "23.88"
+        }, {
+          "value": "37.42"
+        }, {
+          "value": "27.02"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "12",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "85.04"
+        }, {
+          "value": "74.77"
+        }, {
+          "value": "89.39"
+        }, {
+          "value": "84"
+        }, {
+          "value": "73.58"
+        }, {
+          "value": "60.85"
+        }, {
+          "value": "71.64"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "14.96"
+        }, {
+          "value": "25.23"
+        }, {
+          "value": "10.61"
+        }, {
+          "value": "16"
+        }, {
+          "value": "26.42"
+        }, {
+          "value": "39.15"
+        }, {
+          "value": "28.36"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "13",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "85.04"
+        }, {
+          "value": "71.77"
+        }, {
+          "value": "88.09"
+        }, {
+          "value": "82.75"
+        }, {
+          "value": "71.96"
+        }, {
+          "value": "60.85"
+        }, {
+          "value": "70.45"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "14.96"
+        }, {
+          "value": "28.23"
+        }, {
+          "value": "11.91"
+        }, {
+          "value": "17.25"
+        }, {
+          "value": "28.04"
+        }, {
+          "value": "39.15"
+        }, {
+          "value": "29.55"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "14",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "83"
+        }, {
+          "value": "69.73"
+        }, {
+          "value": "87.14"
+        }, {
+          "value": "81.1"
+        }, {
+          "value": "68.81"
+        }, {
+          "value": "57.7"
+        }, {
+          "value": "65.53"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "17"
+        }, {
+          "value": "30.27"
+        }, {
+          "value": "12.86"
+        }, {
+          "value": "18.9"
+        }, {
+          "value": "31.19"
+        }, {
+          "value": "42.3"
+        }, {
+          "value": "34.47"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "15",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "80.92"
+        }, {
+          "value": "69.73"
+        }, {
+          "value": "85.98"
+        }, {
+          "value": "80.92"
+        }, {
+          "value": "66.78"
+        }, {
+          "value": "57.24"
+        }, {
+          "value": "64.2"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "19.08"
+        }, {
+          "value": "30.27"
+        }, {
+          "value": "14.02"
+        }, {
+          "value": "19.08"
+        }, {
+          "value": "33.22"
+        }, {
+          "value": "42.76"
+        }, {
+          "value": "35.8"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "16",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "80.92"
+        }, {
+          "value": "67.6"
+        }, {
+          "value": "84.79"
+        }, {
+          "value": "80.73"
+        }, {
+          "value": "64.54"
+        }, {
+          "value": "54.58"
+        }, {
+          "value": "61.28"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "19.08"
+        }, {
+          "value": "32.4"
+        }, {
+          "value": "15.21"
+        }, {
+          "value": "19.27"
+        }, {
+          "value": "35.46"
+        }, {
+          "value": "45.42"
+        }, {
+          "value": "38.72"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "17",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "80.92"
+        }, {
+          "value": "65.44"
+        }, {
+          "value": "83.78"
+        }, {
+          "value": "78.98"
+        }, {
+          "value": "64.54"
+        }, {
+          "value": "49.47"
+        }, {
+          "value": "58.4"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "19.08"
+        }, {
+          "value": "34.56"
+        }, {
+          "value": "16.22"
+        }, {
+          "value": "21.02"
+        }, {
+          "value": "35.46"
+        }, {
+          "value": "50.53"
+        }, {
+          "value": "41.6"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "18",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "80.92"
+        }, {
+          "value": "64.33"
+        }, {
+          "value": "82.96"
+        }, {
+          "value": "77.4"
+        }, {
+          "value": "62.4"
+        }, {
+          "value": "48.5"
+        }, {
+          "value": "54.71"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "19.08"
+        }, {
+          "value": "35.67"
+        }, {
+          "value": "17.04"
+        }, {
+          "value": "22.6"
+        }, {
+          "value": "37.6"
+        }, {
+          "value": "51.5"
+        }, {
+          "value": "45.29"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "19",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "80.92"
+        }, {
+          "value": "60.96"
+        }, {
+          "value": "81.29"
+        }, {
+          "value": "75.18"
+        }, {
+          "value": "58.2"
+        }, {
+          "value": "44.19"
+        }, {
+          "value": "54.15"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "19.08"
+        }, {
+          "value": "39.04"
+        }, {
+          "value": "18.71"
+        }, {
+          "value": "24.82"
+        }, {
+          "value": "41.8"
+        }, {
+          "value": "55.81"
+        }, {
+          "value": "45.85"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "20",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "78.63"
+        }, {
+          "value": "58.67"
+        }, {
+          "value": "81.07"
+        }, {
+          "value": "73.54"
+        }, {
+          "value": "58.01"
+        }, {
+          "value": "42"
+        }, {
+          "value": "52.91"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "21.37"
+        }, {
+          "value": "41.33"
+        }, {
+          "value": "18.93"
+        }, {
+          "value": "26.46"
+        }, {
+          "value": "41.99"
+        }, {
+          "value": "58"
+        }, {
+          "value": "47.09"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "21",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "76.29"
+        }, {
+          "value": "55.17"
+        }, {
+          "value": "80.21"
+        }, {
+          "value": "71.87"
+        }, {
+          "value": "56.69"
+        }, {
+          "value": "41.48"
+        }, {
+          "value": "50.85"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "23.71"
+        }, {
+          "value": "44.83"
+        }, {
+          "value": "19.79"
+        }, {
+          "value": "28.13"
+        }, {
+          "value": "43.31"
+        }, {
+          "value": "58.52"
+        }, {
+          "value": "49.15"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "22",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "76.29"
+        }, {
+          "value": "52.79"
+        }, {
+          "value": "79.32"
+        }, {
+          "value": "70.38"
+        }, {
+          "value": "53.42"
+        }, {
+          "value": "40.26"
+        }, {
+          "value": "50.26"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "23.71"
+        }, {
+          "value": "47.21"
+        }, {
+          "value": "20.68"
+        }, {
+          "value": "29.62"
+        }, {
+          "value": "46.58"
+        }, {
+          "value": "59.74"
+        }, {
+          "value": "49.74"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "23",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "76.29"
+        }, {
+          "value": "47.96"
+        }, {
+          "value": "78.87"
+        }, {
+          "value": "70.38"
+        }, {
+          "value": "50.28"
+        }, {
+          "value": "36.7"
+        }, {
+          "value": "47.89"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "23.71"
+        }, {
+          "value": "52.04"
+        }, {
+          "value": "21.13"
+        }, {
+          "value": "29.62"
+        }, {
+          "value": "49.72"
+        }, {
+          "value": "63.3"
+        }, {
+          "value": "52.11"
+        }]
+      }]
+    }, {
+      "chart": {
+        "animation": "1",
+        "transposeAnimation": "1",
+        "transposeAnimDuration": "1",
+        "palettecolors": "#0a434c,#0bcccc",
+        "caption": "Drug Addicts Rehabilitation Progress - Priory Group, UK",
+        "subCaption": "Last Year",
+        "xyz": "24",
+        "xaxisname": "Age",
+        "showvalues": "1",
+        "valueFontColor": "#FFFFFF",
+        "numberSuffix": "%",
+        "yAxisMaxValue": "100",
+        "divlineColor": "#999999",
+        "showHoverEffect": "1",
+        "interactiveLegend": "0",
+        "legendBorderAlpha": "20",
+        "theme": "zune"
+      },
+      "categories": [{
+        "category": [{
+          "label": "< 10"
+        }, {
+          "label": "10 - 20"
+        }, {
+          "label": "20 - 30"
+        }, {
+          "label": "30 - 40"
+        }, {
+          "label": "40 - 50"
+        }, {
+          "label": "50 - 60"
+        }, {
+          "label": "60 - 70"
+        }]
+      }],
+      "dataset": [{
+        "seriesname": "Affected",
+        "data": [{
+          "value": "76.29"
+        }, {
+          "value": "46.73"
+        }, {
+          "value": "77.73"
+        }, {
+          "value": "67.96"
+        }, {
+          "value": "47.29"
+        }, {
+          "value": "32.17"
+        }, {
+          "value": "44.26"
+        }]
+      }, {
+        "seriesname": "Cured",
+        "data": [{
+          "value": "23.71"
+        }, {
+          "value": "53.27"
+        }, {
+          "value": "22.27"
+        }, {
+          "value": "32.04"
+        }, {
+          "value": "52.71"
+        }, {
+          "value": "67.83"
+        }, {
+          "value": "55.74"
+        }]
+      }]
+    }],
+    i,
+    updateDuration = 1100,
+    isPlaying = false,
+    interValID,
+    animationDuation = 1500,
+    currentVal = 0,
+    visitChart = new FusionCharts({
+      type: 'line',
+      renderAt: 'chart-container',
+      width: '500',
+      height: '320',
+      dataFormat: 'json',
+      dataSource: data[0]
+    }).render();
+
+  /**
+   * @description - on initial loading of the chart, sets the position of the slider.
+   * @param {Integer} value - starting position of the slider niddle
+   */
+  var slider = function(value) {
+      $("#slider").slider({
+        value: value,
+        min: 0,
+        max: data.length - 1,
+        step: 1,
+        slide: function(event, ui) {
+          if ($("#button").hasClass() === "button-replay")
+            $("#button").addClass("button-play");
+          currentVal = ui.value;
+          isPlaying = false;
+        },
+        stop: function(event, ui) {
+          visitChart.setJSONData(data[ui.value])
+          // else
+
         }
+      });
 
-        #button {
-            display: inline-block;
-            padding: 5px 15px;
-            margin-left: 8px;
-            margin-right: 10px;
-            font-size: 14px;
-            cursor: pointer;
-            text-align: center;
-            outline: none;
-            background-color: #e7eeeb;
-            border-radius: 2px;
-            border: 1px solid #b7b7b7;
+      //chart data update
+      visitChart.setJSONData(data[value]);
+    },
+
+    /**
+     * @description -
+     */
+    startSlider = function() {
+      interValID = setInterval(function() {
+        currentVal = $("#slider").slider("value") + 1;
+
+        if (currentVal >= data.length) {
+          $("#button").removeClass("button");
+          $("#button").removeClass("button-play");
+          $("#button").removeClass("button-pause");
+
+          $("#button").addClass("button-replay");
+          clearInterval(interValID);
+          isPlaying = true;
+        } else {
+          slider(currentVal);
         }
+      }, animationDuation);
+    };
 
-        .button-play {
-            background: url('http://static.fusioncharts.com/jsfiddle/images/button-arrow.png') no-repeat;
-            background-position-x: 13px;
-            background-position-y: 7.5px;
-        }
+  /**
+   * @description -
+   */
+  $("#button").on('click', function() {
+    if (isPlaying) {
+      //pause slider
+      clearInterval(interValID);
+      isPlaying = false;
+      $("#button").removeClass("button");
+      $("#button").removeClass("button-pause");
+      $("#button").removeClass("button-replay");
+      $("#button").addClass("button-play");
 
-        .button-pause {
-            background: url('http://static.fusioncharts.com/jsfiddle/images/pause.png') no-repeat;
-            background-position-x: 12px;
-            background-position-y: 9.5px;
-        }
+      if (currentVal >= data.length) {
+        $("#slider").slider("value", "0")
+        $("#button").removeClass("button");
+        $("#button").removeClass("button-play");
+        $("#button").removeClass("button-replay");
+        $("#button").addClass("button-pause");
+        isPlaying = true;
+        clearInterval(interValID);
+        startSlider();
+      }
+    } else {
+      startSlider();
+      isPlaying = true;
+      $("#button").removeClass("button");
+      $("#button").removeClass("button-play");
+      $("#button").removeClass("button-replay");
+      $("#button").addClass("button-pause");
+    }
+  });
 
-        .button-replay {
-            background: url('http://static.fusioncharts.com/jsfiddle/images/replay.png') no-repeat;
-            background-position-x: 9px;
-            background-position-y: 5px;
-        }
+  // calling slider function with parameter 0
+  slider(0);
+});
 
-        .slide {
-            border-color: #b7b7b7;
-            background: #edf4f1;
-            cursor: pointer;
-            margin-left: 12%;
-            width: 84%;
-            margin-top: -4.6%;
-        }
 
-        .ui-slider-horizontal .ui-state-default {
-            border: 1px solid #b7b7b7;
-            background: #e7eeeb;
-        }
+    }
 
-        .tick {
-            display: inline-block;
-            margin-bottom: 3%;
-            width: 6.35%;
-            font-size: 11px;
-            color: #0a434c;
-        }
+  //]]></script>
 
-        .tick2 {
-            padding-left: 13%;
-        }
-
-    </style>
+</head>
 <body>
-<div class="main-container">
-    <div id="chart-container">FusionCharts will render here</div>
+    <div class="main-container">
+  <div id="chart-container">FusionCharts will render here</div>
+  <div>
     <div>
-        <div>
-            <input type="button" id="button" class="button-play button"/>
-            <div id="slider" class="slide"></div>
-        </div>
-        <div>
-            <div class="tick tick2">Jan</div>
-            <div class="tick">Feb</div>
-            <div class="tick">Mar</div>
-            <div class="tick">Apr</div>
-            <div class="tick">May</div>
-            <div class="tick">Jun</div>
-            <div class="tick">Jul</div>
-            <div class="tick">Aug</div>
-            <div class="tick">Sep</div>
-            <div class="tick">Oct</div>
-            <div class="tick">Nov</div>
-            <div class="tick">Dec</div>
-        </div>
+      <input type="button" id="button" class="button-play button" />
+      <div id="slider" class="slide"></div>
     </div>
+    <div>
+      <div class="tick tick2">Jan</div>
+      <div class="tick">Feb</div>
+      <div class="tick">Mar</div>
+      <div class="tick">Apr</div>
+      <div class="tick">May</div>
+      <div class="tick">Jun</div>
+      <div class="tick">Jul</div>
+      <div class="tick">Aug</div>
+      <div class="tick">Sep</div>
+      <div class="tick">Oct</div>
+      <div class="tick">Nov</div>
+      <div class="tick">Dec</div>
+    </div>
+  </div>
 </div>
 
+
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "qxj7Lyrg"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
 </body>
-</head>
 </html>
