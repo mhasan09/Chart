@@ -108,7 +108,7 @@
       <workItem from="1568879449910" duration="9418000" />
       <workItem from="1569124192420" duration="75000" />
       <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="5783000" />
+      <workItem from="1569124305756" duration="8933000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -292,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569129635429</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bubble chart fixing v3">
+      <created>1569131942646</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1569131942646</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +342,7 @@
     <MESSAGE value="gapminder added" />
     <MESSAGE value="bubble chart fixing v1" />
     <MESSAGE value="bubble chart fixing v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="bubble chart fixing v2" />
+    <MESSAGE value="bubble chart fixing v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="bubble chart fixing v3" />
   </component>
 </project>
