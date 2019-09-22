@@ -14556,8 +14556,9 @@
     Dhaka
 </button>
 <button class="Button" id="jQueryColorChange">Click to change color</button>
+<button onclick=myFunction()>Reset</button>
 <br><br>
-<button class="Button" id="cssColorChange">Click & hold to change color</button>
+
 <button onclick=DD.style.fill="yellow">333</button>
 </body>
 <script type="text/javascript">
@@ -14575,23 +14576,14 @@
 
 </script>
 
-<script type="text/javascript">//<![CDATA[
 
-$(window).load(function () {
-
-    $("button#jQueryColorChange  ").click(function () {
-        $(this).toggleClass("selected");
-    });
-
-});
-
-//]]></script>
 
 <script>
 function myFunction(){
-    var dhakacolor = getElementById("DD");
-    dhakacolor.style.fill="blue"
+    var dhakacolor = document.getElementById("DD");
+    dhakacolor.style.fill="#26bfff";
 }
+
 </script>
 
 </html>

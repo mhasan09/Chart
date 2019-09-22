@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
+    <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="polygon issue fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/map_svg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map_svg.html" afterDir="false" />
     </list>
@@ -108,7 +108,7 @@
       <workItem from="1568879449910" duration="9418000" />
       <workItem from="1569124192420" duration="75000" />
       <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="22097000" />
+      <workItem from="1569124305756" duration="22827000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -327,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569150024781</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="polygon issue fixed">
+      <created>1569152453746</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1569152453746</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gaugechart added" />
     <MESSAGE value="philalpha color for gauge chart" />
     <MESSAGE value="bubbble chart added" />
     <MESSAGE value="specific values added for different products" />
@@ -372,6 +378,7 @@
     <MESSAGE value="slider ticker up" />
     <MESSAGE value="grey svg map added" />
     <MESSAGE value="clippath issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="clippath issue" />
+    <MESSAGE value="polygon issue fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="polygon issue fixed" />
   </component>
 </project>
