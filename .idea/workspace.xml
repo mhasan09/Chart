@@ -31,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/static/js/maps" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/static/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,15 +43,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mahabubul Hasan\PycharmProjects\Chart\templates\static\img" />
+      <recent name="C:\Users\Mahabubul Hasan\PycharmProjects\Chart\templates\static\css" />
+      <recent name="$PROJECT_DIR$/templates/static/js/maps" />
+      <recent name="$PROJECT_DIR$/chart" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/static" />
       <recent name="$PROJECT_DIR$/chart" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/chart/template/static" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/static/js/maps" />
-      <recent name="$PROJECT_DIR$/chart" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,10 +107,14 @@
       <workItem from="1568627297454" duration="42916000" />
       <workItem from="1568809039483" duration="288000" />
       <workItem from="1568865251581" duration="493000" />
-      <workItem from="1568879449910" duration="9418000" />
-      <workItem from="1569124192420" duration="75000" />
-      <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="27019000" />
+      <workItem from="1568879449910" duration="8578000" />
+      <workItem from="1568947566664" duration="3259000" />
+      <workItem from="1568959416822" duration="1689000" />
+      <workItem from="1568984462624" duration="2825000" />
+      <workItem from="1569003870871" duration="1656000" />
+      <workItem from="1569045931683" duration="9385000" />
+      <workItem from="1569068523276" duration="8150000" />
+      <workItem from="1569172348303" duration="618000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -271,91 +277,70 @@
       <option name="project" value="LOCAL" />
       <updated>1568886428361</updated>
     </task>
-    <task id="LOCAL-00024" summary="gapminder added">
-      <created>1568901065894</created>
+    <task id="LOCAL-00024" summary="led chart allignment fix">
+      <created>1568987226485</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1568901065894</updated>
+      <updated>1568987226485</updated>
     </task>
-    <task id="LOCAL-00025" summary="bubble chart fixing v1">
-      <created>1569127148281</created>
+    <task id="LOCAL-00025" summary="led chart responsiveness">
+      <created>1569004931796</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1569127148281</updated>
+      <updated>1569004931796</updated>
     </task>
-    <task id="LOCAL-00026" summary="bubble chart fixing v2">
-      <created>1569129635429</created>
+    <task id="LOCAL-00026" summary="alignment fixed of lED">
+      <created>1569047428457</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1569129635429</updated>
+      <updated>1569047428457</updated>
     </task>
-    <task id="LOCAL-00027" summary="bubble chart fixing v3">
-      <created>1569131942646</created>
+    <task id="LOCAL-00027" summary="sliding chart issue">
+      <created>1569049572279</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1569131942646</updated>
+      <updated>1569049572279</updated>
     </task>
-    <task id="LOCAL-00028" summary="bubble chart fixing v4">
-      <created>1569135751320</created>
+    <task id="LOCAL-00028" summary="bubble chart structure">
+      <created>1569053070329</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1569135751320</updated>
+      <updated>1569053070329</updated>
     </task>
-    <task id="LOCAL-00029" summary="slider ticker up">
-      <created>1569136444476</created>
+    <task id="LOCAL-00029" summary="bubble chart structure level 2">
+      <created>1569054034879</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1569136444476</updated>
+      <updated>1569054034879</updated>
     </task>
-    <task id="LOCAL-00030" summary="grey svg map added">
-      <created>1569146909101</created>
+    <task id="LOCAL-00030" summary="map tested">
+      <created>1569073633718</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1569146909101</updated>
+      <updated>1569073633718</updated>
     </task>
-    <task id="LOCAL-00031" summary="clippath issue">
-      <created>1569150024781</created>
+    <task id="LOCAL-00031" summary="svg map color">
+      <created>1569093989721</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1569150024781</updated>
+      <updated>1569093989721</updated>
     </task>
-    <task id="LOCAL-00032" summary="polygon issue fixed">
-      <created>1569152453746</created>
+    <task id="LOCAL-00032" summary="led chart responsiveness and svg clicker">
+      <created>1569095373096</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1569152453746</updated>
+      <updated>1569095373096</updated>
     </task>
-    <task id="LOCAL-00033" summary="polygon issue fixed v2">
-      <created>1569153118860</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1569153118860</updated>
-    </task>
-    <task id="LOCAL-00034" summary="onclick worked on dhaka">
-      <created>1569153431783</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1569153431783</updated>
-    </task>
-    <task id="LOCAL-00035" summary="double click reset added">
-      <created>1569154366094</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1569154366094</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +360,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="philalpha color for gauge chart" />
+    <MESSAGE value="bubbble chart added" />
+    <MESSAGE value="specific values added for different products" />
     <MESSAGE value="led chart added" />
     <MESSAGE value="added requirements.txt" />
     <MESSAGE value="bangladesh maps added" />
@@ -388,18 +376,15 @@
     <MESSAGE value="gradient down to zero" />
     <MESSAGE value="linked map added for bangladesh" />
     <MESSAGE value="removed watermark" />
-    <MESSAGE value="gapminder added" />
-    <MESSAGE value="bubble chart fixing v1" />
-    <MESSAGE value="bubble chart fixing v2" />
-    <MESSAGE value="bubble chart fixing v3" />
-    <MESSAGE value="bubble chart fixing v4" />
-    <MESSAGE value="slider ticker up" />
-    <MESSAGE value="grey svg map added" />
-    <MESSAGE value="clippath issue" />
-    <MESSAGE value="polygon issue fixed" />
-    <MESSAGE value="polygon issue fixed v2" />
-    <MESSAGE value="onclick worked on dhaka" />
-    <MESSAGE value="double click reset added" />
-    <option name="LAST_COMMIT_MESSAGE" value="double click reset added" />
+    <MESSAGE value="led chart allignment fix" />
+    <MESSAGE value="led chart responsiveness" />
+    <MESSAGE value="alignment fixed of lED" />
+    <MESSAGE value="sliding chart issue" />
+    <MESSAGE value="bubble chart structure" />
+    <MESSAGE value="bubble chart structure level 2" />
+    <MESSAGE value="map tested" />
+    <MESSAGE value="svg map color" />
+    <MESSAGE value="led chart responsiveness and svg clicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="led chart responsiveness and svg clicker" />
   </component>
 </project>
