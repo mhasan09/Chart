@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/slider_bubbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/slider_bubbles.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,7 +107,7 @@
       <workItem from="1568879449910" duration="9418000" />
       <workItem from="1569124192420" duration="75000" />
       <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="8933000" />
+      <workItem from="1569124305756" duration="9628000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -299,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569131942646</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="bubble chart fixing v4">
+      <created>1569135751320</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1569135751320</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +349,7 @@
     <MESSAGE value="bubble chart fixing v1" />
     <MESSAGE value="bubble chart fixing v2" />
     <MESSAGE value="bubble chart fixing v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="bubble chart fixing v3" />
+    <MESSAGE value="bubble chart fixing v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="bubble chart fixing v4" />
   </component>
 </project>
