@@ -1,14 +1,46 @@
 {% load static %}
 <html>
 <head>
+    <script
+            type="text/javascript"
+            src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+
+    ></script>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <style id="compiled-css" type="text/css">
+        .Button {
+            font-family: Calibri, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            width: 160px;
+            height: 25px;
+            background: grey;
+            color: white
+        }
+
+        .selected {
+            color: white;
+            background: green
+        }
+
+        button#cssColorChange:active {
+            color: white;
+            background: red
+        }
+
+        clipPath#Dhaka:active{
+             color: white;
+            background: red
+        }
+
+
+
+    </style>
+
+
 </head>
-<style>.back-red {
-    background-color: red;
-}</style>
+
 <title>SVG MAP</title>
 <body>
 <div class="map" align="center">
@@ -17,8 +49,10 @@
     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          x="0px" y="0px"
          width="700px" height="800px" viewBox="0 0 700 800" enable-background="new 0 0 700 800" xml:space="preserve">
-        <a xlink:title="Dhaka" xlink:href="" id="Dhaka">
-    <polygon fill="#26bfff" points="398.805,371.368 399.076,370.818 399.076,369.998 398.805,369.727 397.713,369.454 396.617,368.905
+
+{#        <a xlink:title="Dhaka" xlink:href="" id="Dhaka">#}
+            <clipPath id="Dhaka">
+                <polygon fill="#26bfff" points="398.805,371.368 399.076,370.818 399.076,369.998 398.805,369.727 397.713,369.454 396.617,368.905
 	396.346,368.905 395.801,369.454 395.254,369.727 394.98,369.998 394.703,370.27 394.434,370.818 393.887,371.092 393.338,371.368
 	393.068,371.639 392.244,371.368 391.424,371.639 390.881,371.639 390.881,371.092 390.881,370.544 390.338,369.998
 	390.338,369.454 390.061,369.178 389.781,369.178 389.518,369.454 388.967,369.454 388.693,369.727 388.145,369.998
@@ -117,7 +151,9 @@
 	401.531,377.921 400.99,377.378 400.99,377.104 400.719,377.104 400.719,376.557 400.445,376.282 400.172,376.282 399.893,376.01
 	399.625,376.01 399.625,375.464 399.893,375.191 400.172,374.919 400.445,374.37 400.445,374.096 400.445,373.553 400.172,373.277
 	399.893,373.003 399.625,372.732 399.076,372.457 399.076,372.186 "/>
-</a>
+            </clipPath>
+
+
 
         <polygon fill="#FF0302" points="395.525,407.166 396.346,406.072 397.158,405.254 397.713,404.979 398.531,404.979 398.805,404.707
 	399.35,404.434 399.625,404.434 400.445,404.16 400.445,403.889 400.445,403.342 400.172,402.791 399.896,402.518 399.625,402.518
@@ -14521,13 +14557,16 @@
 <button onclick="gfg_Run()">
     Dhaka
 </button>
+<button class="Button" id="jQueryColorChange">Click to change color</button>
+<br><br>
+<button class="Button" id="cssColorChange">Click & hold to change color</button>
 </body>
 <script type="text/javascript">
     var color = ["#222f3e", "#333333"]
     var i = 0
     document.querySelector('button').addEventListener("click", function () {
         i = i < color.length ? ++i : 0;
-        document.querySelector('#Dhaka').style.background = color[i]
+        document.querySelector('body').style.background = color[i]
     })
 
     function selected(divObj) {
@@ -14535,6 +14574,17 @@
     }
 
 
-
 </script>
+
+<script type="text/javascript">//<![CDATA[
+
+$(window).load(function () {
+
+    $("button#jQueryColorChange  ").click(function () {
+        $(this).toggleClass("selected");
+    });
+
+});
+
+//]]></script>
 </html>
