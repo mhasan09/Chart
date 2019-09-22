@@ -108,7 +108,7 @@
       <workItem from="1568879449910" duration="9418000" />
       <workItem from="1569124192420" duration="75000" />
       <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="23837000" />
+      <workItem from="1569124305756" duration="27019000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -348,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569153431783</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="double click reset added">
+      <created>1569154366094</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1569154366094</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +375,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="specific values added for different products" />
     <MESSAGE value="led chart added" />
     <MESSAGE value="added requirements.txt" />
     <MESSAGE value="bangladesh maps added" />
@@ -393,6 +399,7 @@
     <MESSAGE value="polygon issue fixed" />
     <MESSAGE value="polygon issue fixed v2" />
     <MESSAGE value="onclick worked on dhaka" />
-    <option name="LAST_COMMIT_MESSAGE" value="onclick worked on dhaka" />
+    <MESSAGE value="double click reset added" />
+    <option name="LAST_COMMIT_MESSAGE" value="double click reset added" />
   </component>
 </project>

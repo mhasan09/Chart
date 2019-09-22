@@ -29,13 +29,7 @@
             background: red
         }
 
-
-
-
-
     </style>
-
-
 </head>
 
 <title>SVG MAP</title>
@@ -45,10 +39,9 @@
     <!-- Generator: Adobe Illustrator 15.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
          x="0px" y="0px"
-         width="700px" height="800px" viewBox="0 0 700 800" enable-background="new 0 0 700 800" xml:space="preserve">
+         width="100%" height="100%" viewBox="0 0 700 800" enable-background="new 0 0 700 800" xml:space="preserve">
 
-{#        <a xlink:title="Dhaka" xlink:href="" id="Dhaka">#}
-           <polygon fill="#26bfff" id="DD" onclick=DD.style.fill="yellow" ondblclick="myFunction()" points="398.805,371.368 399.076,370.818 399.076,369.998 398.805,369.727 397.713,369.454 396.617,368.905
+           <polygon fill="#26bfff" id="DD" onclick="color_switch_Dhaka('DD','Division','District')"  points="398.805,371.368 399.076,370.818 399.076,369.998 398.805,369.727 397.713,369.454 396.617,368.905
 	396.346,368.905 395.801,369.454 395.254,369.727 394.98,369.998 394.703,370.27 394.434,370.818 393.887,371.092 393.338,371.368
 	393.068,371.639 392.244,371.368 391.424,371.639 390.881,371.639 390.881,371.092 390.881,370.544 390.338,369.998
 	390.338,369.454 390.061,369.178 389.781,369.178 389.518,369.454 388.967,369.454 388.693,369.727 388.145,369.998
@@ -265,7 +258,7 @@
 	425.861,335.564 425.861,335.018 425.861,334.469 426.408,334.198 426.408,333.376 426.682,332.833 426.135,332.286
 	426.135,332.014 426.408,331.191 426.682,330.917 426.408,330.646 425.861,330.098 425.32,329.555 424.766,329.277 424.49,328.73
 	424.225,327.911 424.225,327.368 424.766,326.546 424.766,326 425.037,325.727 425.592,325.452 425.592,324.907 "/>
-        <polygon fill="#FF4942" points="378.307,319.439 379.402,318.62 380.49,317.799 381.318,317.253 381.861,316.705 382.135,316.705
+        <polygon fill="#FF4942" id="Gazipur" onclick=Gazipur.style.fill="yellow" ondblclick="myFunction_Gazipur()" points="378.307,319.439 379.402,318.62 380.49,317.799 381.318,317.253 381.861,316.705 382.135,316.705
 	382.406,316.705 382.682,316.705 383.229,316.705 383.771,316.979 384.322,316.979 384.592,316.979 385.145,316.979
 	385.691,316.705 385.691,316.434 385.959,316.434 386.232,316.434 386.232,316.705 386.506,316.979 386.506,317.253
 	386.506,317.525 386.506,318.073 386.779,318.346 387.053,318.62 387.598,318.891 387.879,318.62 388.693,318.346 388.693,318.073
@@ -14558,7 +14551,7 @@
 <button onclick=myFunction()>Reset</button>
 <br><br>
 
-<button onclick=DD.style.fill="yellow">333</button>
+<button onclick=DD.style.fill="yellow">333</button>                                                                            <!-- color change for selected id -->
 </body>
 <script type="text/javascript">
     var color = ["#222f3e", "#333333"]
@@ -14582,7 +14575,21 @@ function myFunction(){                                                          
     var dhakacolor = document.getElementById("DD");
     dhakacolor.style.fill="#26bfff";
 }
+function myFunction_Gazipur(){                                                                                                          <!-- Reset -->
+    var dhakacolor = document.getElementById("Gazipur");
+    dhakacolor.style.fill="#26bfff";
+}
+function color_switch_Dhaka(var id,var division,var district){
 
+    console.log(id,division,district);
+
+        var dhakacolor = document.getElementById("DD");
+    dhakacolor.style.fill="#999999";
+
+        var dhakacolor = document.getElementById("Gazipur");
+    dhakacolor.style.fill="#999999";
+
+}
 </script>
 
 </html>
