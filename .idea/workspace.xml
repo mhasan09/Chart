@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5870af7d-bee9-4d5b-a44f-d30928b8ddf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/svg4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/map_svg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/map_svg.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,7 +108,7 @@
       <workItem from="1568879449910" duration="9418000" />
       <workItem from="1569124192420" duration="75000" />
       <workItem from="1569124274808" duration="4000" />
-      <workItem from="1569124305756" duration="19914000" />
+      <workItem from="1569124305756" duration="22097000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1568618016915</created>
@@ -322,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569146909101</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="clippath issue">
+      <created>1569150024781</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1569150024781</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +347,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed in stack bar chart" />
     <MESSAGE value="gaugechart added" />
     <MESSAGE value="philalpha color for gauge chart" />
     <MESSAGE value="bubbble chart added" />
@@ -367,6 +371,7 @@
     <MESSAGE value="bubble chart fixing v4" />
     <MESSAGE value="slider ticker up" />
     <MESSAGE value="grey svg map added" />
-    <option name="LAST_COMMIT_MESSAGE" value="grey svg map added" />
+    <MESSAGE value="clippath issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="clippath issue" />
   </component>
 </project>
