@@ -9,4 +9,5 @@ body {
 
 }
 
+	#selection {width:200px; min-height:200px; border: 1px solid black; float: left; padding: 0 10px 10px 10px; margin-left:50px;}
 

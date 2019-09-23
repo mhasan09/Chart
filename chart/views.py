@@ -2312,3 +2312,10 @@ def bubble_slide(request):
 
 def svg_map(request):
     return render(request,"map_svg.html")
+
+def table(request):
+    return render(request,"table.html")
+
+
+def svgid(request):
+    return render(request,"svg_id.html")
