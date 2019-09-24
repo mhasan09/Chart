@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import chart,barchart,stackedbarchart,gaugechart,bubblechart,bubblechart2,ledChart,chart2,barisal,dhaka,rajshahi,\
    khulna,sylhet,mymensingh,rangpur,mymensingh,chittagong,chart3,chart4,chart5,linkedchart,bubblechart3,ledChart2,bubble_slide,bubblechart4,\
-   svg_map,table,svgid
+   svg_map,table,svgid,fetch_svg
 
 urlpatterns = [
    path('chart',chart,name="chart"),
@@ -47,4 +47,5 @@ urlpatterns = [
    path('svg',svg_map,name="bubble_slide"),
    path('table',table,name="bubble_slide"),
    path('svgid',svgid,name="bubble_slide"),
+   path('fsvg',fetch_svg,name="bubble_slide"),
 ]

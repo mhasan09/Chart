@@ -2314,8 +2314,12 @@ def svg_map(request):
     return render(request,"map_svg.html")
 
 def table(request):
-    return render(request,"table.html")
+    return render(request,"table2.html")
 
 
 def svgid(request):
     return render(request,"svg_id.html")
+
+def fetch_svg(request):
+    return render(request,"fetchfrommap.html")
+

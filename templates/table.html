@@ -1,80 +1,185 @@
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css">
+    <link rel="stylesheet"
+          href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
 
 
-    {#    #}
-    {#                <th scope="col">Division</th>#}
-    {#            <th scope="col">Dhaka</th>#}
-    {#            <th scope="col">Chittagong</th>#}
-    {#            <th scope="col">Rajshahi</th>#}
-    {#            <th scope="col">Barisal</th>#}
-    {#            <th scope="col">Mymensingh</th>#}
-    {#            <th scope="col">Sylhet</th>#}
-    {#            <th scope="col">Rangpur</th>#}
-
+    <!-- Latest compiled and minified CSS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+    <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
 </head>
-<body>
-<div class="container" style="width: 50%">
-    <table class="table" style="border-color: #333333">
-        <thead>
-        <tr>
+<style>
 
+    .fixed-table-body {
+        overflow-x: auto;
+        overflow-y: auto;
+        height: 32%;
+
+    }
+
+    .total-numbers {
+
+        margin-left: 90%;
+        background-color: #FF6B5E;
+        color: #ffffff;
+        float: right;
+    }
+    .container a{
+
+    }
+
+</style>
+<script>
+    var products = ["Rupchada","Teer","ACI" , "Pran" , "aaa"];
+    var units = ["290","3131","313","311","312"];
+    var cogs = ["Tk. 1313","Tk. 1313","Tk. 1313","Tk. 13","Tk. 211313"]
+    var sells = ["Tk. 313","Tk. 1813","Tk. 1313","Tk. 136","Tk. 41313"]
+    var gross = ["Tk. 113","Tk. 13813","Tk. 1113313","Tk. 241313","Tk. 41313"]
+    for(var i in products){
+        document.write(products[i]+"<br>")
+    }
+
+</script>
+<body>
+
+<div class="container">
+
+
+    <div id="toolbar">
+        <select class="form-control">
+            <option value="">Export Basic</option>
+            <option value="all">Export All</option>
+            <option value="selected">Export Selected</option>
+        </select>
+    </div>
+
+    <table id="table"
+           data-toggle="table"
+           data-search="true"
+           data-filter-control="true"
+           data-show-export="true"
+           data-click-to-select="true"
+           data-toolbar="#toolbar"
+           class="table-responsive"
+           data-show-button-icons="true"
+
+    >
+
+        <thead>
+
+        <tr>
+            <button class="total-numbers" onclick="xb()">28 Products</button>
+            <th data-field="state" data-checkbox="true"></th>
+            <th data-field="prenom" data-sortable="true">Product Name</th>
+            <th data-field="date" data-sortable="true">Unit Sold</th>
+            <th data-field="examen" data-sortable="true">COGS</th>
+            <th data-field="sales" data-sortable="true">Sales</th>
+            <th data-field="gross" data-sortable="true">Gross</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <th scope="row">Dhaka</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+            <td>Rupchanda Oil</td>
+            <td id="1">131</td>
+            <td >Tk. 1,314</td>
+            <td >Tk. 1,314</td>
+            <td >Tk. 1,314</td>
         </tr>
         <tr>
-            <th scope="row">Chittagong</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+            <td>ACI Salt</td>
+            <td id="2">313</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
         </tr>
         <tr>
-            <th scope="row">Rajshahi</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+            <td>7 Up</td>
+            <td id="3">4451</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+
         </tr>
         <tr>
-            <th scope="row">Barisal</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
+            <td>Napa</td>
+            <td id="4">3131</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+
         </tr>
         <tr>
-            <th scope="row">Khulna</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+            <td>Frozen Samosa</td>
+            <td id="5">742</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+            <td>Tk. 1,314</td>
+
+
         </tr>
-        <tr>
-            <th scope="row">Sylhet</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        <tr>
-            <th scope="row">Rangpur</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">Mymensingh</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
+
+
         </tbody>
+
     </table>
+        <div class="container a" style="border:1px solid;border-color: #dddddd; width: 100%;height: 4%;border-radius: 4px">
+        <h6><i>Sales and Profit are shown at product level</i></h6>
+    </div>
+
 </div>
 
 </body>
+<script>
+    //exporte les données sélectionnées
+    var $table = $('#table');
+    $(function () {
+        $('#toolbar').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+    var trBoldBlue = $("table");
+
+    $(trBoldBlue).on("click", "tr", function () {
+        $(this).toggleClass("bold-blue");
+    });
+
+
+</script>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTable").rows.length;
+        document.getElementById("demo").innerHTML = "Found " + x + " tr elements in the table.";
+    }
+
+
+</script>
+
+
+<script>
+    function xb(tk) {
+        document.getElementById("1").innerHTML = "welcome"
+        document.getElementById("2").innerHTML = "welcome"
+        document.getElementById("3").innerHTML = "welcome"
+        document.getElementById("4").innerHTML = "welcome"
+        document.getElementById("5").innerHTML = "welcome"
+
+    }
+</script>
+
 </html>
