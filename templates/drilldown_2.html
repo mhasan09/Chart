@@ -1,0 +1,209 @@
+{% extends 'pinkman/base.html' %}
+{% load staticfiles %}
+
+{% block custom-css %}
+
+    <style>
+        h6 {
+            font-family: 'Titillium Web', sans-serif;
+            color: #417505;
+            margin-left: 5%;
+        }
+
+        #edit-1 {
+            margin-left: 20%;
+            font-family: 'Titillium Web', sans-serif;
+            border-radius: 5px;
+            color: #26bfff;
+            border-color: #26bfff;
+
+        }
+
+        #selected-item {
+            margin-left: 14%;
+            font-family: 'Titillium Web', sans-serif;
+            color: #333333;
+        }
+
+        #left-area {
+            margin-top: 40%;
+        }
+
+        .map {
+            float: left;
+            align: center;
+            height: 59%;
+            width: 30%;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        #myInput {
+
+            width: 60%;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 12px 20px 12px 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 57%;
+            line-height: 14px;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+
+
+    </style>
+
+
+{% endblock %}
+
+
+{% block custom-scripts %}
+
+{% endblock %}
+
+
+{% block page-content %}
+
+
+    <div class="hk-pg-wrapper">
+        <!-- Container -->
+        <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
+            <!-- Row -->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hk-row">
+                        <div class="col-lg-12">
+                            <div class="hk-row">
+                                <div class="col-lg-4">
+                                    <section class="hk-sec-wrapper" style="height:1500px; width: 105%">
+                                        <div class="container" id="left-area">
+                                            <div class="row">
+                                                <i class="fa fa-circle-thin" aria-hidden="true"></i>
+
+                                                <h6>Select Geography</h6>
+                                                <button id="edit-1">Edit</button>
+                                            </div>
+                                            <div class="row">
+                                                <h6 id="selected-item">Dhaka</h6>
+                                            </div>
+                                        </div>
+
+
+                                    </section>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <section class="hk-sec-wrapper" style="height:1500px;width: 105%">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="map">
+                                                    {% include 'pinkman/map.html' %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="text" id="myInput" onkeyup="myFunction()"
+                                               placeholder="" title="Type in a name">
+
+                                        <ul class="Division" id="myUL">
+                                            <li><a href="#">Dhaka</a>
+                                                <ul class="District">
+                                                    <li><a href="#">Narayanganj</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Chittagong</a></li>
+                                            <li><a href="#">Rajshahi</a></li>
+                                            <li><a href="#">Khulna</a></li>
+                                            <li><a href="#">Barisal</a></li>
+                                            <li><a href="#">Sylhet</a></li>
+                                            <li><a href="#">Rangpur</a></li>
+                                            <li><a href="#">Mymensingh</a></li>
+                                        </ul>
+
+
+                                    </section>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <section class="hk-sec-wrapper" style="height:1500px;width: 105%">
+
+                                    </section>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('ul.Division').hide();
+
+            $('li').click(function (event) {
+                event.stopPropagation();
+                $('>ul', this).toogle();
+
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+{% endblock %}
+

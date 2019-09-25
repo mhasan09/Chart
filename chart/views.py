@@ -2323,3 +2323,5 @@ def svgid(request):
 def fetch_svg(request):
     return render(request,"fetchfrommap.html")
 
+def drillDown(request):
+    return render(request,'drill-down.html')
