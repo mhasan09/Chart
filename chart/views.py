@@ -2325,3 +2325,6 @@ def fetch_svg(request):
 
 def drillDown(request):
     return render(request,'drill-down.html')
+
+def drillDown_test(request):
+    return render(request,'drilldown_test.html')

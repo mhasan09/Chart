@@ -1,0 +1,58 @@
+<html>
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul{
+            list-style: none;
+            margin: 0;
+        }
+        .menu ul li{
+            padding: 15px;
+            position: relative;
+            width: 200px ;
+            background-color: #34495E ;
+            border-top: 1px solid #BDC3C7;
+        }
+        .menu ul ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all 0.3s;
+            left: 80%;
+            top : -2%;
+
+        }
+        .menu ul li a{
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .menu ul li:hover > ul{
+                opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li><a href="">Dhaka</a></li>
+        <li><a href="">Chittagong</a>
+            <ul>
+                <li><a href="">Rangmati</a></li>
+                <li><a href="">Bandarban</a></li>
+            </ul>
+        </li>
+        <li><a href="">Rajshahi</a></li>
+        <li><a href="">Khulna</a></li>
+        <li><a href="">Barisal</a></li>
+        <li><a href="">Sylhet</a></li>
+        <li><a href="">Rangpur</a></li>
+        <li><a href="">Mymensingh</a></li>
+    </ul>
+</div>
+</body>
+</html>
