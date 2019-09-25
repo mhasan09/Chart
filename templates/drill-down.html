@@ -1,148 +1,156 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Bootstrap multilevel dropdown menu</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Bootstrap multilevel dropdown menu</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <script
-    type="text/javascript"
-    src="//code.jquery.com/jquery-1.11.0.js"
+    <script
+            type="text/javascript"
+            src="//code.jquery.com/jquery-1.11.0.js"
 
-  ></script>
+    ></script>
 
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
-  <style id="compiled-css" type="text/css">
-      .dropdown-menu>li
-{	position:relative;
-	-webkit-user-select: none; /* Chrome/Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	/* Rules below not implemented in browsers yet */
-	-o-user-select: none;
-	user-select: none;
-	cursor:pointer;
-}
-.dropdown-menu .sub-menu {
-    left: 100%;
-    position: absolute;
-    top: 0;
-    display:none;
-    margin-top: -1px;
-	border-top-left-radius:0;
-	border-bottom-left-radius:0;
-	border-left-color:#fff;
-	box-shadow:none;
+    <style id="compiled-css" type="text/css">
+        .dropdown-menu > li {
+            position: relative;
+            -webkit-user-select: none; /* Chrome/Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+ */
+            /* Rules below not implemented in browsers yet */
+            -o-user-select: none;
+            user-select: none;
+            cursor: pointer;
+        }
 
-
-
-}
-.right-caret:after
- {	content:"";
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-left: 4px solid orange;
-    display: inline-block;
-    height: 0;
-    opacity: 0.8;
-    vertical-align: middle;
-    width: 0;
-	margin-left:5px;
-}
-.left-caret:after
-{	content:"";
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-right: 4px solid orange;
-    display: inline-block;
-    height: 0;
-    opacity: 0.8;
-    vertical-align: middle;
-    width: 0;
-	margin-left:5px;
-}
-  </style>
+        .dropdown-menu .sub-menu {
+            left: 100%;
+            position: absolute;
+            top: 0;
+            display: none;
+            margin-top: -1px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left-color: #fff;
+            box-shadow: none;
 
 
-  <!-- TODO: Missing CoffeeScript 2 -->
+        }
 
-  <script type="text/javascript">//<![CDATA[
+        .right-caret:after {
+            content: "";
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid transparent;
+            border-left: 4px solid orange;
+            display: inline-block;
+            height: 0;
+            opacity: 0.8;
+            vertical-align: middle;
+            width: 0;
+            margin-left: 5px;
+        }
 
-    $(window).load(function(){
+        .left-caret:after {
+            content: "";
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid transparent;
+            border-right: 4px solid orange;
+            display: inline-block;
+            height: 0;
+            opacity: 0.8;
+            vertical-align: middle;
+            width: 0;
+            margin-left: 5px;
+        }
+    </style>
 
-$(function(){
-	$(".dropdown-menu > li > a.trigger").on("click",function(e){
-		var current=$(this).next();
-		var grandparent=$(this).parent().parent();
-		if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
-			$(this).toggleClass('right-caret left-caret');
-		grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
-		grandparent.find(".sub-menu:visible").not(current).hide();
-		current.toggle();
-		e.stopPropagation();
-	});
-	$(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
-		var root=$(this).closest('.dropdown');
-		root.find('.left-caret').toggleClass('right-caret left-caret');
-		root.find('.sub-menu:visible').hide();
-	});
-});
 
-    });
+    <!-- TODO: Missing CoffeeScript 2 -->
 
-  //]]></script>
 
 </head>
 <body>
-    <div class="dropdown" style="position:relative">
-	<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Click Here <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li>
-			<a class="trigger right-caret">Dhaka</a>
-			<ul class="dropdown-menu sub-menu">
-				<li><a href="#">ManikGanj</a></li>
-				<li><a href="#">Tangail</a></li>
-
-
-			</ul>
-		</li>
-		<li>
+{#<input type="text" id="myInput" onkeyup="myFunction()" placeholder="" title="Type in a name">#}
+<div class="dropdown" style="position:relative">
+    <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Click Here <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li>
+            <a class="trigger right-caret">Dhaka</a>
+            <ul class="dropdown-menu sub-menu">
+                <li><a href="#">ManikGanj</a></li>
+                <li><a href="#">Tangail</a></li>
+            </ul>
+        </li>
+        <li>
             <a class="trigger right-caret">Chittagong</a>
             <ul class="dropdown-menu sub-menu">
                 <li><a href="#">Bandarban</a></li>
                 <li><a href="#">Rangamati</a></li>
             </ul>
         </li>
-		<li><a href="#">Rajshahi</a></li>
-		<li><a href="#">Khulna</a></li>
-		<li><a href="#">Barisal</a></li>
-		<li><a href="#">Sylhet</a></li>
-		<li><a href="#">Rangpur</a></li>
-		<li><a href="#">Mymensingh</a></li>
-	</ul>
+        <li><a href="#">Rajshahi</a></li>
+        <li><a href="#">Khulna</a></li>
+        <li><a href="#">Barisal</a></li>
+        <li><a href="#">Sylhet</a></li>
+        <li><a href="#">Rangpur</a></li>
+        <li><a href="#">Mymensingh</a></li>
+    </ul>
 </div>
 
 
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "e02t2jcc"
-      }], "*")
-    }
+<script type="text/javascript">//<![CDATA[
 
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
+$(window).load(function () {
+
+    $(function () {
+        $(".dropdown-menu > li > a.trigger").on("click", function (e) {
+            var current = $(this).next();
+            var grandparent = $(this).parent().parent();
+            if ($(this).hasClass('left-caret') || $(this).hasClass('right-caret'))
+                $(this).toggleClass('right-caret left-caret');
+            grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
+            grandparent.find(".sub-menu:visible").not(current).hide();
+            current.toggle();
+            e.stopPropagation();
+        });
+        $(".dropdown-menu > li > a:not(.trigger)").on("click", function () {
+            var root = $(this).closest('.dropdown');
+            root.find('.left-caret').toggleClass('right-caret left-caret');
+            root.find('.sub-menu:visible').hide();
+        });
+    });
+
+});
+
+//]]></script>
+
+
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("dropdown-menu");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
 </body>
 </html>
