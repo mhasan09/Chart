@@ -2324,4 +2324,7 @@ def fetch_svg(request):
     return render(request,"fetchfrommap.html")
 
 def drillDown(request):
-    return render(request,'drilldown_3.html')
+    return render(request,'drill-down.html')
+
+def drillDown_test(request):
+    return render(request,'drilldown_test.html')
