@@ -2328,3 +2328,5 @@ def drillDown(request):
 
 def drillDown_test(request):
     return render(request,'drilldown_test.html')
+def onclickev(request):
+    return render(request,'shadow_clone.html')
