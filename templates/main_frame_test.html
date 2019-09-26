@@ -101,6 +101,7 @@
 
         #tablebox {
             border: 1px solid #dddddd;
+
         }
 
 
@@ -291,13 +292,13 @@
                                                 </tr>
                                                 <tr>
                                                     <td id="qq"></td>
-                                                    <td><i class="fa fa-times-circle" aria-hidden="true" id="2"></i>
+                                                    <td id="2" onclick="pqrremove()">
 </td>
 
                                                 </tr>
                                                 <tr>
                                                     <td id="rr"></td>
-                                                    <td><i class="fa fa-times-circle" aria-hidden="true" id="3"></i>
+                                                    <td id="3" onclick="abcremove()">
 </td>
 
                                                 </tr>
@@ -378,21 +379,32 @@
     <script>
         function xyz() {
              document.getElementById("tt").innerHTML = "Kishoreganj";
-             document.getElementById("1").innerHTML = "<i class=\"fa fa-times-circle\" aria-hidden=\"true\" id=\"3\">";
+             document.getElementById("1").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
         function pqr() {
              document.getElementById("qq").innerHTML = "Manikganj";
+             document.getElementById("2").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
         function abc() {
              document.getElementById("rr").innerHTML = "Munshiganj";
+             document.getElementById("3").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
         function xyzremove() {
             document.getElementById("tt").innerHTML = "";
            document.getElementById('1').remove();
            this.remove();
 
+        }
+             function pqrremove() {
+            document.getElementById("qq").innerHTML = "";
+           document.getElementById('2').remove();
+           this.remove();
 
-
+        }
+             function abcremove() {
+            document.getElementById("rr").innerHTML = "";
+           document.getElementById('3').remove();
+           this.remove();
 
         }
     </script>
