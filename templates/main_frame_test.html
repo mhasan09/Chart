@@ -93,18 +93,25 @@
             margin-top: 2%;
         }
 
+
         #binbox {
 
             margin-top: 147%;
             width: 100%;
+
         }
 
         #tablebox {
             border: 1px solid #dddddd;
+            position: absolute;
 
         }
 
-
+        .table {
+            height: 20%;
+            width: 50%;
+            line-height: 1.3px;
+        }
 
 
     </style>
@@ -167,9 +174,12 @@
                                                     <ul>
                                                         <li><a href="">Dhaka</a></li>
                                                         <li><a href="">Gazipur</a></li>
-                                                        <li onclick="xyz()"><a href="javascript:void(0)">Kishoreganj</a></li>
-                                                        <li onclick="pqr()"><a href="javascript:void(0)">Manikganj</a></li>
-                                                        <li onclick="abc()"><a href="javascript:void(0)">Munshiganj</a></li>
+                                                        <li onclick="xyz()"><a href="javascript:void(0)">Kishoreganj</a>
+                                                        </li>
+                                                        <li onclick="pqr()"><a href="javascript:void(0)">Manikganj</a>
+                                                        </li>
+                                                        <li onclick="abc()"><a href="javascript:void(0)">Munshiganj</a>
+                                                        </li>
                                                         <li><a href="javascript:void(0)">Narayanganj</a></li>
                                                         <li><a href="">Narsingdi</a></li>
                                                         <li><a href="">Tangail</a></li>
@@ -272,7 +282,7 @@
                                 <div class="col-lg-4">
                                     <section class="hk-sec-wrapper" style="height:1500px;width: 105%">
                                         <div class="container" id="binbox">
-                                            <table class="table" id="tablebox">
+                                            <table class="table table-responsive" id="tablebox">
                                                 <thead>
                                                 <tr>
 
@@ -286,20 +296,60 @@
 
                                                     <td id="tt"></td>
                                                     <td id="1" onclick="xyzremove()"></td>
-</td>
+                                                    </td>
 
 
                                                 </tr>
                                                 <tr>
                                                     <td id="qq"></td>
                                                     <td id="2" onclick="pqrremove()">
-</td>
+                                                    </td>
 
                                                 </tr>
                                                 <tr>
                                                     <td id="rr"></td>
                                                     <td id="3" onclick="abcremove()">
-</td>
+                                                    </td>
+
+                                                </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
+
+                                                </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
+
+                                                </tr>
+                                                   </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
+
+                                                </tr>
+                                                   </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
+
+                                                </tr>
+                                                   </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
+
+                                                </tr>
+                                                   </tr>
+                                                   <tr>
+                                                    <td></td>
+                                                    <td>
+                                                    </td>
 
                                                 </tr>
                                                 </tbody>
@@ -378,33 +428,38 @@
 
     <script>
         function xyz() {
-             document.getElementById("tt").innerHTML = "Kishoreganj";
-             document.getElementById("1").innerHTML = "<i class=\"fa fa-times-circle\" >";
+            document.getElementById("tt").innerHTML = "Dhaka  >>  Kishoreganj";
+            document.getElementById("1").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
+
         function pqr() {
-             document.getElementById("qq").innerHTML = "Manikganj";
-             document.getElementById("2").innerHTML = "<i class=\"fa fa-times-circle\" >";
+            document.getElementById("qq").innerHTML = "Dhaka  >>  Manikganj";
+            document.getElementById("2").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
+
         function abc() {
-             document.getElementById("rr").innerHTML = "Munshiganj";
-             document.getElementById("3").innerHTML = "<i class=\"fa fa-times-circle\" >";
+            document.getElementById("rr").innerHTML = "Dhaka  >>  Munshiganj";
+            document.getElementById("3").innerHTML = "<i class=\"fa fa-times-circle\" >";
         }
+
         function xyzremove() {
             document.getElementById("tt").innerHTML = "";
-           document.getElementById('1').remove();
-           this.remove();
+            document.getElementById('1').remove();
+            this.remove();
 
         }
-             function pqrremove() {
+
+        function pqrremove() {
             document.getElementById("qq").innerHTML = "";
-           document.getElementById('2').remove();
-           this.remove();
+            document.getElementById('2').remove();
+            this.remove();
 
         }
-             function abcremove() {
+
+        function abcremove() {
             document.getElementById("rr").innerHTML = "";
-           document.getElementById('3').remove();
-           this.remove();
+            document.getElementById('3').remove();
+            this.remove();
 
         }
     </script>
