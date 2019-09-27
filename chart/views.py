@@ -2333,3 +2333,6 @@ def onclickev(request):
 
 def multishadowclone(request):
     return render(request,'multishadowclone.html')
+
+def divtest(request):
+    return render(request,'division_test.html')

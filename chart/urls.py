@@ -50,4 +50,5 @@ urlpatterns = [
    path('drill',drillDown_test,name="bubble_slide"),
    path('on',onclickev,name="bubble_slide"),
    path('multi',multishadowclone,name="bubble_slide"),
+   path('div',divtest,name="bubble_slide"),
 ]
