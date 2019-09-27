@@ -2336,3 +2336,7 @@ def multishadowclone(request):
 
 def divtest(request):
     return render(request,'division_test.html')
+
+
+def clicktest(request):
+    return render(request,'dashboard_n.html')

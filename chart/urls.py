@@ -51,4 +51,5 @@ urlpatterns = [
    path('on',onclickev,name="bubble_slide"),
    path('multi',multishadowclone,name="bubble_slide"),
    path('div',divtest,name="bubble_slide"),
+   path('click',clicktest,name="bubble_slide"),
 ]
