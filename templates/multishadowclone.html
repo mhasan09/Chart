@@ -1,0 +1,25 @@
+<hmtl>
+    <head>
+
+    </head>
+    <body>
+    <ul id="ubody">
+
+    </ul>
+    </body>
+    <script>
+        var output = ''
+            var a = ["Dhaka","Chittagong","Rajshahi","Khulna"]
+        function abc(){
+                for (var i in a){
+                    var x = '<li><a href="">'+a[i]+'</a></li>\n'
+                    output += x
+                    console.log("output"+output);
+                }
+                document.getElementById("ubody").innerHTML = output;
+
+
+        }
+        abc();
+        </script>
+</hmtl>
