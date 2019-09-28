@@ -46,7 +46,6 @@ urlpatterns = [
    path('table',table,name="bubble_slide"),
    path('svgid',svgid,name="bubble_slide"),
    path('fsvg',fetch_svg,name="bubble_slide"),
-   path('drilldown',drillDown,name="bubble_slide"),
    path('drill',drillDown_test,name="bubble_slide"),
    path('on',onclickev,name="bubble_slide"),
    path('multi',multishadowclone,name="bubble_slide"),
