@@ -1,25 +1,177 @@
 <hmtl>
     <head>
+        <style>
+              .menu ul ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all 0.3s;
+            left: 80%;
+            top: -2%;
 
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid #BDC3C7;
+        }
+
+        .menu ul li a {
+            color: #333333;
+            text-decoration: none;
+            padding-left: 15%;
+        }
+
+        .menu ul li:hover > ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .checkbox {
+            float: left;
+            margin-top: 2%;
+        }
+
+        #select_all {
+            float: left;
+            margin-top: 2%;
+        }
+        </style>
     </head>
     <body>
-    <ul id="ubody">
+   <div class="menu">
+                <ul id="myUL">
+                    <li><a href=""><input type="checkbox" id="select_all"/> Selecct All</a>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Dhaka</a>
+                        <ul>
+                            <li><a href="">Dhaka</a></li>
+                            <li><a href="">Gazipur</a></li>
+                            <li onclick="xyz()"><a href="javascript:void(0)">Kishoreganj</a>
+                            </li>
+                            <li onclick="pqr()"><a href="javascript:void(0)">Manikganj</a>
+                            </li>
+                            <li onclick="abc()"><a href="javascript:void(0)">Munshiganj</a>
+                            </li>
+                            <li><a href="javascript:void(0)">Narayanganj</a></li>
+                            <li><a href="">Narsingdi</a></li>
+                            <li><a href="">Tangail</a></li>
+                            <li><a href="">Gopalganj</a></li>
+                            <li><a href="">Madaripur</a></li>
+                            <li><a href="">Rajbari</a></li>
+                            <li><a href="">Shariatpur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Chittagong</a>
+                        <ul>
+                            <li><a href="">Brahmanbaria</a></li>
+                            <li><a href="">Comilla</a></li>
+                            <li><a href="">Chandpur</a></li>
+                            <li><a href="">Lakshmipur</a></li>
+                            <li><a href="">Noakhali</a></li>
+                            <li><a href="">Feni</a></li>
+                            <li><a href="">Khagrachhari</a></li>
+                            <li><a href="">Rangamati</a></li>
+                            <li><a href="">Bandarban</a></li>
+                            <li><a href="">Chittagong</a></li>
+                            <li><a href="">CoxsBazar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Rajshahi</a>
 
-    </ul>
+                        <ul>
+                            <li><a href="">Bogura</a></li>
+                            <li><a href="">Chapainawabganj</a></li>
+                            <li><a href="">Joypurhat</a></li>
+                            <li><a href="">Naogaon</a></li>
+                            <li><a href="">Natore</a></li>
+                            <li><a href="">Pabna</a></li>
+                            <li><a href="">Rajshahi</a></li>
+                            <li><a href="">Sirajgonj</a></li>
+                            <li><a href="">Dinajpur</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Khulna</a>
+                        <ul>
+                            <li><a href="">Bagerhat</a></li>
+                            <li><a href="">Chuadanga</a></li>
+                            <li><a href="">Jessore</a></li>
+                            <li><a href="">Jhenaidah</a></li>
+                            <li><a href="">Khulna</a></li>
+                            <li><a href="">Kushtia</a></li>
+                            <li><a href="">Magura</a></li>
+                            <li><a href="">Meherpur</a></li>
+                            <li><a href="">Narail</a></li>
+                            <li><a href="">Satkhira</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Barisal</a>
+                        <ul>
+                            <li><a href="">Barisal</a></li>
+                            <li><a href="">Barguna</a></li>
+                            <li><a href="">Bhola</a></li>
+                            <li><a href="">Jhalokati</a></li>
+                            <li><a href="">Patuakhali</a></li>
+                            <li><a href="">Pirojpur</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Sylhet</a>
+                        <ul>
+                            <li><a href="">Habiganj</a></li>
+                            <li><a href="">Moulvibazar</a></li>
+                            <li><a href="">Sunamganj</a></li>
+                            <li><a href="">Sylhet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Rangpur</a>
+                        <ul>
+                            <li><a href="">Thakurgaon</a></li>
+                            <li><a href="">Rangpur</a></li>
+                            <li><a href="">Panchagarh</a></li>
+                            <li><a href="">Nilphamari</a></li>
+                            <li><a href="">Lalmonirhat</a></li>
+                            <li><a href="">Kurigram</a></li>
+                            <li><a href="">Gaibandha</a></li>
+                            <li><a href="">Sirajgonj</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><input class="checkbox" type="checkbox" name="check[]">Mymensingh</a>
+                        <ul>
+                            <li><a href="">Jamalpur</a></li>
+                            <li><a href="">Mymensingh</a></li>
+                            <li><a href="">Netrokona</a></li>
+                            <li><a href="">Sherpur</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
     </body>
     <script>
         var output = ''
-            var a = ["Dhaka","Chittagong","Rajshahi","Khulna"]
+            var a = ["Dhaka","Chittagong","Rajshahi","Khulna",'Barisal','Sylhet','Rangpur','Mymensingh'];
+        var dhaka = ['tangail','narayangankj']
+
         function abc(){
                 for (var i in a){
                     var x = '<li><a href="">'+a[i]+'</a></li>\n'
                     output += x
                     console.log("output"+output);
                 }
-                document.getElementById("ubody").innerHTML = output;
+                document.getElementById("myUL").innerHTML = output;
 
 
         }
+
         abc();
         </script>
 </hmtl>
