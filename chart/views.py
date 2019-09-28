@@ -2340,3 +2340,7 @@ def divtest(request):
 
 def clicktest(request):
     return render(request,'dashboard_n.html')
+
+
+def mainframe(request):
+    return render(request,'mainframe.html')
