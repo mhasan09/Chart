@@ -1,0 +1,84 @@
+<hmtl>
+    <head>
+        <style>
+              .menu ul ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all 0.3s;
+            left: 80%;
+            top: -2%;
+
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid #BDC3C7;
+        }
+
+        .menu ul li a {
+            color: #333333;
+            text-decoration: none;
+            padding-left: 15%;
+        }
+
+        .menu ul li:hover > ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .checkbox {
+            float: left;
+            margin-top: 2%;
+        }
+
+        #select_all {
+            float: left;
+            margin-top: 2%;
+        }
+        </style>
+    </head>
+    <body>
+   <div class="menu">
+                <ul id="myUL">
+{#
+                </ul>
+            </div>
+    </body>
+    <script>
+        var output = '';
+
+            var a = ["Dhaka","Chittagong","Rajshahi","Khulna",'Barisal','Sylhet','Rangpur','Mymensingh'];
+            var dhaka = ['tangail','narayangankj']
+
+        function division(){
+                for (var i in a){
+
+                    var x = '<ul><a href=""><input class="checkbox" type="checkbox" name="check[]">'+a[i]+'</a></ul>\n'
+                    var y = '<li><a href=""><input class="checkbox" type="checkbox" name="check[]">'+ dhaka[i]+'</a></li>\n'
+
+                    output += x+y
+                    console.log("output"+output);
+                }
+                document.getElementById("myUL").innerHTML = output;
+
+
+        }
+
+
+
+
+
+
+        division();
+
+        </script>
+</hmtl>

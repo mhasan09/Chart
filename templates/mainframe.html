@@ -127,7 +127,7 @@
         </div>
         <div class="col-6">
             <div class="map">
-                {% include 'maponly.html' %}
+                {% include 'dashboard_n.html' %}
             </div>
 
 
@@ -140,7 +140,7 @@
 
         </div>
         <div class="col-6">
-            <input type="text" id="myInput" onkeyup="myFunction()"
+            <input type="text" id="myInput" onkeyup="search()"
                    placeholder="" title="Type in a name">
             <div class="menu">
                 <ul id="myUL">
@@ -286,11 +286,12 @@
 </div>
 </body>
 
-<script>
 
-</script>
+
+
+
 <script>
-    function myFunction() {
+    function search() {
         var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
@@ -333,6 +334,10 @@
         });
     }
 </script>
+
+
+
+
 
 
 

@@ -53,4 +53,6 @@ urlpatterns = [
    path('div',divtest,name="bubble_slide"),
    path('click',clicktest,name="bubble_slide"),
    path('mainframe',mainframe,name="bubble_slide"),
+   path('sage',sage,name="bubble_slide"),
+   path('fetch',fetch,name="bubble_slide"),
 ]

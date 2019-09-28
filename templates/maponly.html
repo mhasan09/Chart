@@ -15013,4 +15013,195 @@
 
 
 </body>
+
+<script>
+
+
+    var dhakaDivisionMap = ['DhakaMap', 'GazipurMap', 'KishoreganjMap', 'ManikganjMap', 'MunshiganjMap', 'NarayanganjMap', 'NarsingdiMap', 'TangailMap', 'FaridpurMap', 'GopalganjMap', 'MadaripurMap', 'RajbariMap', 'ShariatpurMap'];
+    var chattogramDivisionMap = ['BrahmanbariaMap', 'ComillaMap', 'ChandpurMap', 'LakshmipurMap', 'NoakhaliMap', 'FeniMap', 'KhagrachhariMap', 'RangamatiMap', 'BandarbanMap', 'ChittagongMap', 'CoxsBazarMap'];
+    var rangpurDivisionMap = ['ThakurgaonMap', 'RangpurMap', 'PanchagarhMap', 'NilphamariMap', 'LalmonirhatMap', 'KurigramMap', 'GaibandhaMap', 'DinajpurMap'];
+    var rajshahiDivisionMap = ['BoguraMap', 'ChapainawabganjMap', 'JoypurhatMap', 'NaogaonMap', 'NatoreMap', 'PabnaMap', 'RajshahiMap', 'SirajgonjMap'];
+    var barisalDivisionMap = ['BarisalMap', 'BargunaMap', 'BholaMap', 'JhalokatiMap', 'PatuakhaliMap', 'PirojpurMap'];
+    var mymensinghDivisionMap = ['JamalpurMap', 'MymensinghMap', 'NetrokonaMap', 'SherpurMap'];
+
+    var sylhetDivisionMap = ['HabiganjMap', 'MoulvibazarMap', 'SunamganjMap', 'SylhetMap'];
+    var khulnaDivisionMap = ['BagerhatMap', 'ChuadangaMap', 'JessoreMap', 'JhenaidahMap', 'KhulnaMap', 'KushtiaMap', 'MaguraMap', 'MeherpurMap', 'NarailMap', 'SatkhiraMap'];
+
+
+    var division = "";
+    var dict_district = [];
+
+
+
+    function myFunction(id, district) {
+
+        var dhakacolor = document.getElementById(id);
+
+
+        if (dhakaDivisionMap.indexOf(id) >= 0 && division != "Dhaka") {
+
+            division = "Dhaka";
+
+
+            divisionColor("yellow", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (chattogramDivisionMap.indexOf(id) >= 0 && division != "Chattogram") {
+
+
+            division = "Chattogram";
+
+            divisionColor("yellow", chattogramDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (rangpurDivisionMap.indexOf(id) >= 0 && division != "Rangpur") {
+
+
+            division = "Rangpur";
+
+            divisionColor("yellow", rangpurDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (rajshahiDivisionMap.indexOf(id) >= 0 && division != "Rajshahi") {
+
+
+            division = "Rajshahi";
+
+            divisionColor("yellow", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (barisalDivisionMap.indexOf(id) >= 0 && division != "Barisal") {
+
+
+            division = "Barisal";
+
+            divisionColor("yellow", barisalDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (mymensinghDivisionMap.indexOf(id) >= 0 && division != "Mymensingh") {
+
+
+            division = "Mymensingh";
+
+            divisionColor("yellow", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (sylhetDivisionMap.indexOf(id) >= 0 && division != "Sylhet") {
+
+
+            division = "Sylhet";
+
+            divisionColor("yellow", sylhetDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+            divisionColor("#FFC0AF", khulnaDivisionMap)
+
+
+        } else if (khulnaDivisionMap.indexOf(id) >= 0 && division != "Khulna") {
+
+
+            division = "Khulna";
+
+            divisionColor("yellow", khulnaDivisionMap)
+            divisionColor("#FFC0AF", dhakaDivisionMap)
+            divisionColor("#FFC0AF", chattogramDivisionMap)
+            divisionColor("#FFC0AF", rajshahiDivisionMap)
+            divisionColor("#FFC0AF", barisalDivisionMap)
+            divisionColor("#FFC0AF", mymensinghDivisionMap)
+            divisionColor("#FFC0AF", sylhetDivisionMap)
+            divisionColor("#FFC0AF", rangpurDivisionMap)
+
+
+        } else if (dict_district.includes(id)) {
+
+
+            var index = dict_district.indexOf(id);
+            if (index !== -1) dict_district.splice(index, 1);
+
+            dhakacolor.style.fill = "#FFC0AF";
+
+
+        } else {
+
+            dict_district.push(id)
+            dhakacolor.style.fill = "#F85648";
+        }
+
+
+        var i;
+        for (i = 0; i < dict_district.length; i++) {
+
+            var mId = document.getElementById(dict_district[i]);
+            mId.style.fill = "#F85648";
+
+
+        }
+
+
+    }
+
+
+    function divisionColor(color, division) {
+
+        var i;
+
+        for (i = 0; i < division.length; i++) {
+
+            var mId = document.getElementById(division[i]);
+            mId.style.fill = color;
+
+
+        }
+
+    }
+
+
+</script>
+
 </html>

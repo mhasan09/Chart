@@ -2344,3 +2344,10 @@ def clicktest(request):
 
 def mainframe(request):
     return render(request,'mainframe.html')
+
+
+def sage(request):
+    return render(request,'sagejutsu.html')
+
+def fetch(request):
+    return render(request,'mapfetchtest.html')

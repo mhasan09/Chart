@@ -4,19 +4,20 @@
 </head>
 <body>
 <ul>
-    <li onclick="xyz()"><a href="">aahaorhaorhorah</a></li>
+    <li onclick="xyz('kk','bj diba babu ?')"><a href="">aahaorhaorhorah</a></li>
 
 </ul>
 
 <div id="abc">
-
+            <input type="text" id="xx"
+                   placeholder="" title="Type in a name">
 
 </div>
 <script>xyz()</script>
 </body>
 <script>
-    function xyz() {
-        document.getElementById("abc").innerHTML = "adadadada";
+    function xyz(id,ki_diba) {
+        document.getElementById("xx").value =  ki_diba;
 
     }
 </script>
