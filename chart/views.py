@@ -2351,3 +2351,7 @@ def sage(request):
 
 def fetch(request):
     return render(request,'mapfetchtest.html')
+
+
+def maprebuild(request):
+    return render(request,'maprebuild.html')
