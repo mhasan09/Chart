@@ -2361,3 +2361,6 @@ def dynamiconclick(request):
 
 def promotionbeta(request):
     return render(request,'promotion_beta.html')
+
+def checkbydivision(request):
+    return render(request,'check_by_division.html')

@@ -15149,7 +15149,7 @@
                         <ul class="kd" id="myUL">
                             <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/> Select All</a>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="DhakaDiv">Dhaka</a>
+                            <li id="DhakaDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Dhaka</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Dhaka">Dhaka</a></li>
                                     <li><a href="javascript:void(0)" id="Gazipur">Gazipur</a></li>
@@ -15212,7 +15212,7 @@
                                     <li><a href="javascript:void(0)" id="Satkhira">Satkhira</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="BarisalDiv">Barisal</a>
+                            <li ><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="BarisalDiv">Barisal</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Barisal">Barisal</a></li>
                                     <li><a href="javascript:void(0)" id="Barguna">Barguna</a></li>
@@ -15254,13 +15254,13 @@
                     </div>
         </div>
         <div class="col" id="right-middle">
-      <table id="bin">
+      <table class="table table-responsive" id="bin">
         <thead>
             <tr>
-                <th>Select Geography</th>
+                <th>Selected Geography</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
 
         </tbody>
     </table>
@@ -15535,12 +15535,15 @@
 
 </script>
 
+
+
 <script>
 
      $(document).ready(function(){
         $(".kd ul li").click(function(){
             var district = $(this).text();
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td><td></td></tr>";
+            console.log(district)
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
             $("table tbody").append(markup);
         });
 
@@ -15557,7 +15560,27 @@
 </script>
 
 
+<script>
 
+     $(document).ready(function(){
+        $(".map polygon").click(function(){
+            var district = $(this).attr("id");
+            console.log(district);
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+
+</script>
 
 
 
