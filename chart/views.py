@@ -2358,3 +2358,6 @@ def maprebuild(request):
 
 def dynamiconclick(request):
     return render(request,'mapdynamiconclick.html')
+
+def promotionbeta(request):
+    return render(request,'promotion_beta.html')
