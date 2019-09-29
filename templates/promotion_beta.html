@@ -15153,11 +15153,11 @@
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Dhaka">Dhaka</a></li>
                                     <li><a href="javascript:void(0)" id="Gazipur">Gazipur</a></li>
-                                    <li onclick="xyz()"><a href="javascript:void(0)" id="Kishoreganj">Kishoreganj</a>
+                                    <li><a href="javascript:void(0)" id="Kishoreganj">Kishoreganj</a>
                                     </li>
-                                    <li onclick="pqr()"><a href="javascript:void(0)" id="Manikganj">Manikganj</a>
+                                    <li><a href="javascript:void(0)" id="Manikganj">Manikganj</a>
                                     </li>
-                                    <li onclick="abc()"><a href="javascript:void(0)" id="Munshiganj">Munshiganj</a>
+                                    <li><a href="javascript:void(0)" id="Munshiganj">Munshiganj</a>
                                     </li>
                                     <li><a href="javascript:void(0)" id="Narayanganj">Narayanganj</a></li>
                                     <li><a href="javascript:void(0)" id="Narsingdi">Narsingdi</a></li>
@@ -15168,7 +15168,7 @@
                                     <li><a href="javascript:void(0)" id="Shariatpur">Shariatpur</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="ChittagongDiv">Chittagong</a>
+                            <li id="ChittagongDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Chittagong</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Brahmanbaria">Brahmanbaria</a></li>
                                     <li><a href="javascript:void(0)" id="Comilla">Comilla</a></li>
@@ -15183,7 +15183,7 @@
                                     <li><a href="javascript:void(0)" id="CoxsBazar">CoxsBazar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="RajshahiDiv">Rajshahi</a>
+                            <li id="RajshahiDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Rajshahi</a>
 
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Bogura">Bogura</a></li>
@@ -15198,7 +15198,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="KhulnaDiv">Khulna</a>
+                            <li id="KhulnaDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Khulna</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Bagerhat">Bagerhat</a></li>
                                     <li><a href="javascript:void(0)" id="Chuadanga">Chuadanga</a></li>
@@ -15212,7 +15212,7 @@
                                     <li><a href="javascript:void(0)" id="Satkhira">Satkhira</a></li>
                                 </ul>
                             </li>
-                            <li ><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="BarisalDiv">Barisal</a>
+                            <li id="BarisalDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Barisal</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Barisal">Barisal</a></li>
                                     <li><a href="javascript:void(0)" id="Barguna">Barguna</a></li>
@@ -15222,7 +15222,7 @@
                                     <li><a href="javascript:void(0)" id="Pirojpur">Pirojpur</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="SylhetDiv">Sylhet</a>
+                            <li id="SylhetDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Sylhet</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Habiganj">Habiganj</a></li>
                                     <li><a href="javascript:void(0)" id="Moulvibazar">Moulvibazar</a></li>
@@ -15230,7 +15230,7 @@
                                     <li><a href="javascript:void(0)" id="Sylhet">Sylhet</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="RangpurDiv">Rangpur</a>
+                            <li id="RangpurDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Rangpur</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Thakurgaon">Thakurgaon</a></li>
                                     <li><a href="javascript:void(0)" id="Rangpur">Rangpur</a></li>
@@ -15242,7 +15242,7 @@
                                     <li><a href="javascript:void(0)" id="Sirajgonj">Sirajgonj</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" id="MymensinghDiv">Mymensingh</a>
+                            <li id="MymensinghDiv"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Mymensingh</a>
                                 <ul>
                                     <li><a href="javascript:void(0)" id="Jamalpur">Jamalpur</a></li>
                                     <li><a href="javascript:void(0)" id="Mymensingh">Mymensingh</a></li>
@@ -15563,6 +15563,34 @@
 <script>
 
      $(document).ready(function(){
+        $(".kd li").click(function(){
+            var district = $(this).attr("id");
+            console.log(district)
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+     $(document).ready(function(){
         $(".map polygon").click(function(){
             var district = $(this).attr("id");
             console.log(district);
@@ -15581,6 +15609,7 @@
     });
 
 </script>
+
 
 
 
