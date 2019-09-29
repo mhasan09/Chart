@@ -2355,3 +2355,6 @@ def fetch(request):
 
 def maprebuild(request):
     return render(request,'maprebuild.html')
+
+def dynamiconclick(request):
+    return render(request,'mapdynamiconclick.html')
