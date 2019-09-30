@@ -15307,6 +15307,9 @@
 </body>
 
 <script>
+
+    {#search function#}
+
         function search() {
             var input, filter, ul, li, a, i, txtValue;
             input = document.getElementById("myInput");
@@ -15326,6 +15329,9 @@
     </script>
 
 <script>
+
+    {#select all checkboxes#}
+
         var select_all = document.getElementById("select_all"); //select all checkbox
         var checkboxes = document.getElementsByClassName("checkbox"); //checkbox items
 
@@ -15546,6 +15552,8 @@
 
 
 <script>
+    {#select all division#}
+
     function divload() {
         $('#delete_button').show();
         $('#save_button').show();
@@ -15594,6 +15602,9 @@
 
 
 <script>
+
+    {#specific id for each district and division#}
+
         $(document).on('click', '[id^=District_]', function(e){
             $('#delete_button').show();
             $('#save_button').show();
@@ -15625,6 +15636,8 @@
 
 <script>
 
+  {#click and load data from map#}
+
      $(document).ready(function(){
         $(".map polygon").click(function(){
             $('#delete_button').show();
@@ -15635,6 +15648,9 @@
             var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
             $("table tbody").append(markup);
         });
+
+
+
 
            $(".map path").click(function(){
             $('#delete_button').show();
@@ -15663,6 +15679,9 @@
 
 
 <script>
+    {#data will load from here and will save into an array#}
+
+
     $("#save_button").click(function() {
         $('#cluster').show();
         var array = [];
@@ -15687,11 +15706,17 @@
         console.log(l);
         var ooo = "";
 
+
+        {#selected Geography list will generate from here#}
+
        for (var i in l){
            var ad = ''+l[i]+'</br>';
            ooo +=  ad ;
        }
        var oooo = "";
+
+       {#cluster load will begin from here#}
+
        for (var ix in l){
 
            var dd = '<li>'+l[ix]+'</li>';
