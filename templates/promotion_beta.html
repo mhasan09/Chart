@@ -85,11 +85,8 @@
             border: 1px solid #BDC3C7;
         }
 
-        .menu ul li a {
-            color: #333333;
-            text-decoration: none;
-            padding-left: 15%;
-        }
+
+
 
         .menu ul li:hover > ul {
             opacity: 1;
@@ -99,6 +96,7 @@
         .checkbox {
             float: left;
             margin-top: 2.1%;
+
         }
         #select_all {
             float: left;
@@ -112,6 +110,7 @@
             border-radius : 5px ;
             display : none ;
         }
+
     </style>
 
 </head>
@@ -15151,107 +15150,105 @@
                 placeholder="" title="Type in a name">
                 <div class="menu">
                         <ul class="kd" id="myUL">
-                            <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/> Select All</a>
+                            <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/>&nbsp Select All</a>
                             </li>
-                            <li id="DhakaDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Dhaka</a>
+                            <li id="District_Dhaka" class="Division"><input class="checkbox" type="checkbox" name="check[]" >&nbsp Dhaka
                                 <ul>
-                                    <li id="Dhaka" ><a href="javascript:void(0)" >Dhaka</a></li>
-                                    <li id="Gazipur"><a href="javascript:void(0)" >Gazipur</a></li>
-                                    <li id="Kishoreganj"><a href="javascript:void(0)" >Kishoreganj</a>
+                                    <li id="District_Gazipur">Gazipur</li>
+                                    <li id="District_Kishoreganj">Kishoreganj
                                     </li>
-                                    <li id="Manikganj"><a href="javascript:void(0)" >Manikganj</a>
+                                    <li id="District_Manikganj">Manikganj
                                     </li>
-                                    <li id="Munshiganj"><a href="javascript:void(0)" >Munshiganj</a>
+                                    <li id="District_Munshiganj">Munshiganj
                                     </li>
-                                    <li id="Narayanganj" ><a href="javascript:void(0)" >Narayanganj</a></li>
-                                    <li id="Narsingdi" ><a href="javascript:void(0)" >Narsingdi</a></li>
-                                    <li id="Tangail" ><a href="javascript:void(0)" >Tangail</a></li>
-                                    <li id="Gopalganj" ><a href="javascript:void(0)" >Gopalganj</a></li>
-                                    <li id="Madaripur"><a href="javascript:void(0)" >Madaripur</a></li>
-                                    <li id="Rajbari" ><a href="javascript:void(0)" >Rajbari</a></li>
-                                    <li id="Shariatpur"><a href="javascript:void(0)" >Shariatpur</a></li>
+                                    <li id="District_Narayanganj" >Narayanganj</li>
+                                    <li id="District_Narsingdi" >Narsingdi</li>
+                                    <li id="District_Tangail" >Tangail</li>
+                                    <li id="District_Gopalganj" >Gopalganj</li>
+                                    <li id="District_Madaripur">Madaripur</li>
+                                    <li id="District_Rajbari" >Rajbari</li>
+                                    <li id="District_Shariatpur">Shariatpur</li>
                                 </ul>
                             </li>
-                            <li id="ChittagongDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Chittagong</a>
+                            <li id="District_Chittagong" class="Division"><input class="checkbox" type="checkbox" name="check[]" >&nbsp Chittagong
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Brahmanbaria">Brahmanbaria</a></li>
-                                    <li><a href="javascript:void(0)" id="Comilla">Comilla</a></li>
-                                    <li><a href="javascript:void(0)" id="Chandpur">Chandpur</a></li>
-                                    <li><a href="javascript:void(0)" id="Lakshmipur">Lakshmipur</a></li>
-                                    <li><a href="javascript:void(0)" id="Noakhali">Noakhali</a></li>
-                                    <li><a href="javascript:void(0)" id="Feni">Feni</a></li>
-                                    <li><a href="javascript:void(0)" id="Khagrachhari">Khagrachhari</a></li>
-                                    <li><a href="javascript:void(0)" id="Rangamati">Rangamati</a></li>
-                                    <li><a href="javascript:void(0)" id="Bandarban">Bandarban</a></li>
-                                    <li><a href="javascript:void(0)" id="Chittagong">Chittagong</a></li>
-                                    <li><a href="javascript:void(0)" id="CoxsBazar">CoxsBazar</a></li>
+                                    <li id="District_Brahmanbaria">Brahmanbaria</li>
+                                    <li id="District_Comilla">Comilla</li>
+                                    <li id="District_Chandpur">Chandpur</li>
+                                    <li id="District_Lakshmipur">Lakshmipur</li>
+                                    <li id="District_Noakhali">Noakhali</li>
+                                    <li id="District_Feni">Feni</li>
+                                    <li id="District_Khagrachhari">Khagrachhari</li>
+                                    <li id="District_Rangamati">Rangamati</li>
+                                    <li id="District_Bandarban">Bandarban</li>
+                                    <li id="District_CoxsBazar">CoxsBazar</li>
                                 </ul>
                             </li>
-                            <li id="RajshahiDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Rajshahi</a>
+                            <li id="District_Rashahi" class="Division"><input class="checkbox" type="checkbox" name="check[]" >&nbsp Rajshahi
 
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Bogura">Bogura</a></li>
-                                    <li><a href="javascript:void(0)" id="Chapainawabganj">Chapainawabganj</a></li>
-                                    <li><a href="javascript:void(0)" id="Joypurhat">Joypurhat</a></li>
-                                    <li><a href="javascript:void(0)" id="Naogaon">Naogaon</a></li>
-                                    <li><a href="javascript:void(0)" id="Natore">Natore</a></li>
-                                    <li><a href="javascript:void(0)" id="Pabna">Pabna</a></li>
-                                    <li><a href="javascript:void(0)" id="Rajshahi">Rajshahi</a></li>
-                                    <li><a href="javascript:void(0)" id="Sirajgonj">Sirajgonj</a></li>
-                                    <li><a href="javascript:void(0)" id="Dinajpur">Dinajpur</a></li>
+                                    <li id="District_Bogura">Bogura</li>
+                                    <li id="District_Chapainawabganj">Chapainawabganj</li>
+                                    <li id="District_Joypurhat">Joypurhat</li>
+                                   <li id="District_Naogaon">Naogaon</li>
+                                    <li id="District_Natore">Natore</li>
+                                    <li id="District_Pabna">Pabna</li>
+                                    <li id="District_Rajshahi">Rajshahi</li>
+                                    <li id="District_Sirajgonj">Sirajgonj</li>
+                                    <li id="District_Dinajpur">Dinajpur</li>
+                                </ul>
+                            </li>
+                              <li id="District_Khulna" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Khulna
+                                <ul>
+                                    <li id="District_Bagerhat">Bagerhat</li>
+                                    <li id="District_Chuadanga">Chuadanga</li>
+                                    <li id="District_Jessore">Jessore</li>
+                                    <li id="District_Jhenaidah">Jhenaidah</li>
+                                    <li id="District_Kushtia">Kushtia</li>
+                                    <li id="District_Magura">Magura</li>
+                                    <li id="District_Meherpur">Meherpur</li>
+                                    <li id="District_Narail">Narail</li>
+                                    <li id="District_Kushtia">Kushtia</li>
+                                    <li id="District_Satkhira">Satkhira</li>
                                 </ul>
                             </li>
 
-                            <li id="KhulnaDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]" >Khulna</a>
+
+
+                            <li id="District_Barisal" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Barisal
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Bagerhat">Bagerhat</a></li>
-                                    <li><a href="javascript:void(0)" id="Chuadanga">Chuadanga</a></li>
-                                    <li><a href="javascript:void(0)" id="Jessore">Jessore</a></li>
-                                    <li><a href="javascript:void(0)" id="Jhenaidah">Jhenaidah</a></li>
-                                    <li><a href="javascript:void(0)" id="Khulna">Khulna</a></li>
-                                    <li><a href="javascript:void(0)" id="Kushtia">Kushtia</a></li>
-                                    <li><a href="javascript:void(0)" id="Magura">Magura</a></li>
-                                    <li><a href="javascript:void(0)" id="Meherpur">Meherpur</a></li>
-                                    <li><a href="javascript:void(0)" id="Narail">Narail</a></li>
-                                    <li><a href="javascript:void(0)" id="Satkhira">Satkhira</a></li>
+                                    <li id="District_Barguna">Barguna</li>
+                                    <li id="District_Bhola">Bhola</li>
+                                    <li id="District_Jhalokati">Jhalokati</li>
+                                    <li id="District_Patuakhali">Patuakhali</li>
+                                    <li id="District_Pirojpur">Pirojpur</li>
                                 </ul>
                             </li>
-                            <li id="BarisalDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Barisal</a>
+                            <li id="District_Sylhet" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Sylhet
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Barisal">Barisal</a></li>
-                                    <li><a href="javascript:void(0)" id="Barguna">Barguna</a></li>
-                                    <li><a href="javascript:void(0)" id="Bhola">Bhola</a></li>
-                                    <li><a href="javascript:void(0)" id="Jhalokati">Jhalokati</a></li>
-                                    <li><a href="javascript:void(0)" id="Patuakhali">Patuakhali</a></li>
-                                    <li><a href="javascript:void(0)" id="Pirojpur">Pirojpur</a></li>
+                                    <li id="District_Habiganj">Habiganj</li>
+                                    <li id="District_Moulvibazar">Moulvibazar</li>
+                                    <li id="District_Sunamganj">Sunamganj</li>
                                 </ul>
                             </li>
-                            <li id="SylhetDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Sylhet</a>
+                            <li id="District_Rangpur" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Rangpur
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Habiganj">Habiganj</a></li>
-                                    <li><a href="javascript:void(0)" id="Moulvibazar">Moulvibazar</a></li>
-                                    <li><a href="javascript:void(0)" id="Sunamganj">Sunamganj</a></li>
-                                    <li><a href="javascript:void(0)" id="Sylhet">Sylhet</a></li>
+                                    <li id="District_Thakurgaon">Thakurgaon</li>
+                                    <li id="District_Rangpur">Rangpur</li>
+                                    <li id="District_Panchagarh">Panchagarh</li>
+                                    <li id="District_Nilphamari">Nilphamari</li>
+                                    <li id="District_Lalmonirhat">Lalmonirhat</li>
+                                    <li id="District_Kurigram">Kurigram</li>
+                                    <li id="District_Gaibandha">Gaibandha</li>
+                                    <li id="District_Sirajgonj">Sirajgonj</li>
                                 </ul>
                             </li>
-                            <li id="RangpurDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Rangpur</a>
+                            <li id="District_Mymensingh" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Mymensingh
                                 <ul>
-                                    <li><a href="javascript:void(0)" id="Thakurgaon">Thakurgaon</a></li>
-                                    <li><a href="javascript:void(0)" id="Rangpur">Rangpur</a></li>
-                                    <li><a href="javascript:void(0)" id="Panchagarh">Panchagarh</a></li>
-                                    <li><a href="javascript:void(0)" id="Nilphamari">Nilphamari</a></li>
-                                    <li><a href="javascript:void(0)" id="Lalmonirhat">Lalmonirhat</a></li>
-                                    <li><a href="javascript:void(0)" id="Kurigram">Kurigram</a></li>
-                                    <li><a href="javascript:void(0)" id="Gaibandha">Gaibandha</a></li>
-                                    <li><a href="javascript:void(0)" id="Sirajgonj">Sirajgonj</a></li>
-                                </ul>
-                            </li>
-                            <li id="MymensinghDiv" class="Division"><a href="javascript:void(0)"><input class="checkbox" type="checkbox" name="check[]">Mymensingh</a>
-                                <ul>
-                                    <li><a href="javascript:void(0)" id="Jamalpur">Jamalpur</a></li>
-                                    <li><a href="javascript:void(0)" id="Mymensingh">Mymensingh</a></li>
-                                    <li><a href="javascript:void(0)" id="Netrokona">Netrokona</a></li>
-                                    <li><a href="javascript:void(0)" id="Sherpur">Sherpur</a></li>
+                                    <li id="District_Jamalpur">Jamalpur</li>
+                                    <li id="District_Mymensingh">Mymensingh</li>
+                                    <li id="District_Netrokona">Netrokona</li>
+                                    <li id="District_Sherpur">Sherpur</li>
                                 </ul>
                             </li>
                         </ul>
@@ -15540,20 +15537,44 @@
 
 
 
+{#<script>#}
+{##}
+{#     $(document).ready(function(){#}
+{#        $(".Kd ul li").click(function(){#}
+{#            $('#delete_button').show();#}
+{#            var district = $(this).text();#}
+{#            console.log(district)#}
+{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";#}
+{#            $("table tbody").append(markup);#}
+{#        });#}
+{##}
+{##}
+{##}
+{#        // Find and remove selected table rows#}
+{#        $(".delete-row").click(function(){#}
+{#            $("table tbody").find('input[name="record"]').each(function(){#}
+{#            	if($(this).is(":checked")){#}
+{#                    $(this).parents("tr").remove();#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    });#}
+{##}
+{#</script>#}
+
+
 <script>
+        $(document).on('click', '[id^=District_]', function(e){
+	if (this===e.target) {
+  	  var name = e.target.id.split("District_")[1];
+  	   var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";
+  	   $("table tbody").append(markup);
+  	  console.log(name);
 
-     $(document).ready(function(){
-        $(".Kd ul li").click(function(){
-            $('#delete_button').show();
-            var district = $(this).text();
-            console.log(district)
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
-            $("table tbody").append(markup);
-        });
+  }
 
+});
 
-
-        // Find and remove selected table rows
         $(".delete-row").click(function(){
             $("table tbody").find('input[name="record"]').each(function(){
             	if($(this).is(":checked")){
@@ -15561,7 +15582,7 @@
                 }
             });
         });
-    });
+
 
 </script>
 

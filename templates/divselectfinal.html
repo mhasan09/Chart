@@ -73,48 +73,6 @@
 </body>
 
 
-
-{#  <script type="text/javascript">//<![CDATA[#}
-{##}
-{#    window.onload=function(){#}
-{##}
-{# $(document).ready(function(){#}
-{##}
-{#           $(".kd ul li").click(function(){#}
-{#            var name = $(this).text();#}
-{##}
-{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";#}
-{#            $("table tbody").append(markup);#}
-{#        });#}
-{##}
-{#             $(".District").click(function(){#}
-{#            var name = $(this).attr("id");#}
-{##}
-{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";#}
-{#            $("table tbody").append(markup);#}
-{#        });#}
-{##}
-{#        $(document).on('click', '[id^=folderLink_]', function(e){#}
-{#	if (this===e.target) alert(e.target.id);#}
-{#});#}
-{##}
-{##}
-{##}
-{##}
-{#        // Find and remove selected table rows#}
-{#        $(".delete-row").click(function(){#}
-{#            $("table tbody").find('input[name="record"]').each(function(){#}
-{#            	if($(this).is(":checked")){#}
-{#                    $(this).parents("tr").remove();#}
-{#                }#}
-{#            });#}
-{#        });#}
-{#    });#}
-{##}
-{#    }#}
-{##}
-{#  //]]></script>#}
-
 <script>
     $(document).on('click', '[id^=District_]', function(e){
 	if (this===e.target) {
