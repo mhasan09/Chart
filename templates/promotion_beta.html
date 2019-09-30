@@ -107,12 +107,16 @@
             margin-top: 30%;
         }
         #delete_button{
+            background-color: #FF6B5E;
             border-radius : 5px ;
             display : none ;
+            color : #ffffff;
         }
         #save_button{
             border-radius : 5px ;
             display : none ;
+            background-color: #26bfff;
+            color : #ffffff;
         }
 
     </style>
@@ -130,7 +134,7 @@
                     <button id="edit-1">Edit</button>
                 </div>
                 <div class="row">
-                    <h6 id="selected-item">Dhaka</h6>
+                    <h6 id="selected-item"></h6>
 
                 </div>
             </div>
@@ -15138,8 +15142,6 @@
 
                     </svg>
 
-
-
                 </div>
 
         </div>
@@ -15155,17 +15157,13 @@
                 placeholder="" title="Type in a name">
                 <div class="menu">
                         <ul class="kd" id="myUL">
-                            <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/>&nbsp Select All</a>
-                            </li>
+                            <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/>&nbsp Select All</a></li>
                             <li id="District_Dhaka" class="Division"><input class="checkbox" type="checkbox" name="check[]" >&nbsp Dhaka
                                 <ul>
                                     <li id="District_Gazipur">Gazipur</li>
-                                    <li id="District_Kishoreganj">Kishoreganj
-                                    </li>
-                                    <li id="District_Manikganj">Manikganj
-                                    </li>
-                                    <li id="District_Munshiganj">Munshiganj
-                                    </li>
+                                    <li id="District_Kishoreganj">Kishoreganj</li>
+                                    <li id="District_Manikganj">Manikganj</li>
+                                    <li id="District_Munshiganj">Munshiganj</li>
                                     <li id="District_Narayanganj" >Narayanganj</li>
                                     <li id="District_Narsingdi" >Narsingdi</li>
                                     <li id="District_Tangail" >Tangail</li>
@@ -15218,8 +15216,6 @@
                                 </ul>
                             </li>
 
-
-
                             <li id="District_Barisal" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Barisal
                                 <ul>
                                     <li id="District_Barguna">Barguna</li>
@@ -15239,7 +15235,6 @@
                             <li id="District_Rangpur" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Rangpur
                                 <ul>
                                     <li id="District_Thakurgaon">Thakurgaon</li>
-                                    <li id="District_Rangpur">Rangpur</li>
                                     <li id="District_Panchagarh">Panchagarh</li>
                                     <li id="District_Nilphamari">Nilphamari</li>
                                     <li id="District_Lalmonirhat">Lalmonirhat</li>
@@ -15251,7 +15246,6 @@
                             <li id="District_Mymensingh" class="Division"><input class="checkbox" type="checkbox" name="check[]">&nbsp Mymensingh
                                 <ul>
                                     <li id="District_Jamalpur">Jamalpur</li>
-                                    <li id="District_Mymensingh">Mymensingh</li>
                                     <li id="District_Netrokona">Netrokona</li>
                                     <li id="District_Sherpur">Sherpur</li>
                                 </ul>
@@ -15272,11 +15266,30 @@
         </tbody>
     </table>
              <button type="button" id="delete_button" class="delete-row">Delete</button>
-             <button type="button" id="save_button" >Save as cluster</button>
+             <button type="button" id="save_button" data-toggle="modal" data-target="#exampleModalCenter">Save as cluster</button>
 
 
         </div>
     </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -15585,8 +15598,6 @@
   	   {#$("#selected-item").append(pp);#}
 
 
-
-
  }
 
 });
@@ -15658,14 +15669,21 @@
             array.push(arrayItem);
         });
         {#console.log(JSON.stringify(array,['Location']));#}
-        var l = []
+        var l = [];
         var ppp = JSON.stringify(array,['Location']);
         var dataonly = JSON.parse(ppp);
         for (var i in dataonly){
              l.push(dataonly[i]['Location']);
         }
         console.log(l);
-        alert(l);
+        var ooo = "";
+
+       for (var i in l){
+           var ad = ''+l[i]+'</br>';
+           ooo +=  ad ;
+       }
+       console.log(ooo);
+       document.getElementById("selected-item").innerHTML = ooo;
 
     });
 </script>
