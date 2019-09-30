@@ -118,6 +118,9 @@
             background-color: #26bfff;
             color : #ffffff;
         }
+        #cluster{
+            display : none ;
+        }
 
     </style>
 
@@ -15250,6 +15253,9 @@
                                     <li id="District_Sherpur">Sherpur</li>
                                 </ul>
                             </li>
+                             <li class="dynamic_clsuter" id="cluster"><input class="checkbox" type="checkbox" name="check[]">&nbsp Cluster-1
+
+                            </li>
                         </ul>
                     </div>
         </div>
@@ -15344,7 +15350,7 @@
     </script>
 
 
-<script>
+<script >
 
     var dhakaDivisionMap = ['DhakaMap', 'GazipurMap', 'KishoreganjMap', 'ManikganjMap', 'MunshiganjMap', 'NarayanganjMap', 'NarsingdiMap', 'TangailMap', 'FaridpurMap', 'GopalganjMap', 'MadaripurMap', 'RajbariMap', 'ShariatpurMap'];
     var chattogramDivisionMap = ['BrahmanbariaMap', 'ComillaMap', 'ChandpurMap', 'LakshmipurMap', 'NoakhaliMap', 'FeniMap', 'KhagrachhariMap', 'RangamatiMap', 'BandarbanMap', 'ChittagongMap', 'CoxsBazarMap'];
@@ -15656,6 +15662,7 @@
 
 <script>
     $("#save_button").click(function() {
+        $('#cluster').show();
         var array = [];
         var headers = [];
         $('#bin th').each(function (index, item) {
@@ -15682,8 +15689,18 @@
            var ad = ''+l[i]+'</br>';
            ooo +=  ad ;
        }
+       var oooo = "";
+       for (var ix in l){
+           var ad = '<ul>';
+           var dd = '<li id="cluster[]">'+l[ix]+'</li>';
+           var da = '<ul>';
+           oooo += ad+dd+da;
+       }
+
        console.log(ooo);
+       console.log(oooo);
        document.getElementById("selected-item").innerHTML = ooo;
+       document.getElementById("cluster").innerHTML = oooo;
 
     });
 </script>
