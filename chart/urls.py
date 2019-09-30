@@ -58,4 +58,5 @@ urlpatterns = [
    path('m3',dynamiconclick,name="bubble_slide"),
    path('promo',promotionbeta,name="bubble_slide"),
    path('c2',checkbydivision,name="bubble_slide"),
+   path('c4',divcheck,name="bubble_slide"),
 ]

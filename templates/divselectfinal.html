@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+  <style id="compiled-css" type="text/css">
+          form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+       <ul class= "kd">
+              <li class="District" id="District_Chatga">Chatga</li>
+              <li class="District" id="District_Barisal">Barisal
+              <ul>
+                <li id="District_Jhalokathi">Jhalokathi</li>
+                <li id="District_Borguna">Borguna</li>
+              </ul>
+              </li>
+              <li class="District" id="District_Noakhali">Noakhali</li>
+              <li class="District" id="District_dhaka">dhaka</li>
+          </ul>
+    <form>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email Address">
+    	<input type="button" class="add-row" value="Add Row">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>Peter Parker</td>
+                <td>peterparker@mail.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="delete-row">Delete Row</button>
+
+
+
+</body>
+
+
+
+{#  <script type="text/javascript">//<![CDATA[#}
+{##}
+{#    window.onload=function(){#}
+{##}
+{# $(document).ready(function(){#}
+{##}
+{#           $(".kd ul li").click(function(){#}
+{#            var name = $(this).text();#}
+{##}
+{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";#}
+{#            $("table tbody").append(markup);#}
+{#        });#}
+{##}
+{#             $(".District").click(function(){#}
+{#            var name = $(this).attr("id");#}
+{##}
+{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";#}
+{#            $("table tbody").append(markup);#}
+{#        });#}
+{##}
+{#        $(document).on('click', '[id^=folderLink_]', function(e){#}
+{#	if (this===e.target) alert(e.target.id);#}
+{#});#}
+{##}
+{##}
+{##}
+{##}
+{#        // Find and remove selected table rows#}
+{#        $(".delete-row").click(function(){#}
+{#            $("table tbody").find('input[name="record"]').each(function(){#}
+{#            	if($(this).is(":checked")){#}
+{#                    $(this).parents("tr").remove();#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    });#}
+{##}
+{#    }#}
+{##}
+{#  //]]></script>#}
+
+<script>
+    $(document).on('click', '[id^=District_]', function(e){
+	if (this===e.target) {
+  	  var name = e.target.id.split("District_")[1];
+  	   var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td></td></tr>";
+  	   $("table tbody").append(markup);
+  	  console.log(name);
+
+  }
+
+});
+
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+</script>
+
+</html>

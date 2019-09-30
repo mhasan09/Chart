@@ -2364,3 +2364,8 @@ def promotionbeta(request):
 
 def checkbydivision(request):
     return render(request,'check_by_division.html')
+
+
+def divcheck(request):
+    return render(request,'divselectfinal.html')
+
