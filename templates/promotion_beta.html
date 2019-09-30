@@ -15559,28 +15559,28 @@
 
 </script>
 
-
-<script>
-
-     $(document).ready(function(){
-        $(".kd li").click(function(){
-            var district = $(this).attr("id");
-            console.log(district)
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
-            $("table tbody").append(markup);
-        });
-
-        // Find and remove selected table rows
-        $(".delete-row").click(function(){
-            $("table tbody").find('input[name="record"]').each(function(){
-            	if($(this).is(":checked")){
-                    $(this).parents("tr").remove();
-                }
-            });
-        });
-    });
-
-</script>
+{##}
+{#<script>#}
+{##}
+{#     $(document).ready(function(){#}
+{#        $(".kd li").click(function(){#}
+{#            var district = $(this).attr("id");#}
+{#            console.log(district)#}
+{#            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";#}
+{#            $("table tbody").append(markup);#}
+{#        });#}
+{##}
+{#        // Find and remove selected table rows#}
+{#        $(".delete-row").click(function(){#}
+{#            $("table tbody").find('input[name="record"]').each(function(){#}
+{#            	if($(this).is(":checked")){#}
+{#                    $(this).parents("tr").remove();#}
+{#                }#}
+{#            });#}
+{#        });#}
+{#    });#}
+{##}
+{#</script>#}
 
 
 
@@ -15592,7 +15592,8 @@
 
      $(document).ready(function(){
         $(".map polygon").click(function(){
-            var district = $(this).attr("id");
+            var district = $(this).attr("id").split('Map')[0];
+            {#var trimmed_district = district.split(",");#}
             console.log(district);
             var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + district + "</td></tr>";
             $("table tbody").append(markup);
