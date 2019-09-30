@@ -15527,11 +15527,12 @@
 <script>
     function divload() {
         $('#delete_button').show();
+        $('#save_button').show();
         var o = "";
         var division = ["Dhaka",'Chittagong','Rajshahi','Khulna','Barisal','Sylhet','Mymensingh','Rangpur'];
         for (var i in division){
             var kk = '<tr>';
-            var aa = '<td><input type=\'checkbox\'></td>';
+            var aa = '<td><input type=\'checkbox\' name=\'record\'></td>';
             var ll = '<td>'+division[i]+'</td>';
             var qq = '</tr>';
             o+= kk + aa + ll + qq ;
@@ -15578,7 +15579,7 @@
             {#var pp = [];#}
 	if (this===e.target) {
   	   var name = e.target.id.split("District_")[1];
-  	   var markup = "<tr><td><input type='checkbox'></td><td>" + name + "</td></tr>";
+  	   var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td></tr>";
   	   $("table tbody").append(markup);
   	   {#pp.push(name);#}
   	   {#$("#selected-item").append(pp);#}
@@ -15586,7 +15587,7 @@
 
 
 
-  }
+ }
 
 });
 
