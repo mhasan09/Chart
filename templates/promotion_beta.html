@@ -15254,7 +15254,9 @@
                                 </ul>
                             </li>
                              <li class="dynamic_clsuter" id="cluster"><input class="checkbox" type="checkbox" name="check[]">&nbsp Cluster-1
+                                <ul id="cluster_2">
 
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -15691,16 +15693,16 @@
        }
        var oooo = "";
        for (var ix in l){
-           var ad = '<ul>';
-           var dd = '<li id="cluster[]">'+l[ix]+'</li>';
-           var da = '<ul>';
-           oooo += ad+dd+da;
+
+           var dd = '<li>'+l[ix]+'</li>';
+
+           oooo += dd;
        }
 
-       console.log(ooo);
+       {#console.log(ooo);#}
        console.log(oooo);
        document.getElementById("selected-item").innerHTML = ooo;
-       document.getElementById("cluster").innerHTML = oooo;
+       document.getElementById("cluster_2").innerHTML = oooo;
 
     });
 </script>
