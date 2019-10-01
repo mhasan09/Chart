@@ -15153,8 +15153,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col" id="lower-middle">
-                <input type="text" id="myInput" onkeyup="search()"
-                placeholder="" title="Type in a name">
+                <input type="text" class="text-input" id="myInput" value="" >
                 <div class="menu">
                         <ul class="kd" id="myUL">
                             <li><a href=""><input type="checkbox" onclick="divload()" id="select_all"/>&nbsp Select All</a></li>
@@ -15305,24 +15304,30 @@
 
 <script>
 
-    {#search function#}
+   $(document).ready(function(){
+    $("#myInput").keyup(function(){
 
-        function search() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
+        // Retrieve the input field text and reset the count to zero
+        var myInput = $(this).val(), count = 0;
+
+        // Loop through the comment list
+        $('[id^=District_]').each(function(){
+
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).text().search(new RegExp(myInput, "i")) < 0) {
+                $(this).fadeOut();
+
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+                $(this).show();
+                count++;
             }
-        }
+        });
+
+        // Update the count
+
+    });
+});
     </script>
 
 <script>
@@ -15725,6 +15730,8 @@
 
     });
 </script>
+
+
 
 
 

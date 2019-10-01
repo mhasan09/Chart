@@ -59,4 +59,5 @@ urlpatterns = [
    path('promo',promotionbeta,name="bubble_slide"),
    path('c2',checkbydivision,name="bubble_slide"),
    path('c4',divcheck,name="bubble_slide"),
+   path('ul',ultomapcolorchange,name="bubble_slide"),
 ]

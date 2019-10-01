@@ -2369,3 +2369,5 @@ def checkbydivision(request):
 def divcheck(request):
     return render(request,'divselectfinal.html')
 
+def ultomapcolorchange(request):
+    return render(request,'ulto_mapcolorchange.html')
