@@ -2371,3 +2371,4 @@ def divcheck(request):
 
 def ultomapcolorchange(request):
     return render(request,'ulto_mapcolorchange.html')
+
