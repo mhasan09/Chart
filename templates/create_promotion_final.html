@@ -1,0 +1,957 @@
+{% extends 'pinkman/base.html' %}
+{% load staticfiles %}
+
+{% block custom-css %}
+
+
+
+    <style>
+
+        .fixed-table-body {
+            overflow-x: auto;
+            overflow-y: auto;
+            height: auto;
+
+        }
+
+        .total-numbers {
+
+            margin-left: 90%;
+            background-color: #FF6B5E;
+            color: #ffffff;
+            float: right;
+            width: 14%;
+            height: auto;
+        }
+
+        .container a {
+            height: auto;
+            width: auto;
+        }
+
+        #promotion_title {
+            font-size: 18px;
+            font-weight: bold;
+            color: {{ color_dict.blueHash }};
+            margin-left: 5%;
+            position: relative;
+        }
+
+        .btn-outline-primary {
+            border-radius: 10px;
+            margin-left: 75%;
+            top: 50%;
+            display: block;
+            margin-top: -10%;
+
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: lighter;
+            color: #b2b2b2;
+            margin-left: 10%;
+
+        }
+
+        .right_heading {
+            text-align: center;
+            font-weight: bold;
+            color: {{ color_dict.darkHash }};
+            font-size: 18px;
+            position: relative;
+            left: 20%;
+            right: 30%
+        }
+
+        {#promotion_title_section#}
+
+        .right_edit_only {
+            margin-left: 5%;
+            margin-top: 10%;
+            padding-bottom: 4%;
+        }
+
+        .custom-radio{
+            margin-top: 5%;
+            margin-left: 3.5%;
+        }
+
+        .col-md-7{
+            margin-left: 3%;
+        }
+        {#promotion_title_section_ends#}
+
+
+      {#promotion_type_section#}
+
+
+        .custom-radio{
+            margin-top: 5%;
+        }
+
+        #promotion_type{
+            display: none;
+        }
+
+        {#promotion_type_section_ends#}
+
+
+        {#category_type_section#}
+
+        #select_category{
+            display: none;
+        }
+        .kd_category{
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+
+        .kd_category li {
+            margin: 15px 0;
+        }
+
+        {#category_type_section_ends#}
+
+
+        {#manufactureres_section#}
+
+          #select_manufacturer{
+            display: none;
+        }
+        .kd_manufacturer{
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+
+        .kd_manufacturer li {
+            margin: 15px 0;
+        }
+
+        {#manufactureres_section_ends#}
+
+
+       {#products_section#}
+
+          #select_product{
+            display: none;
+        }
+        .kd_product{
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+
+        .kd_product li {
+            margin: 15px 0;
+        }
+
+        {#manufactureres_section_ends#}
+
+
+       {#products_sku_section#}
+
+        #select_product_sku{
+                display: none;
+        }
+        .kd_product_sku{
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+
+        .kd_product_sku li {
+            margin: 15px 0;
+        }
+
+        {#products_sku_section_ends#}
+
+
+
+
+
+
+
+    </style>
+
+
+{% endblock %}
+
+
+{% block custom-scripts %}
+
+
+
+    <script>
+
+    </script>
+
+    <script>
+        $(function () {
+
+            var start = moment().subtract(29, 'days');
+            var end = moment();
+
+            function cb(start, end) {
+                $('#rangetext').html(start.format('D MMM YYYY') + ' - ' + end.format('D MMM YYYY'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+        });
+    </script>
+
+    <script>
+        function switchTab(tabTitle, tabDetails) {
+            var i;
+            var x = document.getElementsByClassName("tab-details");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+                //x[i].style.background = color_dict.whiteHash;
+            }
+            document.getElementById(tabTitle).style.display = "block";
+
+            var y = document.getElementsByClassName("tab-title");
+            for (i = 0; i < y.length; i++) {
+                y[i].style.background = "#b2b2b2";
+                //x[i].style.background = color_dict.whiteHash;
+            }
+            document.getElementById(tabDetails).style.background = "#1589B9";
+            //document.getElementById(tabDetails).setAttribute("style", "font-size: 100px; font-style: italic; color:#ff0000; border: #");
+        }
+    </script>
+
+
+    <link rel="stylesheet"
+          href="//rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css">
+
+
+    <link href="{% static 'vendor/vendor_pinkman/vendors/bootstrap/dist/css/bootstrap.min.css' %}"
+          rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/vendor_pinkman/vendors/bootstrap-table/dist/bootstrap-table.min.css' %}"
+          rel="stylesheet" type="text/css">
+
+    {#    Date Range Picker #}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+
+    <!-- Latest compiled and minified CSS -->
+    {#    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>#}
+    {#    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>#}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+    <script src="//rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+
+    {#    <script src="{% static 'vendor/vendor_pinkman/vendors/bootstrap-table/dist/bootstrap-table.min.js' %}"></script>#}
+
+    {#  Date Range Picker  #}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    {################### hide & seek  ################}
+    <script>
+        $("#edit_1").click(function(){
+            $("#promotion_title_container").show();
+            $("#promotion_type").hide();
+            $("#select_category").hide();
+            $("#select_manufacturer").hide();
+            $("#select_product").hide();
+            $("#select_product_sku").hide();
+        });
+
+         $("#edit_2").click(function(){
+                 $("#promotion_title_container").hide();
+            $("#promotion_type").show();
+            $("#select_category").hide();
+            $("#select_manufacturer").hide();
+            $("#select_product").hide();
+            $("#select_product_sku").hide();
+        });
+
+          $("#edit_3").click(function(){
+              $("#promotion_title_container").hide();
+            $("#promotion_type").hide();
+            $("#select_category").show();
+            $("#select_manufacturer").hide();
+            $("#select_product").hide();
+            $("#select_product_sku").hide();
+        });
+
+           $("#edit_4").click(function(){
+                 $("#promotion_title_container").hide();
+            $("#promotion_type").hide();
+            $("#select_category").hide();
+            $("#select_manufacturer").show();
+            $("#select_product").hide();
+            $("#select_product_sku").hide();
+        });
+
+            $("#edit_5").click(function(){
+                $("#promotion_title_container").hide();
+            $("#promotion_type").hide();
+            $("#select_category").hide();
+            $("#select_manufacturer").hide();
+            $("#select_product").show();
+            $("#select_product_sku").hide();
+        });
+
+            $("#edit_6").click(function(){
+                $("#promotion_title_container").hide();
+            $("#promotion_type").hide();
+            $("#select_category").hide();
+            $("#select_manufacturer").hide();
+            $("#select_product").hide();
+            $("#select_product_sku").show();
+        });
+    </script>
+
+
+    <script>
+              $('#promotion_title_form input').on('change', function() {
+               var x =$('input[name=customRadio]:checked', '#promotion_title_form').val();
+               $('#promotion_title_input').val(x);
+                $('#subtitle_1').html(x);
+
+
+            });
+
+    </script>
+
+
+
+    <script>
+              $('#promotion_type_form input').on('change', function() {
+               var x =$('input[name=customRadio]:checked', '#promotion_type_form').val();
+               $('#promotion_type_input').val(x);
+                 $('#subtitle_2').html(x);
+
+
+            });
+
+    </script>
+
+
+
+    <script>
+        $('.kd li').on('click',function () {
+          var pc = $(this).attr('id');
+          console.log(pc);
+          $('#subtitle_3').html(pc);
+
+        })
+
+    </script>
+
+    <script>
+        var product_category = ['Beverage','Bakery-items','Medicine','Toiletries','Cooking','Home and Cleaning','Baby care'];
+        var output = "";
+        for (var i in product_category){
+            var aa = '<li id="category_'+i+'">'+product_category[i]+'</li>';
+
+            output+= aa;
+
+        }
+        $('.kd_category').html(output);
+
+
+
+
+
+        $(document).ready(function () {
+        $("#filter_category").keyup(function () {
+
+            // Retrieve the input field text and reset the count to zero
+            var myInput = $(this).val(), count = 0;
+
+            // Loop through the comment list
+            $(".kd_category li").each(function () {
+
+                // If the list item does not contain the text phrase fade it out
+                if ($(this).text().search(new RegExp(myInput, "i")) < 0) {
+                    $(this).fadeOut();
+
+                    // Show the list item if the phrase matches and increase the count by 1
+                } else {
+                    $(this).show();
+                    count++;
+                }
+            });
+
+            // Update the count
+
+        });
+        });
+</script>
+        {##################category_end###########}
+
+<script>
+        var output2 = '';
+        var product_manufacturers = ['Pran','Abul khair Group','Akiz Group','Partex','Bombay Sweets','Nestle','Unilver'];
+        for (var j in product_manufacturers){
+                 var aaa = '<li id="manufacturers_'+j+'">'+product_manufacturers[j]+'</li>';
+
+
+            output2+= aaa;
+
+        }
+        $('.kd_manufacturer').html(output2);
+
+        $(document).ready(function () {
+        $("#filter_manufacturer").keyup(function () {
+
+            // Retrieve the input field text and reset the count to zero
+            var myInput = $(this).val(), count = 0;
+
+            // Loop through the comment list
+            $(".kd_manufacturer li").each(function () {
+
+                // If the list item does not contain the text phrase fade it out
+                if ($(this).text().search(new RegExp(myInput, "i")) < 0) {
+                    $(this).fadeOut();
+
+                    // Show the list item if the phrase matches and increase the count by 1
+                } else {
+                    $(this).show();
+                    count++;
+                }
+            });
+
+            // Update the count
+
+        });
+        });
+</script>
+        {#manufacturer_end#}
+<script>
+        var output3 = '';
+        var product = ['Teer Soyabin Oil' , 'Pran Laccha Shemai', 'Lux','Pepsi','Sprite','Wheel','Pran Ghee'];
+        for (var k in product){
+                   var ll = '<li id="product_'+k+'">'+product[k]+'</li>';
+
+
+            output3+= ll;
+
+        }
+        console.out(output3);
+        $('.kd_product').html(output3);
+             $(document).ready(function () {
+        $("#filter_product").keyup(function () {
+
+            // Retrieve the input field text and reset the count to zero
+            var myInput = $(this).val(), count = 0;
+
+            // Loop through the comment list
+            $(".kd_product li").each(function () {
+
+                // If the list item does not contain the text phrase fade it out
+                if ($(this).text().search(new RegExp(myInput, "i")) < 0) {
+                    $(this).fadeOut();
+
+                    // Show the list item if the phrase matches and increase the count by 1
+                } else {
+                    $(this).show();
+                    count++;
+                }
+            });
+
+            // Update the count
+
+        });
+        });
+
+</script>
+
+    <script>
+
+        var output4 = '';
+        var product_sku = ['5 litre Teer Soyabin Oil' , '500gm Pran Laccha Shemai' , '200g Lux' , '1 litre Pepsi', '500ml Sprite'];
+        for (var l in product_sku){
+                 var kkk = '<li id="product_sku_'+l+'">'+product_sku[l]+'</li>';
+
+
+            output4+= kkk;
+
+        }
+        $('.kd_product_sku').html(output4);
+                   $(document).ready(function () {
+        $("#filter_product_sku").keyup(function () {
+
+            // Retrieve the input field text and reset the count to zero
+            var myInput = $(this).val(), count = 0;
+
+            // Loop through the comment list
+            $(".kd_product_sku li").each(function () {
+
+                // If the list item does not contain the text phrase fade it out
+                if ($(this).text().search(new RegExp(myInput, "i")) < 0) {
+                    $(this).fadeOut();
+
+                    // Show the list item if the phrase matches and increase the count by 1
+                } else {
+                    $(this).show();
+                    count++;
+                }
+            });
+
+            // Update the count
+
+        });
+        });
+
+
+
+
+    </script>
+
+
+    <script>
+
+
+     $(document).ready(function() {
+
+         $(".kd_category li").click(function () {
+             var name = $(this).text();
+             $("#subtitle_3").append(name);
+
+         })
+     });
+
+
+    </script>
+
+
+
+{% endblock %}
+
+
+{% block page-content %}
+
+
+    <div class="hk-pg-wrapper">
+    {% comment %} TITLE {% endcomment %}
+    <div class="col-lg-12"
+         style="position: absolute; width: 120%; height: 100px; background: #fff; padding: 0px; margin-left: -50px; ">
+
+            <span class="fa fa fa-arrow-circle-o-left fa-lg" aria-hidden="true"
+                  style="position: absolute; text-align: center; line-height: 100px; margin-left: 60px; color: {{ color_dict.darkHash }}"></span>
+        <span style="text-align: center; display: inline-block; line-height: 100px; margin-left: 90px; color: {{ color_dict.darkHash }}; font-size: 14px;">CREATE PROMOTION</span>
+
+    </div>
+
+    {% comment %} DIRECTORY {% endcomment %}
+    <div class="col-lg-12"
+         style="position: absolute; width: 120%; height: 50px; background: #fff; padding: 0px; margin-left: -50px; margin-top: 101px;">
+
+            <span class="fa fa fa-home fa-sm" aria-hidden="true"
+                  style="position: absolute; text-align: center; line-height: 50px; margin-left: 60px; color: {{ color_dict.darkHash }}"></span>
+        <span style="text-align: center; display: inline-block; line-height: 50px; margin-left: 90px; color: {{ color_dict.darkHash }}; font-size: 12px;">Home / Create promotion</span>
+
+    </div>
+
+    <!-- Container -->
+    <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-12" style="margin-top: 150px;">
+                <div class="hk-row">
+                    <div class="col-lg-12">
+                        <section class="hk-sec-wrapper" style="height: 1800px; padding: 0px;">
+
+                            <div class=""
+                                 style="display: flex; justify-content: center; padding: 30px; cursor: pointer;">
+                                <div id="d-tab" class="tab-title" onclick="switchTab('design', 'd-tab')"
+                                     style="clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);  text-align: center;
+                                             background: {{ color_dict.blueHash }};
+                                             color: {{ color_dict.whiteHash }}; border-radius: 10px">
+                                    1. DESIGN
+                                </div>
+
+                                <div id="e-tab" class="tab-title" onclick="switchTab('evaluate', 'e-tab')"
+                                     style="clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); text-align: center;
+                                             background: #b2b2b2; color: {{ color_dict.whiteHash }}; border-radius: 0px 10px 10px 0px;">
+                                    2. EVALUATE
+                                </div>
+                            </div>
+
+                            <div id="design" class="tab-details" style="padding: 60px;">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title">ENTER PROMOTION TITLE
+
+                                                <h5 class="subtitle" id="subtitle_1"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_1">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title"> SELECT PROMOTION TYPE
+
+                                                <h5 class="subtitle" id="subtitle_2"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_2">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title"> SELECT PRODUCT CATEGORY
+
+                                                <h5 class="subtitle" id="subtitle_3"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_3">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title"> SELECT MANUFACTURERES
+
+                                                <h5 class="subtitle" id="subtitle_4"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_4">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title"> SELECT PRODUCT
+
+                                                <h5 class="subtitle" id="subtitle_5"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_5">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+                                        <div>
+                                            <i id="title-uncheck" class="fa fa-circle-o"
+                                               style="color: {{ color_dict.blueHash }}; font-size: 30px; "></i>
+                                            <i id="title-check" class="fa fa-check-circle-o"
+                                               style="color: {{ color_dict.darkGreenHash }}; font-size: 30px; display: none"></i>
+                                            <span id="promotion_title">  SELECT PRODUCT SKU
+
+                                                <h5 class="subtitle" id="subtitle_6"></h5>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                        id="edit_6">
+                                                EDIT
+                                            </button>
+                                            </span>
+
+                                        </div>
+
+
+                                        <br>
+                                    </div>
+
+                                    <div class="col">
+                                        <div id="vertical-line"
+                                             style="width: 2px; height: 700px; background: {{ color_dict.blueHash }};  position:absolute;"></div>
+
+                                        {#####################################################################}
+
+                                        <div class="container" id="promotion_title_container">
+                                              <div id="title-field">
+                                            <span class="right_heading">SELECT PROMOTION TITLE
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+
+                                              <div class="col-md-7">
+
+                                            <input id="promotion_title_input" type="text" class="form-control" placeholder="Promotion Title" >
+                                            </div>
+                                            <form id="promotion_title_form">
+                                             <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio1" name="customRadio" value="Promotion 1" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio1">Promotion 1</label>
+                                            </div>
+                                              <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio2" name="customRadio" value="Promotion 2" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio2">Promotion 2</label>
+                                            </div>
+                                              <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio3" name="customRadio" value="Promotion 3" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio3">Promotion 3</label>
+                                            </div>
+                                              <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio4" name="customRadio" value="Promotion 4" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio4">Promotion 4</label>
+                                            </div>
+                                            </form>
+                                        </div>
+
+                                        {#####################################################################}
+
+                                        <div class="container" id="promotion_type">
+                                                  <div id="title-field_promotion_type">
+                                            <span class="right_heading">SELECT PROMOTION TYPE
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+                                            <div class="col-md-7">
+                                            <input type="text" id="promotion_type_input" class="form-control" placeholder="Promotion type">
+                                            </div>
+                                            <form id="promotion_type_form">
+                                             <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio1_promotion_type" name="customRadio" value="5% off" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio1_promotion_type">5% off</label>
+                                            </div>
+                                              <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio2_promotion_type" name="customRadio" value="Buy 2 get one" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio2_promotion_type">Buy 2 get one</label>
+                                            </div>
+                                              <div class="custom-control custom-radio" >
+                                                <input type="radio" id="customRadio3_promotion_type" name="customRadio" value="other" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio3_promotion_type">Other:
+                                                    <input type="text" value=""> </label>
+
+                                            </div>
+                                            </form>
+
+                                        </div>
+
+                                        {#####################################################################}
+
+                                        <div class="container" id="select_category">
+                                            <div id="title-field_promotion_type">
+                                            <span class="right_heading">SELECT CATEGORY TYPE
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+                                            <div class="col-md-7">
+                                            <input type="text" class="form-control" placeholder="Category type" id="filter_category" value="">
+                                            </div>
+
+                                            <ul class="kd_category">
+
+                                            </ul>
+
+
+                                        </div>
+
+                                        {#####################################################################}
+
+                                          <div class="container" id="select_manufacturer">
+                                            <div id="title-field_promotion_type">
+                                            <span class="right_heading">SELECT MANUFACTURER
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+                                            <div class="col-md-7">
+                                            <input type="text" class="form-control" placeholder="Manufacturer" id="filter_manufacturer" value="">
+                                            </div>
+
+                                                 <ul class="kd_manufacturer">
+
+                                            </ul>
+
+                                        </div>
+
+                                        {#####################################################################}
+
+
+                                          {#####################################################################}
+
+                                          <div class="container" id="select_product">
+                                            <div id="title-field_promotion_type">
+                                            <span class="right_heading">SELECT PRODUCT
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+                                            <div class="col-md-7">
+                                            <input type="text" class="form-control" placeholder="Products" id="filter_product" value="">
+                                            </div>
+
+                                                 <ul class="kd_product">
+
+                                            </ul>
+
+                                        </div>
+
+                                        {#####################################################################}
+
+
+                                        {#####################################################################}
+
+                                          <div class="container" id="select_product_sku">
+                                            <div id="title-field_promotion_type">
+                                            <span class="right_heading">SELECT PRODUCT SKU
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div class="right_edit_only">
+                                            Please select from below
+                                        </div>
+                                            <div class="col-md-7">
+                                            <input type="text" class="form-control" placeholder="Product SKU" id="filter_product_sku" value="">
+                                            </div>
+                                                 <ul class="kd_product_sku">
+
+                                            </ul>
+
+                                        </div>
+
+                                        {#####################################################################}
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </section>
+
+                            <div id="evaluate" class="tab-details" style="display:none; padding: 30px;">
+                                <h2>Evaluate</h2>
+                                <p>Evaluate the promotion.</p>
+                            </div>
+
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+
+    </div>
+
+
+
+
+    <script>
+        function xb() {
+
+
+            var output
+            document.getElementById("1").innerHTML = "welcome";
+            document.getElementById("2").innerHTML = "welcome";
+            document.getElementById("3").innerHTML = "welcome";
+            document.getElementById("4").innerHTML = "welcome";
+            document.getElementById("5").innerHTML = "welcome";
+
+
+        }
+    </script>
+
+
+
+
+
+    <script>
+
+        //var products = ["Rupchada", "Teer", "ACI", "Pran", "aaa"];
+        var units = ["290", "3131", "313", "311", "312"];
+        var cogs = ["Tk. 1313", "Tk. 1313", "Tk. 1313", "Tk. 13", "Tk. 211313"]
+        var sells = ["Tk. 313", "Tk. 1813", "Tk. 1313", "Tk. 136", "Tk. 41313"]
+        var gross = ["Tk. 113", "Tk. 13813", "Tk. 1113313", "Tk. 241313", "Tk. 41313"]
+
+        function abc() {
+
+            var output = ''
+            for (var i in products) {
+                document.write(products[i] + "<br>")
+
+
+                var sTag = ' <tr><td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
+                var one = '<td>' + products[i] + '</td>';
+                var two = '<td>' + units[i] + '</td>';
+                var three = '<td>' + cogs[i] + '</td>';
+                var four = '<td>' + sells[i] + '</td>';
+                var five = '<td>' + gross[i] + '</td>';
+
+                var lTag = ' </tr>'
+
+
+                output += sTag + one + two + three + four + five;
+
+                console.log("output" + output);
+
+            }
+
+            document.getElementById("tBody").innerHTML = output;
+
+
+        }
+
+        abc();
+
+    </script>
+
+{% endblock %}
+
