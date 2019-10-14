@@ -345,23 +345,11 @@
     </script>
 
 
-
-    <script>
-        $('.kd li').on('click',function () {
-          var pc = $(this).attr('id');
-          console.log(pc);
-          $('#subtitle_3').html(pc);
-
-        })
-
-    </script>
-
     <script>
         var product_category = ['Beverage','Bakery-items','Medicine','Toiletries','Cooking','Home and Cleaning','Baby care'];
         var output = "";
         for (var i in product_category){
             var aa = '<li id="category_'+i+'">'+product_category[i]+'</li>';
-
             output+= aa;
 
         }
@@ -440,13 +428,13 @@
         var output3 = '';
         var product = ['Teer Soyabin Oil' , 'Pran Laccha Shemai', 'Lux','Pepsi','Sprite','Wheel','Pran Ghee'];
         for (var k in product){
-                   var ll = '<li id="product_'+k+'">'+product[k]+'</li>';
+                   var qe = '<li id="product_'+k+'">'+product[k]+'</li>';
 
 
-            output3+= ll;
+            output3+= qe;
 
         }
-        console.out(output3);
+
         $('.kd_product').html(output3);
              $(document).ready(function () {
         $("#filter_product").keyup(function () {
@@ -525,13 +513,64 @@
 
          $(".kd_category li").click(function () {
              var name = $(this).text();
-             $("#subtitle_3").append(name);
+             $("#subtitle_3").text(name);
 
          })
      });
 
 
     </script>
+
+
+
+    <script>
+
+
+     $(document).ready(function() {
+
+         $(".kd_manufacturer li").click(function () {
+             var name = $(this).text();
+             $("#subtitle_4").text(name);
+
+         })
+     });
+
+
+    </script>
+
+
+
+    <script>
+
+
+     $(document).ready(function() {
+
+         $(".kd_product li").click(function () {
+             var name = $(this).text();
+             $("#subtitle_5").text(name);
+
+         })
+     });
+
+
+    </script>
+
+        <script>
+
+
+     $(document).ready(function() {
+
+         $(".kd_product_sku li").click(function () {
+             var name = $(this).text();
+             $("#subtitle_6").text(name);
+
+         })
+     });
+
+
+    </script>
+
+
 
 
 
@@ -835,8 +874,7 @@
                                             <div class="col-md-7">
                                             <input type="text" class="form-control" placeholder="Products" id="filter_product" value="">
                                             </div>
-
-                                                 <ul class="kd_product">
+                                              <ul class="kd_product">
 
                                             </ul>
 

@@ -60,4 +60,5 @@ urlpatterns = [
    path('c2',checkbydivision,name="bubble_slide"),
    path('c4',divcheck,name="bubble_slide"),
    path('ul',ultomapcolorchange,name="bubble_slide"),
+   path('echart',echarttest,name="bubble_slide"),
 ]

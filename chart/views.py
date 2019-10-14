@@ -2372,3 +2372,5 @@ def divcheck(request):
 def ultomapcolorchange(request):
     return render(request,'ulto_mapcolorchange.html')
 
+def echarttest(request):
+    return render(request,'echart_test.html')
