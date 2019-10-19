@@ -2355,3 +2355,12 @@ def fetch(request):
 
 def maprebuild(request):
     return render(request,'maprebuild.html')
+
+
+
+def mapprac(request):
+    return render(request,'map_practice.html')
+
+
+def crud(request):
+    return render(request,'crud_niye_khela.html')

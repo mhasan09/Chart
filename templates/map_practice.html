@@ -1,0 +1,85 @@
+<html>
+<head>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid #BDC3C7;
+        }
+
+        .menu ul ul {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all 0.3s;
+            left: 83%;
+            top: -2%;
+
+        }
+
+        .menu ul li a {
+            color: #333333;
+            text-decoration: none;
+        }
+
+        .menu ul li:hover > ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #myInput {
+
+            width: 60%;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 12px 20px 12px 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul id="myUL">
+
+
+    </ul>
+</div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script>
+
+    var division = ['Dhakadiv', 'Chittagongdiv', 'Rangpurdiv', 'Rajshahidiv', 'Barisaldiv', 'Mymensinghdiv', 'Sylhetdiv', 'Khulnadiv'];
+    var dhakaDivisionMap = ['DhakaMap', 'GazipurMap', 'KishoreganjMap', 'ManikganjMap', 'MunshiganjMap', 'NarayanganjMap', 'NarsingdiMap', 'TangailMap', 'FaridpurMap', 'GopalganjMap', 'MadaripurMap', 'RajbariMap', 'ShariatpurMap'];
+    var chattogramDivisionMap = ['BrahmanbariaMap', 'ComillaMap', 'ChandpurMap', 'LakshmipurMap', 'NoakhaliMap', 'FeniMap', 'KhagrachhariMap', 'RangamatiMap', 'BandarbanMap', 'ChittagongMap', 'CoxsBazarMap'];
+    var rangpurDivisionMap = ['ThakurgaonMap', 'RangpurMap', 'PanchagarhMap', 'NilphamariMap', 'LalmonirhatMap', 'KurigramMap', 'GaibandhaMap', 'DinajpurMap'];
+    var rajshahiDivisionMap = ['BoguraMap', 'ChapainawabganjMap', 'JoypurhatMap', 'NaogaonMap', 'NatoreMap', 'PabnaMap', 'RajshahiMap', 'SirajgonjMap'];
+    var barisalDivisionMap = ['BarisalMap', 'BargunaMap', 'BholaMap', 'JhalokatiMap', 'PatuakhaliMap', 'PirojpurMap'];
+    var mymensinghDivisionMap = ['JamalpurMap', 'MymensinghMap', 'NetrokonaMap', 'SherpurMap'];
+    var sylhetDivisionMap = ['HabiganjMap', 'MoulvibazarMap', 'SunamganjMap', 'SylhetMap'];
+    var khulnaDivisionMap = ['BagerhatMap', 'ChuadangaMap', 'JessoreMap', 'JhenaidahMap', 'KhulnaMap', 'KushtiaMap', 'MaguraMap', 'MeherpurMap', 'NarailMap', 'SatkhiraMap'];
+    var out1 = "";
+    for (var i in division){
+        var a = '<li id="'+division[i]+'">'+division[i].split("div")[0]+'</li>';
+        out1+=a;
+    }
+
+    console.log("aaa",out1);
+    $("#myUL").html(out1);
+
+</script>
+</html>

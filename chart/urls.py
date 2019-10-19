@@ -55,4 +55,6 @@ urlpatterns = [
    path('sage',sage,name="bubble_slide"),
    path('fetch',fetch,name="bubble_slide"), #fetch is working
    path('m2',maprebuild,name="bubble_slide"),
+   path('m3',mapprac,name="bubble_slide"),
+   path('crud',crud,name="bubble_slide"),
 ]
