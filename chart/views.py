@@ -2374,3 +2374,6 @@ def ultomapcolorchange(request):
 
 def echarttest(request):
     return render(request,'echart_test.html')
+
+def login(request):
+    return render(request,'login.html')
