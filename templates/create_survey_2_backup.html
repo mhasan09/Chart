@@ -226,6 +226,18 @@
             display: none;
         }
 
+        #update_q {
+            margin-top: 1%;
+        }
+
+        #close_update_section {
+            margin-top: 1%;
+        }
+
+        #dropdown_button_group {
+            margin-left: 90%;
+            display: none;
+        }
 
     </style>
 
@@ -597,7 +609,9 @@
         $("#add_more_question_section").on('click', function () {
             $('#more_question_container').show();
             $('#selected_box_container').hide();
-
+            $('#dropdown_button_group').hide();
+            $('#choice_container').hide();
+            $('#checkbox_container').hide();
         });
 
     </script>
@@ -647,48 +661,43 @@
         }
 
         function edit_question(id) {
+            $('#selected_box_container').show();
+            $('#more_question_container').hide();
+            $('#dropdown_button_group').show();
             question_arr.forEach(function (question, i) {
-             {% comment %}   if (question.id == id) {
-                    $("#edit_question_modal_body").empty().append(`
-                  <form id="update_question" action="">
-                      <label for="name">Question</label>
+                {% comment %}   if (question.id == id) {
+                       $("#edit_question_modal_body").empty().append(`
+                     <form id="update_question" action="">
+                         <label for="name">Question</label>
 
-                      <textarea class="form-control" id="exampleFormControlTextarea1" name="name" rows="3">${question.question_description}</textarea>
-                        <div class="form-group">
-                                <label for="exampleFormControlSelect1">Select Question Type</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>Multiple Choice</option>
-                                  <option>Checkbox</option>
-                                  <option>Text Area</option>
-                                  <option>Slider</option>
-                            </select>
-                          </div>
+                         <textarea class="form-control" id="exampleFormControlTextarea1" name="name" rows="3">${question.question_description}</textarea>
+                           <div class="form-group">
+                                   <label for="exampleFormControlSelect1">Select Question Type</label>
+                                   <select class="form-control" id="exampleFormControlSelect1">
+                                     <option>Multiple Choice</option>
+                                     <option>Checkbox</option>
+                                     <option>Text Area</option>
+                                     <option>Slider</option>
+                               </select>
+                             </div>
 
-              `);
-                    $("#edit_question_modal_footer").empty().append(`
-                      <button type="button" type="submit" class="btn btn-primary" id="update_q" onClick="update_question(${id})">Save changes</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  </form>
-              `);
-                }{% endcomment %}
-                   if (question.id == id) {
+                 `);
+                       $("#edit_question_modal_footer").empty().append(`
+                         <button type="button" type="submit" class="btn btn-primary" id="update_q" onClick="update_question(${id})">Save changes</button>
+                         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                     </form>
+                 `);
+                   }{% endcomment %}
+                if (question.id == id) {
                     $("#selected_box_container").empty().append(`
                   <form id="update_question" action="">
                       <label for="name">Question</label>
 
                       <textarea class="form-control" id="exampleFormControlTextarea1" name="name" rows="3">${question.question_description}</textarea>
-                        <div class="form-group">
-                                <label for="exampleFormControlSelect1">Select Question Type</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>Multiple Choice</option>
-                                  <option>Checkbox</option>
-                                  <option>Text Area</option>
-                                  <option>Slider</option>
-                            </select>
-                          </div>
+
 
                       <button type="button" type="submit" class="btn btn-primary" id="update_q" onClick="update_question(${id})">Save changes</button>
-                      <button type="button" class="btn btn-primary">Close</button>
+                      <button type="button" class="btn btn-primary" id="close_update_section" onClick="close_container()">Close</button>
                   </form>
               `);
                 }
@@ -718,7 +727,8 @@
                             $(this).text(question.question_description);
                         }
                     });
-                    $("#myModal").modal("toggle");
+                    {#$("#myModal").modal("toggle");#}
+                    {# $('#selected_box_container').hide();#}
 
                 }
             });
@@ -733,7 +743,7 @@
               <td class="questionData" name="name">${question.question_description}</td>
 
               <td align="center">
-                  <i class='fa fa-edit' style='font-size:26px' data-toggle="modal" data-target="#myModal" onClick="edit_question(${question.id})"></i>
+                  <i class='fa fa-edit' style='font-size:26px' id="edit_question_section" onClick="edit_question(${question.id})"></i>
               </td>
 
           </tr>
@@ -741,24 +751,139 @@
         }
 
 
-        $('.questionData').on('click', function () {
+        {% comment %} $('.questionData').on('click', function () {
 
 
-            var q_data = $(this).text();
-            $('#selected_box_container').show();
-            $('#selected_box_container').text(q_data);
-            $("#question_type_dropdown").show();
-            $('#more_question_container').hide();
-        })
+             var q_data = $(this).text();
+             $('#selected_box_container').show();
+             $('#selected_box_container').text(q_data);
+             $("#question_type_dropdown").show();
+             $('#more_question_container').hide();
+         });{% endcomment %}
 
         $('#save_user').on('click', function () {
 
             $('#title-check_question').show();
             $('#title-uncheck_question').hide();
-        })
+        });
+        {% comment %}     $('#edit_question_section').on('click', function () {
+                   $('#selected_box_container').show();
+                   $('#more_question_container').hide();
+          });{% endcomment %}
+
+        function close_container() {
+            $('#selected_box_container').hide();
+        }
+
+        $('#question_multiple_choice').click(function () {
+            multiple_choice();
+            $("#choice_container").show();
+            $("#checkbox_container").hide();
+            $('#more_question_container').hide();
+            $('#selected_box_container').show();
+            $('#dropdown_button_group').show();
+        });
+
+        $('#question_multiple_checkbox').click(function () {
+            multiple_checkbox();
+            $("#choice_container").hide();
+            $("#checkbox_container").show();
+            $('#more_question_container').hide();
+            $('#selected_box_container').show();
+            $('#dropdown_button_group').show();
+        });
+        $('#question_comment_box').click(function () {
+            $("#choice_container").hide();
+            $("#checkbox_container").hide();
+            $("#textbox_container").show();
+            $('#more_question_container').hide();
+            $('#selected_box_container').show();
+            $('#dropdown_button_group').show();
+        });
 
 
     </script>
+
+
+    <script>
+        var multiple_choice_arr = ['Yes', 'No'];
+        var multiple_checkbox_arr = ['Yes', 'No'];
+
+        function multiple_choice() {
+            var output = "";
+
+
+            for (var i in multiple_choice_arr) {
+                var aa = '';
+                aa = '<li checked="checked" id="' + multiple_choice_arr[i] + '"><input type="radio" class="radio_button" name="multiple_choice_radio" value="male">' + multiple_choice_arr[i] + '</li>';
+                output += aa;
+
+            }
+
+            $('.kd_choice').html(output);
+            $(document).ready(function () {
+
+                $(".kd_choice li").click(function () {
+                    $(".kd_choice li").find('input[type="radio"]').removeAttr('checked');
+                    $(this).find('input[type="radio"]').attr('checked', 'checked');
+
+
+                })
+            });
+        }
+
+        function multiple_checkbox() {
+            var output = "";
+
+
+            for (var i in multiple_checkbox_arr) {
+                var aa = '';
+                aa = '<li checked="checked" id="' + multiple_checkbox_arr[i] + '"><input type="checkbox" name="multiple_choice_checkbox" value="male">' + multiple_checkbox_arr[i] + '</li>';
+                output += aa;
+
+            }
+
+            $('.kd_checkbox').html(output);
+            $(document).ready(function () {
+
+                $(".kd_checkbox li").click(function () {
+                    $(".kd_checkbox li").find('input[type="radio"]').removeAttr('checked');
+                    $(this).find('input[type="radio"]').attr('checked', 'checked');
+
+
+                })
+            });
+        }
+
+        function sliderSetup() {
+            function print() {
+                $aa = this.val();
+
+                if ($aa == 1) {
+
+                    $("#slider_result").text("Unlikely");
+                } else if ($aa == 2) {
+
+                    $("#slider_result").text("likely");
+                } else {
+
+                    $("#slider_result").text("Very likely");
+                }
+            }
+
+            $('#slider').on('change', function () {
+                print.call($(this));
+            });
+
+        }
+
+    </script>
+
+
+
+
+
+
 
 
 
@@ -1128,7 +1253,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-6" id="selected_box">
                                                                 </div>
-                                                                <div class="col-md-4" id="dropdown_button_box">
+                                                                {% comment %}<div class="col-md-4" id="dropdown_button_box">
 
                                                                     <!-- Example split danger button -->
                                                                     <div class="btn-group" id="question_type_dropdown"
@@ -1156,12 +1281,81 @@
                                                                             </a>
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                                </div>{% endcomment %}
                                                             </div>
                                                         </div>
+                                                        <div class="btn-group" id="dropdown_button_group">
 
+                                                            <button type="button"
+                                                                    class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item" href="#"
+                                                                   id="question_multiple_choice">Multiple
+                                                                    Choice</a>
+                                                                <a class="dropdown-item" href="#"
+                                                                   id="question_multiple_checkbox">Checkboxes
+                                                                </a>
+                                                                <a class="dropdown-item" href="#"
+                                                                   id="question_comment_box">Comment box
+                                                                </a>
+                                                                <a class="dropdown-item" href="#"
+                                                                   id="question_slider">Slider
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="container" id="choice_container">
+                                                                <ul class="kd_choice"></ul>
+                                                            </div>
+                                                            <div class="container" id="checkbox_container">
+                                                                <ul class="kd_checkbox"></ul>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div id="textbox_container">
+                                                            <div class="row">
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group">
+                                                                    <textarea class="form-control" rows="5"
+                                                                              id="comment">
+                                                                    </textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <button type="button" class="btn btn-success"
+                                                                        id="save_textbox">Save
+                                                                </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
+
+                                                </div>
+
+
+                                            </div>
+
+                                            {# NOC #}
+                                            <div class="row" style="margin-top: 60px;">
+
+                                                <div class="container">
+
+                                                    <button type="button"
+                                                            id="save_user">
+                                                        Questionnaire Complete
+                                                    </button>
+
+
+                                                    <button type="button"
+                                                            id="add_more_question_section">
+                                                        Add More Question
+                                                    </button>
                                                 </div>
 
 
@@ -1170,48 +1364,25 @@
 
                                         </div>
 
-                                        {# NOC #}
-                                        <div class="row" style="margin-top: 60px;">
 
-                                            <div class="container">
-
-                                                <button type="button"
-                                                        id="save_user">
-                                                    Questionnaire Complete
-                                                </button>
-
-
-                                                <button type="button"
-                                                        id="add_more_question_section">
-                                                    Add More Question
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-
+                                    </section>
 
                                 </div>
 
-
-                                </section>
-
                             </div>
+
 
                         </div>
 
-
                     </div>
-
                 </div>
             </div>
+            <!-- /Row -->
         </div>
-        <!-- /Row -->
-    </div>
-    <!-- /Container -->
+        <!-- /Container -->
 
-    {# TODO PC MAP #}
-    {% comment %}{% if mobile %}
+        {# TODO PC MAP #}
+        {% comment %}{% if mobile %}
 
     {% else %}
 
@@ -16819,8 +16990,8 @@
 
     {% endif %}{% endcomment %}
 
-    {# PHONE MODAL #}
-    {% comment %}<div class="modal fade" id="listModal" tabindex="-1" role="dialog"
+        {# PHONE MODAL #}
+        {% comment %}<div class="modal fade" id="listModal" tabindex="-1" role="dialog"
          aria-labelledby="listModalLabel" aria-hidden="true">
         <div class="modal-dialog mw-100 w-95">
             <div class="modal-content">
@@ -16860,8 +17031,8 @@
     </div>{% endcomment %}
 
 
-    {#       category_modal#}
-    {% comment %}<div class="modal fade" id="clear_data_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        {#       category_modal#}
+        {% comment %}<div class="modal fade" id="clear_data_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div id="clear_data_dialog" class="modal-dialog" role="document">
             <div class="modal-content" id="clear_data_content">
@@ -16881,17 +17052,17 @@
             </div>
         </div>
     </div>{% endcomment %}
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" id="edit_question_modal_content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Update Question</h4>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" id="edit_question_modal_content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Update Question</h4>
+                    </div>
+                    <div class="modal-body" id="edit_question_modal_body"></div>
+                    <div class="modal-footer" id="edit_question_modal_footer"></div>
                 </div>
-                <div class="modal-body" id="edit_question_modal_body"></div>
-                <div class="modal-footer" id="edit_question_modal_footer"></div>
             </div>
         </div>
-    </div>
 
     </div>
 
