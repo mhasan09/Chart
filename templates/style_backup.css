@@ -32198,7 +32198,7 @@ table.dataTable > tbody > tr.child span.dtr-data {
 .hk-landing .play-wrap .play-btn::before {
     display: inline-block;
     font-family: 'Titillium Web', sans-serif;
-    padding-left: 3px;
+    padding-left: 3px;  
     font-size: 28px;
     speak: none;
     font-style: normal;
