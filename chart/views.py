@@ -2356,11 +2356,24 @@ def fetch(request):
 def maprebuild(request):
     return render(request,'maprebuild.html')
 
+def dynamiconclick(request):
+    return render(request,'mapdynamiconclick.html')
+
+def promotionbeta(request):
+    return render(request,'promotion_beta.html')
+
+def checkbydivision(request):
+    return render(request,'check_by_division.html')
 
 
-def mapprac(request):
-    return render(request,'map_practice.html')
+def divcheck(request):
+    return render(request,'divselectfinal.html')
 
+def ultomapcolorchange(request):
+    return render(request,'ulto_mapcolorchange.html')
 
-def crud(request):
-    return render(request,'crud_niye_khela.html')
+def echarttest(request):
+    return render(request,'echart_test.html')
+
+def login(request):
+    return render(request,'login.html')

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>FusionCharts - Gallery Example - Multi-series line 2D Chart </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="googlebot" content="noindex, nofollow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css"/>
+    <script type="text/javascript" src="cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script type="text/javascript"
+            src="cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+    {#      <script type="text/javascript" src="http://static.fusioncharts.com/code/develop/fusioncharts.js"></script>#}
+    {#      <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fusion.js"></script>#}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+
+    <style id="compiled-css" type="text/css">
+            .main-container {
+            width: 500px;
+            background-color: #ffffff;
+        }
+
+        #button {
+            display: inline-block;
+            padding: 5px 15px;
+            margin-left: 8px;
+            margin-right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+            background-color: #e7eeeb;
+            border-radius: 29px;
+            border: 2px solid #b7b7b7;
+        }
+
+
+
+        .slide {
+            border-color: #b7b7b7;
+            background: #bdbdbd;
+            cursor: pointer;
+            margin-left: 12%;
+            width: 80.5%;
+            margin-top: -4.6%;
+        }
+
+        .ui-slider-horizontal .ui-state-default {
+            border: 1px solid #333333;
+            background: #e7eeeb;
+            width: 10px;
+
+        }
+
+        .tick {
+            display: inline-block;
+            margin-bottom: 3%;
+            width: 14.16%;
+            font-size: 14px;
+            color: #0a434c;
+
+        }
+
+        .tick2 {
+            padding-left: 11%;
+
+        }
+        #slider{
+            margin-top : 1%;
+        }
+ {% comment %}       #may{
+            margin-left: 1%;
+        }
+        #Jun{
+            margin-left: 1%;
+        }{% endcomment %}
+
+    </style>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+    window.onload = function () {
+
+        FusionCharts.ready(function () {
+            // Store all sets of data to be updated in an array.
+            var data = [{
+                    "chart": {
+                        "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "0",
+                        "showValues": "0",
+
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+
+                        ]
+
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "50",
+                            "y": "19450",
+                            "z": "19",
+                            "name": "Lux",
+
+
+                        }, {
+                            "x": "65",
+                            "y": "10500",
+                            "z": "8",
+                            "name": "Cool Shaving Cream",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "43",
+                            "y": "8750",
+                            "z": "5",
+                            "name": "Teer Ata",
+                            "color": "333333"
+
+                        }, {
+                            "x": "32",
+                            "y": "22000",
+                            "z": "10",
+                            "name": "Coca Cola",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "44",
+                            "y": "13000",
+                            "z": "9",
+                            "name": "Pepsi",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                }, {
+                    "chart": {
+                          "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "10",
+                        "valuePosition": "outside",
+                        "showValues": "0"
+
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+                  ]
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "50",
+                            "y": "19450",
+                            "z": "313119",
+                            "name": "Wheel"
+                        }, {
+                            "x": "90",
+                            "y": "9500",
+                            "z": "31318",
+                            "name": "Bashundhara Tissue",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "10",
+                            "y": "29150",
+                            "z": "31315",
+                            "name": "Potato Crackers",
+                            "color": "333333"
+
+                        }, {
+                            "x": "32",
+                            "y": "22000",
+                            "z": "111310",
+                            "name": "Close Up",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "68",
+                            "y": "13000",
+                            "z": "1419",
+                            "name": "Lipton Taza",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                }, {
+                    "chart": {
+                           "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "10",
+                        "valuePosition": "outside",
+                        "showValues": "0"
+
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+               ]
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "50",
+                            "y": "19450",
+                            "z": "19",
+                            "name": "Lux"
+                        }, {
+                            "x": "65",
+                            "y": "10500",
+                            "z": "8",
+                            "name": "Chaka Ball soap",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "13",
+                            "y": "750",
+                            "z": "5",
+                            "name": "Bashundhara Ata",
+                            "color": "333333"
+
+                        }, {
+                            "x": "32",
+                            "y": "12000",
+                            "z": "10",
+                            "name": "ACI Gura Masala",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "44",
+                            "y": "3000",
+                            "z": "9",
+                            "name": "Pran Chinigura Chal",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                }, {
+                    "chart": {
+                           "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "10",
+                        "valuePosition": "outside",
+                        "showValues": "0"
+
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+               ]
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "50",
+                            "y": "19450",
+                            "z": "19",
+                            "name": "Lux"
+                        }, {
+                            "x": "65",
+                            "y": "10500",
+                            "z": "8",
+                            "name": "Koolson Laccha Shemai",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "43",
+                            "y": "8750",
+                            "z": "5",
+                            "name": "Polar Ice Cream",
+                            "color": "333333"
+
+                        }, {
+                            "x": "32",
+                            "y": "22000",
+                            "z": "10",
+                            "name": "Pran Milk Candy",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "44",
+                            "y": "13000",
+                            "z": "9",
+                            "name": "Ruchi Chanachur",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                }, {
+                    "chart": {
+                        "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "10",
+                        "valuePosition": "outside",
+                        "showValues": "0"
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+              ]
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "50",
+                            "y": "19450",
+                            "z": "19",
+                            "name": "Lux"
+                        }, {
+                            "x": "65",
+                            "y": "10500",
+                            "z": "8",
+                            "name": "Cool Shaving Cream",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "43",
+                            "y": "1750",
+                            "z": "5",
+                            "name": "Teer Ata",
+                            "color": "333333"
+
+                        }, {
+                            "x": "32",
+                            "y": "8000",
+                            "z": "10",
+                            "name": "Coca Cola",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "40",
+                            "y": "1000",
+                            "z": "9",
+                            "name": "Pepsi",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                },
+                {
+                    "chart": {
+                           "theme": "fusion",
+                        "caption": "Top 5 Products",
+                        "xAxisMinValue": "1",
+                        "xAxisMaxValue": "12",
+                        "yAxisMinValue": "0",
+                        "yAxisMaxValue": "30000",
+                        "plotFillAlpha": "70",
+                        "plotFillHoverColor": "#6baa01",
+                        "showPlotBorder": "0",
+                        "xAxisName": "Month",
+                        "yAxisName": "Total Sales",
+                        "showxaxisline": "1",
+                        "showyaxisline": "1",
+                        "divlinecolor": "#ffffff",
+                        "plotTooltext": "$name : Tk $yvalue",
+                        "showXAxisValues": "0",
+                        "showYAxisValues": "0",
+                        "numVDivlines": "5",
+                        "xAxisValuesStep": "1",
+                        "vDivlineThickness": "5",
+                        "vDivlineAlpha": "70",
+                        "vDivlineIsDashed": "1",
+                        "vDivlineDashLen": "4",
+                        "vDivlineDashGap": "3",
+                        "showAlternateVGridColor": "1",
+                        "alternateVGridColor": "0ffff0",
+                        "alternateVGridAlpha": "40",
+                        "valueFontSize": "10",
+                        "valuePosition": "outside",
+                        "showValues": "0"
+                    },
+                    "categories": [{
+                        "category": [{
+                            "label": "0",
+                            "x": "0"
+                        },
+                            {
+                                "label": "Jan",
+                                "x": "10",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Feb",
+                                "x": "20",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Mar",
+                                "x": "30",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Apr",
+                                "x": "40",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "May",
+                                "x": "50",
+                                "showverticalline": "1"
+                            },
+                            {
+                                "label": "Jun",
+                                "x": "60",
+                                "showverticalline": "1"
+                            },
+              ]
+                    }],
+                    "dataset": [{
+                        "color": "#00aee4",
+                        "data": [{
+                            "x": "40",
+                            "y": "1950",
+                            "z": "19",
+                            "name": "Lux"
+                        }, {
+                            "x": "35",
+                            "y": "1000",
+                            "z": "8",
+                            "name": "Cool Shaving Cream",
+                            "color": "ffbf00"
+
+                        }, {
+                            "x": "73",
+                            "y": "1750",
+                            "z": "5",
+                            "name": "Teer Ata",
+                            "color": "333333"
+
+                        }, {
+                            "x": "12",
+                            "y": "8000",
+                            "z": "10",
+                            "name": "Coca Cola",
+                            "color": "ff6b5e"
+
+                        }, {
+                            "x": "40",
+                            "y": "1000",
+                            "z": "9",
+                            "name": "Pepsi",
+                            "color": "96e0ff"
+                        }]
+                    }],
+
+
+                },],
+                i,
+                updateDuration = 900,
+                isPlaying = false,
+                interValID,
+                animationDuation = 900,
+                currentVal = 0,
+                visitChart = new FusionCharts({
+                    type: 'bubble',
+                    renderAt: 'chart-container',
+                    width: '100%',
+                    height: '400',
+                    dataFormat: 'json',
+                    dataSource: data[0]
+                }).render();
+
+
+        var slider = function (value) {
+                    $("#slider").slider({
+                        value: value,
+                        min: 0,
+                        range: false,
+                        animate : "slow",
+                        orientation : "horizontal",
+
+                        max: data.length - 1,
+                        step: 0.001,
+                        slide: function (event, ui) {
+                            currentVal = Math.round(ui.value);
+                        },
+                        stop: function (event, ui) {
+                            $("#slider").slider('value',Math.round(ui.value));
+                            visitChart.setJSONData(data[Math.round(ui.value)])
+
+                        }
+                    });
+
+                    visitChart.setJSONData(data[value]);
+                },
+
+                startSlider = function () {
+                    interValID = setInterval(function () {
+                        currentVal = $("#slider").slider("value") + 1;
+
+                        if (currentVal >= data.length) {
+
+                            clearInterval(interValID);
+                            isPlaying = true;
+                        } else {
+                            slider(currentVal);
+                        }
+                    }, animationDuation);
+                };
+            slider(0);
+        });
+
+
+    }
+    </script>
+
+</head>
+<body>
+<div class="main-container">
+    <div id="chart-container">FusionCharts will render here</div>
+        <div class="row">
+
+            <div class="tick tick2">Jan</div>
+            <div class="tick">Feb</div>
+            <div class="tick">Mar</div>
+            <div class="tick" id="apr">Apr</div>
+            <div class="tick" id="may">May</div>
+            <div class="tick" id="Jun">Jun</div>
+        </div>
+    <div>
+        <div>
+
+            <div id="slider" class="slide"></div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
