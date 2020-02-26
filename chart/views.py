@@ -5,65 +5,63 @@ from django.http import HttpResponse
 from .fusioncharts import FusionCharts
 from collections import OrderedDict
 
+
 # Loading Data from a Ordered Dictionary
 # Example to create a World Map with the chart data passed as Dictionary format.
 # The `chart` method is defined to load chart data from Dictionary.
 
 def chart(request):
+    # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
+    dataSource = OrderedDict()
 
-  # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
-  dataSource = OrderedDict()
+    # The `mapConfig` dict contains key-value pairs data for chart attribute
+    mapConfig = OrderedDict()
+    mapConfig["caption"] = "Average Annual Population Growth"
+    mapConfig["subcaption"] = "1955-2015"
+    mapConfig["numbersuffix"] = "%"
+    mapConfig["includevalueinlabels"] = "1"
+    mapConfig["labelsepchar"] = ":"
+    mapConfig["theme"] = "fusion"
 
-  # The `mapConfig` dict contains key-value pairs data for chart attribute
-  mapConfig = OrderedDict()
-  mapConfig["caption"] = "Average Annual Population Growth"
-  mapConfig["subcaption"] = "1955-2015"
-  mapConfig["numbersuffix"] = "%"
-  mapConfig["includevalueinlabels"] = "1"
-  mapConfig["labelsepchar"] = ":"
-  mapConfig["theme"] = "fusion"
+    # Map color range data
+    colorDataObj = {"minvalue": "0", "code": "#FFE0B2", "gradient": "1",
+                    "color": [
+                        {"minValue": "0.5", "maxValue": "1", "code": "#FFD74D"},
+                        {"minValue": "1.0", "maxValue": "2.0", "code": "#FB8C00"},
+                        {"minValue": "2.0", "maxValue": "3.0", "code": "#E65100"}
+                    ]
+                    }
 
-  # Map color range data
-  colorDataObj = { "minvalue": "0", "code" : "#FFE0B2", "gradient": "1",
-    "color" : [
-        { "minValue" : "0.5", "maxValue" : "1", "code" : "#FFD74D" },
-        { "minValue" : "1.0", "maxValue" : "2.0", "code" : "#FB8C00" },
-        { "minValue" : "2.0", "maxValue" : "3.0", "code" : "#E65100" }
+    dataSource["chart"] = mapConfig
+    dataSource["colorrange"] = colorDataObj
+    dataSource["data"] = []
+
+    # Map data array
+    mapDataArray = [
+        ["NA", "0.82", "1"],
+        ["SA", "2.04", "1"],
+        ["AS", "1.78", "1"],
+        ["EU", "0.40", "1"],
+        ["AF", "2.58", "1"],
+        ["AU", "1.30", "1"]
     ]
-  }
 
-  dataSource["chart"] = mapConfig
-  dataSource["colorrange"] = colorDataObj
-  dataSource["data"] = []
+    # Iterate through the data in `mapDataArray` and insert in to the `dataSource["data"]` list.
+    # The data for the `data` should be in an array wherein each element of the array is a JSON object
+    # having the `id`, `value` and `showlabel` as keys.
+    for i in range(len(mapDataArray)):
+        dataSource["data"].append({"id": mapDataArray[i][0], "value": mapDataArray[i][1], "showLabel": mapDataArray[i][2]})
 
+    # Create an object for the world map using the FusionCharts class constructor
+    # The chart data is passed to the `dataSource` parameter.
+    fusionMap = FusionCharts("maps/world", "ex1", "650", "450", "chart-1", "json", dataSource)
 
-  # Map data array
-  mapDataArray = [
-    ["NA", "0.82", "1"],
-    ["SA", "2.04", "1"],
-    ["AS", "1.78", "1"],
-    ["EU", "0.40", "1"],
-    ["AF", "2.58", "1"],
-    ["AU", "1.30", "1"]
-  ]
-
-
-  # Iterate through the data in `mapDataArray` and insert in to the `dataSource["data"]` list.
-  # The data for the `data` should be in an array wherein each element of the array is a JSON object
-  # having the `id`, `value` and `showlabel` as keys.
-  for i in range(len(mapDataArray)):
-      dataSource["data"].append({"id": mapDataArray[i][0], "value": mapDataArray[i][1], "showLabel": mapDataArray[i][2] })
-
-  # Create an object for the world map using the FusionCharts class constructor
-  # The chart data is passed to the `dataSource` parameter.
-  fusionMap = FusionCharts("maps/world", "ex1" , "650", "450", "chart-1", "json", dataSource)
-
-  # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
-  return  render(request, 'index.html', {'output' : fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
+    # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
+    return render(request, 'index.html', {'output': fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
 
 
 def barchart(request):
-   chartObj = FusionCharts( 'column2d','ex1',"70%","400",'chart-1','json', """{
+    chartObj = FusionCharts('column2d', 'ex1', "70%", "400", 'chart-1', 'json', """{
   "chart": {
     "caption": "Shoppers",
     "numbersuffix": "K",
@@ -87,11 +85,11 @@ def barchart(request):
     }
   ]
 }""")
-   return render(request, 'index.html', {'output': chartObj.render()})
+    return render(request, 'index.html', {'output': chartObj.render()})
 
 
 def stackedbarchart(request):
-   chartObj = FusionCharts( 'stackedcolumn2d', 'chart-container', '70%', '400', 'chart-1', 'json', """{
+    chartObj = FusionCharts('stackedcolumn2d', 'chart-container', '70%', '400', 'chart-1', 'json', """{
     "chart": {
      
         "theme": "fusion",
@@ -166,59 +164,56 @@ def stackedbarchart(request):
     ],  
     
 }""")
-   return render(request, 'index.html', {'output': chartObj.render()})
-
-
+    return render(request, 'index.html', {'output': chartObj.render()})
 
 
 def gaugechart(request):
-
     # Create an object for the angualar gauge using the FusionCharts class constructor
-    angularGauge = FusionCharts("angulargauge", "ex1" , "100%", "400", "chart-1", "json",
-        # The data is passed as a string in the `dataSource` as parameter.
-        """{
-            "chart": {
-               
-                "theme": "fusion",
-                "chartBottomMargin": "50",
-                "showValue": "0",
-                "showTickMarks": "0",
-                "showTickValues": "0",
-                "pivotFillColor": "#ffffff",
-                "pivotFillAlpha": "0",
-                "showhovereffect": "1",
-               "showHoverAnimation": "1",
-               "plotHoverEffect" : "1"
-
-            },
-            "colorRange": {
-                "color": [{
-                    "minValue": "0",
-                    "maxValue": "300",
-                    "code": "#26bfff",           
-                         
-                }
-               , {
-                    "minValue": "301",
-                    "maxValue": "500",
-                    "code": "#ff6b5e"
-                }, ]
-            },
-              "dials": {
-                "dial": [{
-                    "value": "70",
-                    "id": "dial1",
-                    "radius":"0",
-                    "pivotRadius":"0",
-                    "rearExtension":"0",
-                    
-                }]  
-            }
-         
-        }"""
-        )
+    angularGauge = FusionCharts("angulargauge", "ex1", "100%", "400", "chart-1", "json",
+                                # The data is passed as a string in the `dataSource` as parameter.
+                                """{
+                                    "chart": {
+                                       
+                                        "theme": "fusion",
+                                        "chartBottomMargin": "50",
+                                        "showValue": "0",
+                                        "showTickMarks": "0",
+                                        "showTickValues": "0",
+                                        "pivotFillColor": "#ffffff",
+                                        "pivotFillAlpha": "0",
+                                        "showhovereffect": "1",
+                                       "showHoverAnimation": "1",
+                                       "plotHoverEffect" : "1"
+                        
+                                    },
+                                    "colorRange": {
+                                        "color": [{
+                                            "minValue": "0",
+                                            "maxValue": "300",
+                                            "code": "#26bfff",           
+                                                 
+                                        }
+                                       , {
+                                            "minValue": "301",
+                                            "maxValue": "500",
+                                            "code": "#ff6b5e"
+                                        }, ]
+                                    },
+                                      "dials": {
+                                        "dial": [{
+                                            "value": "70",
+                                            "id": "dial1",
+                                            "radius":"0",
+                                            "pivotRadius":"0",
+                                            "rearExtension":"0",
+                                            
+                                        }]  
+                                    }
+                                 
+                                }"""
+                                )
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
-    return  render(request, 'index.html', {'output' : angularGauge.render(),'chartTitle': 'Update data at runtime'})
+    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
 
 def bubblechart(request):
@@ -334,9 +329,8 @@ def bubblechart(request):
 def bubblechart2(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
 
-
     global_bubblechart = dict()
-    chart_dict= dict()
+    chart_dict = dict()
     chart_dict['theme'] = "fusion"
     chart_dict['caption'] = "Top 5 Products"
     chart_dict['xAxisMinValue'] = "0"
@@ -401,7 +395,6 @@ def bubblechart2(request):
     category_list.append(categories_dict)
     global_bubblechart['categories'] = categories_list
 
-
     dataset_list = list()
     dataset_dict = dict()
     dataset_dict["x"] = ["50"]
@@ -418,7 +411,6 @@ def bubblechart2(request):
     dataset_dict["color"] = ["ffbf00"]
     dataset_list.append(dataset_dict)
 
-
     dataset_dict = dict()
     dataset_dict["x"] = ["43"]
     dataset_dict["y"] = ["8750"]
@@ -427,7 +419,6 @@ def bubblechart2(request):
     dataset_dict["color"] = ["333333"]
     dataset_list.append(dataset_dict)
 
-
     dataset_dict = dict()
     dataset_dict["x"] = ["32"]
     dataset_dict["y"] = ["22000"]
@@ -435,8 +426,6 @@ def bubblechart2(request):
     dataset_dict["name"] = ["Coca Cola"]
     dataset_dict["color"] = ["ff6b5e"]
     dataset_list.append(dataset_dict)
-
-
 
     dataset_dict = dict()
     dataset_dict["x"] = ["44"]
@@ -447,33 +436,25 @@ def bubblechart2(request):
     dataset_list.append(dataset_dict)
     global_bubblechart['dataset'] = dataset_list
 
-
     print(global_bubblechart)
-    a= FusionCharts("bubble","ex1","70%","400","chart-1","json",global_bubblechart)
-
+    a = FusionCharts("bubble", "ex1", "70%", "400", "chart-1", "json", global_bubblechart)
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': a.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def bubblechart3(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
-
-
-
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'test4.html')
 
+
 def bubblechart4(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
 
-
-
-
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'test_bubble.html')
-
-
 
 
 def ledChart(request):
@@ -585,225 +566,224 @@ def ledChart(request):
                                 }"""
                                 )
     angularGauge2 = FusionCharts("hled", "ex2", "25%", "155", "chart-2", "json",
-                                """{
-     "chart": {
-            "subcaption" : "Free Product     ",
-            "lowerLimit": "0",
-            "upperLimit": "100",
-            "numberSuffix": "%",
-            "gaugeFillColor": "#ffffff",
-            "showhovereffect": "1",
-            "origW": "400",
-            "origH": "150",
-            "ledSize": "5",
-            "ledGap": "0",
-            "theme": "fusion",
-            "plotTooltext": "$value%",
-            "showTickMarks": "0",
-            "showTickValues": "0",
-            "showGaugeBorder": "0",
-            "showValue": "0",
-            "showHoverEffect":"1",
-
-      },
-         "annotations": {
-        "showbelow": "1",
-
-
-    },
-    "colorRange": {
-        "color": [
-            {
-                "minValue": "0",
-                "maxValue": "10",
-                "code": "#1589B9"
-            },
-            {
-                "minValue": "10",
-                "maxValue": "15",
-                "code": "#ffffff"
-            },
-            {
-                "minValue": "15",
-                "maxValue": "25",
-                "code": "#1589B9"
-            },
+                                 """{
+      "chart": {
+             "subcaption" : "Free Product     ",
+             "lowerLimit": "0",
+             "upperLimit": "100",
+             "numberSuffix": "%",
+             "gaugeFillColor": "#ffffff",
+             "showhovereffect": "1",
+             "origW": "400",
+             "origH": "150",
+             "ledSize": "5",
+             "ledGap": "0",
+             "theme": "fusion",
+             "plotTooltext": "$value%",
+             "showTickMarks": "0",
+             "showTickValues": "0",
+             "showGaugeBorder": "0",
+             "showValue": "0",
+             "showHoverEffect":"1",
+ 
+       },
+          "annotations": {
+         "showbelow": "1",
+ 
+ 
+     },
+     "colorRange": {
+         "color": [
              {
-                "minValue": "25",
-                "maxValue": "30",
-                "code": "#ffffff"
-            },
+                 "minValue": "0",
+                 "maxValue": "10",
+                 "code": "#1589B9"
+             },
              {
-                "minValue": "30",
-                "maxValue": "40",
-                "code": "#1589B9"
-            },
+                 "minValue": "10",
+                 "maxValue": "15",
+                 "code": "#ffffff"
+             },
              {
-                "minValue": "40",
-                "maxValue": "45",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "45",
-                "maxValue": "55",
-                "code": "#1589B9"
-            },
-             {
-                "minValue": "55",
-                "maxValue": "60",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "60",
-                "maxValue": "70",
-                "code": "#1589B9"
-            },    {
-                "minValue": "70",
-                "maxValue": "75",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "75",
-                "maxValue": "85",
-                "code": "#1589B9"
-            },
-             {
-                "minValue": "85",
-                "maxValue": "90",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "90",
-                "maxValue": "100",
-                "code": "#1589B9"
-            },
-
-
-
-
-        ]
-    },
-    "value": "81",
-    
-
-
-                                }"""
-                                )
+                 "minValue": "15",
+                 "maxValue": "25",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "25",
+                 "maxValue": "30",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "30",
+                 "maxValue": "40",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "40",
+                 "maxValue": "45",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "45",
+                 "maxValue": "55",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "55",
+                 "maxValue": "60",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "60",
+                 "maxValue": "70",
+                 "code": "#1589B9"
+             },    {
+                 "minValue": "70",
+                 "maxValue": "75",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "75",
+                 "maxValue": "85",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "85",
+                 "maxValue": "90",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "90",
+                 "maxValue": "100",
+                 "code": "#1589B9"
+             },
+ 
+ 
+ 
+ 
+         ]
+     },
+     "value": "81",
+     
+ 
+ 
+                                 }"""
+                                 )
     angularGauge3 = FusionCharts("hled", "ex3", "25%", "155", "chart-3", "json",
-                                """{
-     "chart": {
-            "subcaption" : "Tk 5 Off",
-            "subcaption" : "Tk 5 Off",
-            "subcaptionAlignment" : "left",
-            "gaugeFillColor": "#ffffff",
-          
-            "lowerLimit": "0",
-            "upperLimit": "100",
-            "numberSuffix": "%",
-            "showhovereffect": "1",
-            "origW": "400",
-            "origH": "150",
-            "ledSize": "3",
-            "ledGap": "0",
-            "theme": "fusion",
-            "plotTooltext": "$value%",
-            "showTickMarks": "0",
-            "showTickValues": "0",
-            "showGaugeBorder": "0",
-            "showValue": "0",
-            "showHoverEffect":"1",
-
-      },
-      
-         "annotations": {
-        "showbelow": "1",
+                                 """{
+      "chart": {
+             "subcaption" : "Tk 5 Off",
+             "subcaption" : "Tk 5 Off",
+             "subcaptionAlignment" : "left",
+             "gaugeFillColor": "#ffffff",
+           
+             "lowerLimit": "0",
+             "upperLimit": "100",
+             "numberSuffix": "%",
+             "showhovereffect": "1",
+             "origW": "400",
+             "origH": "150",
+             "ledSize": "3",
+             "ledGap": "0",
+             "theme": "fusion",
+             "plotTooltext": "$value%",
+             "showTickMarks": "0",
+             "showTickValues": "0",
+             "showGaugeBorder": "0",
+             "showValue": "0",
+             "showHoverEffect":"1",
+ 
+       },
        
-
-
-    },
-    "colorRange": {
-        "color": [
-            {
-                "minValue": "0",
-                "maxValue": "10",
-                "code": "#1589B9"
-            },
-            {
-                "minValue": "10",
-                "maxValue": "15",
-                "code": "#ffffff"
-            },
-            {
-                "minValue": "15",
-                "maxValue": "25",
-                "code": "#1589B9"
-            },
+          "annotations": {
+         "showbelow": "1",
+        
+ 
+ 
+     },
+     "colorRange": {
+         "color": [
              {
-                "minValue": "25",
-                "maxValue": "30",
-                "code": "#ffffff"
-            },
+                 "minValue": "0",
+                 "maxValue": "10",
+                 "code": "#1589B9"
+             },
              {
-                "minValue": "30",
-                "maxValue": "40",
-                "code": "#1589B9"
-            },
+                 "minValue": "10",
+                 "maxValue": "15",
+                 "code": "#ffffff"
+             },
              {
-                "minValue": "40",
-                "maxValue": "45",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "45",
-                "maxValue": "55",
-                "code": "#1589B9"
-            },
-             {
-                "minValue": "55",
-                "maxValue": "60",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "60",
-                "maxValue": "70",
-                "code": "#1589B9"
-            },    {
-                "minValue": "70",
-                "maxValue": "75",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "75",
-                "maxValue": "85",
-                "code": "#1589B9"
-            },
-             {
-                "minValue": "85",
-                "maxValue": "90",
-                "code": "#ffffff"
-            },
-             {
-                "minValue": "90",
-                "maxValue": "100",
-                "code": "#1589B9"
-            },
-
-
-
-
-        ]
-    },
-    "value": "34"
-
-
-                                }"""
-                                )
+                 "minValue": "15",
+                 "maxValue": "25",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "25",
+                 "maxValue": "30",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "30",
+                 "maxValue": "40",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "40",
+                 "maxValue": "45",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "45",
+                 "maxValue": "55",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "55",
+                 "maxValue": "60",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "60",
+                 "maxValue": "70",
+                 "code": "#1589B9"
+             },    {
+                 "minValue": "70",
+                 "maxValue": "75",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "75",
+                 "maxValue": "85",
+                 "code": "#1589B9"
+             },
+              {
+                 "minValue": "85",
+                 "maxValue": "90",
+                 "code": "#ffffff"
+             },
+              {
+                 "minValue": "90",
+                 "maxValue": "100",
+                 "code": "#1589B9"
+             },
+ 
+ 
+ 
+ 
+         ]
+     },
+     "value": "34"
+ 
+ 
+                                 }"""
+                                 )
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'led_chart.html', {'output': angularGauge.render(),
                                               'output2': angularGauge2.render(),
                                               'output3': angularGauge3.render(),
-
 
                                               })
 
@@ -1131,61 +1111,55 @@ def ledChart2(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'led2.html', {'output': angularGauge.render(),
-                                              'output2': angularGauge2.render(),
-                                              'output3': angularGauge3.render(),
+                                         'output2': angularGauge2.render(),
+                                         'output3': angularGauge3.render(),
 
-                                              })
+                                         })
 
 
 def chart2(request):
+    # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
+    dataSource = OrderedDict()
 
-  # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.
-  dataSource = OrderedDict()
+    # The `mapConfig` dict contains key-value pairs data for chart attribute
+    mapConfig = OrderedDict()
+    mapConfig["caption"] = "Average Promotion Statistics"
+    mapConfig["subcaption"] = "2019"
+    mapConfig["numbersuffix"] = "%"
+    mapConfig["includevalueinlabels"] = "1"
+    mapConfig["labelsepchar"] = ":"
+    mapConfig["theme"] = "fusion"
 
-  # The `mapConfig` dict contains key-value pairs data for chart attribute
-  mapConfig = OrderedDict()
-  mapConfig["caption"] = "Average Promotion Statistics"
-  mapConfig["subcaption"] = "2019"
-  mapConfig["numbersuffix"] = "%"
-  mapConfig["includevalueinlabels"] = "1"
-  mapConfig["labelsepchar"] = ":"
-  mapConfig["theme"] = "fusion"
+    # Map color range data
+    colorDataObj = {"minvalue": "0", "code": "#FFE0B2", "gradient": "1",
+                    "color": [
+                        {"minValue": "0.5", "maxValue": "1", "code": "#FFD74D"},
+                        {"minValue": "1.0", "maxValue": "2.0", "code": "#FB8C00"},
+                        {"minValue": "2.0", "maxValue": "3.0", "code": "#E65100"}
+                    ]
+                    }
 
-  # Map color range data
-  colorDataObj = { "minvalue": "0", "code" : "#FFE0B2", "gradient": "1",
-    "color" : [
-        { "minValue" : "0.5", "maxValue" : "1", "code" : "#FFD74D" },
-        { "minValue" : "1.0", "maxValue" : "2.0", "code" : "#FB8C00" },
-        { "minValue" : "2.0", "maxValue" : "3.0", "code" : "#E65100" }
+    dataSource["chart"] = mapConfig
+    # dataSource["colorrange"] = colorDataObj
+    dataSource["data"] = []
+
+    # Map data array
+    mapDataArray = [
+        ["BA", "0.82", "1"],
+        ["CG", "2.04", "1"],
+        ["DA", "1.78", "1"],
+        ["KH", "0.40", "1"],
+        ["RS", "2.58", "1"],
+        ["RP", "1.30", "1"],
+        ["SY", "1.30", "1"],
     ]
-  }
+    # Create an object for the world map using the FusionCharts class constructor
+    # The chart data is passed to the `dataSource` parameter.
+    fusionMap = FusionCharts("maps/bangladesh", "ex1", "80%", "950", "chart-1", "json", mapDataArray)
 
-  dataSource["chart"] = mapConfig
-  # dataSource["colorrange"] = colorDataObj
-  dataSource["data"] = []
+    # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
+    return render(request, 'index.html', {'output': fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
 
-
-  # Map data array
-  mapDataArray = [
-    ["BA", "0.82", "1"],
-    ["CG", "2.04", "1"],
-    ["DA", "1.78", "1"],
-    ["KH", "0.40", "1"],
-    ["RS", "2.58", "1"],
-    ["RP", "1.30", "1"],
-    ["SY", "1.30", "1"],
-
-  ]
-
-
-
-
-  # Create an object for the world map using the FusionCharts class constructor
-  # The chart data is passed to the `dataSource` parameter.
-  fusionMap = FusionCharts("maps/bangladesh", "ex1" , "80%", "950", "chart-1", "json", dataSource)
-
-  # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
-  return  render(request, 'index.html', {'output' : fusionMap.render(), 'chartTitle': 'Simple Map Using Array'})
 
 def chart3(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
@@ -1493,7 +1467,7 @@ def chart3(request):
                                 )
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
-    return render(request, 'index.html', {'output': angularGauge.render()  ,'chartTitle': 'Update data at runtime'})
+    return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
 
 def chart4(request):
@@ -1621,6 +1595,7 @@ def chart4(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def chart5(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/bangladesh", "ex1", "70%", "950", "chart-1", "json",
@@ -1716,9 +1691,6 @@ def chart5(request):
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
 
-
-
-
 def barisal(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/barisal", "ex1", "70%", "950", "chart-1", "json",
@@ -1781,6 +1753,7 @@ def barisal(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
 
 def mymensingh(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
@@ -1911,6 +1884,7 @@ def dhaka(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def rajshahi(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/rajshahi", "ex1", "70%", "950", "chart-1", "json",
@@ -1975,6 +1949,7 @@ def rajshahi(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
 
 def khulna(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
@@ -2041,6 +2016,7 @@ def khulna(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def sylhet(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/sylhet", "ex1", "70%", "950", "chart-1", "json",
@@ -2105,6 +2081,7 @@ def sylhet(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
 
 def mymensingh(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
@@ -2171,6 +2148,7 @@ def mymensingh(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def rangpur(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
     angularGauge = FusionCharts("maps/rangpur", "ex1", "70%", "950", "chart-1", "json",
@@ -2235,6 +2213,7 @@ def rangpur(request):
 
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
+
 
 def chittagong(request):
     # Create an object for the angualar gauge using the FusionCharts class constructor
@@ -2304,76 +2283,131 @@ def chittagong(request):
     # returning complete JavaScript and HTML code, which is used to generate chart in the browsers.
     return render(request, 'index.html', {'output': angularGauge.render(), 'chartTitle': 'Update data at runtime'})
 
+
 def linkedchart(request):
-    return render(request,"bdmap.html")
+    return render(request, "bdmap.html")
+
 
 def bubble_slide(request):
-    return render(request,"slider_bubbles.html")
+    return render(request, "slider_bubbles.html")
+
 
 def svg_map(request):
-    return render(request,"map_svg.html")
+    return render(request, "map_svg.html")
+
 
 def table(request):
-    return render(request,"table2.html")
+    return render(request, "table2.html")
 
 
 def svgid(request):
-    return render(request,"svg_id.html")
+    return render(request, "svg_id.html")
+
 
 def fetch_svg(request):
-    return render(request,"fetchfrommap.html")
+    return render(request, "fetchfrommap.html")
+
 
 def drillDown(request):
-    return render(request,'drill-down.html')
+    return render(request, 'drill-down.html')
+
 
 def drillDown_test(request):
-    return render(request,'drilldown_test.html')
+    return render(request, 'drilldown_test.html')
+
+
 def onclickev(request):
-    return render(request,'shadow_clone.html')
+    return render(request, 'shadow_clone.html')
+
 
 def multishadowclone(request):
-    return render(request,'multishadowclone.html')
+    return render(request, 'multishadowclone.html')
+
 
 def divtest(request):
-    return render(request,'division_test.html')
+    return render(request, 'division_test.html')
 
 
 def clicktest(request):
-    return render(request,'dashboard_n.html')
+    return render(request, 'dashboard_n.html')
 
 
 def mainframe(request):
-    return render(request,'mainframe.html')
+    return render(request, 'mainframe.html')
 
 
 def sage(request):
-    return render(request,'sagejutsu.html')
+    return render(request, 'sagejutsu.html')
+
 
 def fetch(request):
-    return render(request,'mapfetchtest.html')
+    return render(request, 'mapfetchtest.html')
 
 
 def maprebuild(request):
-    return render(request,'maprebuild.html')
+    return render(request, 'maprebuild.html')
+
 
 def dynamiconclick(request):
-    return render(request,'mapdynamiconclick.html')
+    return render(request, 'mapdynamiconclick.html')
+
 
 def promotionbeta(request):
-    return render(request,'promotion_beta.html')
+    return render(request, 'promotion_beta.html')
+
 
 def checkbydivision(request):
-    return render(request,'check_by_division.html')
+    return render(request, 'check_by_division.html')
 
 
 def divcheck(request):
-    return render(request,'divselectfinal.html')
+    return render(request, 'divselectfinal.html')
+
 
 def ultomapcolorchange(request):
-    return render(request,'ulto_mapcolorchange.html')
+    return render(request, 'ulto_mapcolorchange.html')
+
 
 def echarttest(request):
-    return render(request,'echart_test.html')
+    return render(request, 'echart_test.html')
+
 
 def login(request):
-    return render(request,'login.html')
+    return render(request, 'login.html')
+
+
+def dash(request):
+    return render(request, 'dashboard_n.html')
+
+
+def mcq(request):
+
+    product_name = ['PRAN Mama Wafer ','Bisco Dry Cake','Mithai Premium Sweet Cookies','Bisk Club Orange Cream Biscuit','Pran Ts Sweet Toast']
+    product_manufacture_name = ['PRAN','Bisco','Pran','Bisk Club','Pran']
+    product_buying_price = ['4.5','30','130','8.5','33']
+    product_image_url = ['p_pran_mama_wafer.png','p_bisco_dry_cake.png','p_mithai_premium_sweet_cookies.png','p_bisk_club_orange_cream_biscuit.png','p_pran_ts_sweet_toast.png']
+    product_selling_price = ['5','35','150','10','35']
+    product_brand_name = ['PRAN','Bisco','Pran','Bisk Club','Pran']
+    product_category_name = ['food','food','food','food','food']
+    product_subcategory_name = ['snacks','biscuits','cookies','biscuits','biscuits']
+
+    product_list = list()
+    for i in range(0,5):
+        temp_dict = dict()
+        temp_dict['product_name'] = product_name[i]
+        product_properties_list = list()
+
+        for j in range(0,5):
+            second_temp_dict = dict()
+            second_temp_dict['product_manufacture_name'] = product_manufacture_name[i]
+            second_temp_dict['product_buying_price'] = product_buying_price[i]
+            second_temp_dict['product_selling_price'] = product_selling_price[i]
+            second_temp_dict['product_brand_name'] = product_brand_name[i]
+            second_temp_dict['product_category_name'] = product_category_name[i]
+            second_temp_dict['product_subcategory_name'] = product_subcategory_name[i]
+        product_properties_list.append(second_temp_dict)
+        temp_dict['products'] = product_properties_list
+        product_list.append(temp_dict)
+    print(product_list)
+    return render(request, 'mcq.html')
+

@@ -62,4 +62,6 @@ urlpatterns = [
    path('ul',ultomapcolorchange,name="bubble_slide"),
    path('echart',echarttest,name="bubble_slide"),
    path('login',login,name="login"),
+   path('dash',dash,name="login"),
+   path('mcq',mcq,name="mcq"),
 ]
