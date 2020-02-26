@@ -2379,7 +2379,6 @@ def login(request):
 def dash(request):
     return render(request, 'dashboard_n.html')
 
-
 def mcq(request):
 
     product_name = ['PRAN Mama Wafer ','Bisco Dry Cake','Mithai Premium Sweet Cookies','Bisk Club Orange Cream Biscuit','Pran Ts Sweet Toast']
