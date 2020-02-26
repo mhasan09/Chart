@@ -5,3 +5,13 @@ venv/
 .venv
 venv/
 venv
+*.pyc
+
+# SQLITE DATABASE
+db.sqlite3
+
+#migrations folder
+migrations/
+
+#media folder
+media/

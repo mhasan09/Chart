@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>HTML5 CRUD</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script
+            type="text/javascript"
+            src="/js/lib/dummy.js"
+
+    ></script>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style id="compiled-css" type="text/css">
+
+    </style>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+    var Product = {
+        ProductId: 0,
+        ProductName: "",
+
+    };
+
+    function CreateMockData() {
+        var prodArray = [];
+        var record1 = {
+            ProductId: 1,
+            ProductName: "Extending bootstrap with css, javascript and jquery",
+
+        };
+        prodArray.push(record1);
+        var record2 = {
+            ProductId: 2,
+            ProductName: "Build your own Bootstrap Business",
+
+        };
+        prodArray.push(record2);
+        var record3 = {
+            ProductId: 3,
+            ProductName: "Building mobile web sites using web forms, bootstrap and html5",
+
+        };
+        prodArray.push(record3);
+
+        return prodArray;
+    }
+
+    var productsCollection = [];
+
+
+    // CLICK EVENT HANDLERS
+    function updateClick() {
+        // build project object from inputs
+        Product = (new Object());
+        Product.ProductId = $("#productid").val();
+        Product.ProductName = $("#productname").val();
+
+
+        if ($("#updateButton").text().trim() == "Add") {
+
+            var newId = Math.max.apply(Math, productsCollection.map(function (o) {
+                return o.ProductId;
+            }));
+            newId++;
+            Product.ProductId = newId;
+            productAdd(Product);
+        } else {
+            productUpdate(Product);
+        }
+
+        $("#addButton").removeClass("hidden");
+    }
+
+    function addClick() {
+        $("#editPanel").removeClass("hidden");
+        $("#addButton").addClass("hidden");
+        $("#updateButton").text("Add");
+        formClear();
+    }
+
+    function cancelClick() {
+        formClear();
+        $("#editPanel").addClass("hidden");
+        $("#addButton").removeClass("hidden");
+    }
+
+    // CRUD OPERATIONS
+    function productAdd(product) {
+        productsCollection.push(product);
+        productAddSuccess(product);
+    }
+
+    /*
+     *
+     */
+
+    function productUpdate(product) {
+
+        // update the object in the local collection
+        $.each(productsCollection, function () {
+            if (this.ProductId == product.ProductId) {
+                this.ProductName = product.ProductName;
+
+            }
+        });
+
+        productUpdateSuccess(product);
+
+    }
+
+    function productDelete(ctl) {
+        // get the product id from the data- attribute
+        var id = $(ctl).data("id");
+
+        var data = $.grep(productsCollection, function (e) {
+            return e.ProductId !== id;
+        });
+        productsCollection = data;
+        $(ctl).parents("tr").remove();
+    }
+
+    function productGet(ctl) {
+        // get the product id from the data- attribute
+        var id = $(ctl).data("id");
+
+        // store product id in the hidden field
+        $("#productid").val(id);
+
+        // find it
+        var foundProduct = $.grep(productsCollection, function (e) {
+            return e.ProductId == id;
+        });
+        productToFields(foundProduct[0]);
+
+        $("#editPanel").removeClass("hidden");
+        $("#addButton").addClass("hidden");
+
+        // change the update button text
+        $("#updateButton").text("Update");
+    }
+
+
+    function productList() {
+        if (productsCollection == null) {
+            productsCollection = [];
+            productsCollection = CreateMockData();
+        }
+        if (productsCollection.length == 0) {
+            productsCollection = CreateMockData();
+        }
+        productListSuccess(productsCollection);
+
+    }
+
+    function productListSuccess(products) {
+        $.each(products, function (index, product) {
+            // add a row to the product table
+            productAddRow(product);
+        });
+        // throw new Error("Not implemented");
+    };
+
+    function productAddRow(product) {
+        // check if <tbody> tag exists, add one if not
+        if ($("#productTable tbody").length == 0) {
+            $("#productTable").append("<tbody></tbody>");
+        }
+
+        // append row to the <table>
+        $("#productTable tbody").append(productBuildTableRow(product));
+    }
+
+    function productBuildTableRow(product) {
+        var prodId = product.ProductId;
+        var prodName = product.ProductName;
+
+        var htmlToReturn = "<tr>" + "<td>" + "<button type='button'  " +
+            " onclick='productGet(this)' " + " class='btn btn-default' " +
+            " data-id='" + prodId + "'>";
+        htmlToReturn += "<span class='glyphicon glyphicon-edit'></span>" + "</button>" + "</td>" + "<td>";
+        htmlToReturn += prodName + "</td><td>";
+        htmlToReturn += "<button type='button'  " + " onclick='productDelete(this)' " +
+            " class='btn btn-default' " + " data-id='" + prodId + "'>" +
+            "<span class='glyphicon glyphicon-remove'></span>" + "</button>" +
+            "</td>" + "</tr>";
+
+
+        return htmlToReturn;
+    }
+
+    function productToFields(product) {
+        $("#productname").val(product.ProductName);
+
+    }
+
+    function productAddSuccess(product) {
+        productAddRow(product);
+        $("#editPanel").addClass("hidden");
+        formClear();
+    }
+
+    function productUpdateSuccess(product) {
+        productUpdateInTable(product);
+    }
+
+    function productUpdateInTable(product) {
+        // find product in the <table>: look for the associated button and note the first row that is a parent for it.
+        var row = $("#productTable button[data-id='" + product.ProductId + "']").parents("tr")[0];
+
+        // add changed product to the table
+        $(row).after(productBuildTableRow(product));
+
+        // remove originaly
+        $(row).remove();
+
+        formClear();
+
+        // change the update button text
+        $("#updateButton").text("Add");
+
+        $("#editPanel").addClass("hidden");
+    }
+
+    function formClear() {
+        $("#productname").val("");
+
+    }
+
+
+    // call the product list function after the webpage loads
+    $(document).ready(function () {
+        if (productsCollection == null) {
+            productsCollection = [];
+            productsCollection = CreateMockData();
+        }
+        if (productsCollection.length == 0) {
+            productsCollection = CreateMockData();
+        }
+        productList();
+        $("#editPanel").addClass("hidden");
+    });
+
+
+    //]]></script>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <table id="productTable" class="table table-bordered table-condensed table-striped">
+            <thead>
+            <tr>
+                <th>Edit</th>
+                <th>Product Name</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="button" id="addButton" class="btn btn-primary" onclick="addClick();">Add Product</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-primary hidden" id="editPanel">
+                <div class="panel-heading">
+                    Product Information
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="productname">Product Name</label>
+                        <input type="text" id="productname" class="form-control"/>
+                    </div>
+                </div>
+                <input type="hidden" id="productid" value="0"/>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" id="updateButton" class="btn btn-primary" onclick="updateClick();">
+                                Add
+                            </button>
+                            <button type="button" id="cancelButton" class="btn btn-primary" onclick="cancelClick();">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
